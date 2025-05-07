@@ -1,6 +1,0 @@
-2025/05/07-03:22:27.218 30bed0 Creating DB /Users/michaelsensale/Documents/School/ML/LLM-Voice-Control/.chrome-debug-profile/Default/WebStorage/2/IndexedDB/indexeddb.leveldb since it was missing.
-2025/05/07-03:22:27.220 30bed0 Reusing MANIFEST /Users/michaelsensale/Documents/School/ML/LLM-Voice-Control/.chrome-debug-profile/Default/WebStorage/2/IndexedDB/indexeddb.leveldb/MANIFEST-000001
-2025/05/07-03:36:40.418 30bece Level-0 table #5: started
-2025/05/07-03:36:40.421 30bece Level-0 table #5: 20652 bytes OK
-2025/05/07-03:36:40.422 30bece Delete type=0 #3
-2025/05/07-03:36:40.422 30bece Manual compaction at level-0 from (begin) .. (end); will stop at (end)
