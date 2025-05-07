@@ -1,0 +1,50 @@
+2025/05/07-03:17:40.819 30bed0 Creating DB /Users/michaelsensale/Documents/School/ML/LLM-Voice-Control/.chrome-debug-profile/Default/Sync Data/LevelDB since it was missing.
+2025/05/07-03:17:40.825 30bed0 Reusing MANIFEST /Users/michaelsensale/Documents/School/ML/LLM-Voice-Control/.chrome-debug-profile/Default/Sync Data/LevelDB/MANIFEST-000001
+2025/05/07-03:18:16.858 30bed9 Level-0 table #5: started
+2025/05/07-03:18:16.863 30bed9 Level-0 table #5: 137834 bytes OK
+2025/05/07-03:18:16.864 30bed9 Delete type=0 #3
+2025/05/07-03:18:18.680 30bed9 Level-0 table #7: started
+2025/05/07-03:18:18.687 30bed9 Level-0 table #7: 97928 bytes OK
+2025/05/07-03:18:18.688 30bed9 Delete type=0 #4
+2025/05/07-03:18:20.534 30bed9 Level-0 table #9: started
+2025/05/07-03:18:20.540 30bed9 Level-0 table #9: 97926 bytes OK
+2025/05/07-03:18:20.542 30bed9 Delete type=0 #6
+2025/05/07-03:18:21.582 30bed9 Level-0 table #11: started
+2025/05/07-03:18:21.584 30bed9 Level-0 table #11: 97920 bytes OK
+2025/05/07-03:18:21.586 30bed9 Delete type=0 #8
+2025/05/07-03:18:22.630 30bed9 Level-0 table #13: started
+2025/05/07-03:18:22.633 30bed9 Level-0 table #13: 97918 bytes OK
+2025/05/07-03:18:22.633 30bed9 Delete type=0 #10
+2025/05/07-03:18:23.678 30bed9 Level-0 table #15: started
+2025/05/07-03:18:23.680 30bed9 Level-0 table #15: 97927 bytes OK
+2025/05/07-03:18:23.681 30bed9 Delete type=0 #12
+2025/05/07-03:18:23.681 30bed9 Compacting 4@0 + 1@1 files
+2025/05/07-03:18:23.683 30bed9 Generated table #16@0: 1 keys, 930 bytes
+2025/05/07-03:18:23.683 30bed9 Compacted 4@0 + 1@1 files => 930 bytes
+2025/05/07-03:18:23.684 30bed9 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/05/07-03:18:23.684 30bed9 Delete type=2 #15
+2025/05/07-03:18:23.684 30bed9 Delete type=2 #7
+2025/05/07-03:18:23.684 30bed9 Delete type=2 #13
+2025/05/07-03:18:23.684 30bed9 Delete type=2 #11
+2025/05/07-03:18:23.684 30bed9 Delete type=2 #9
+2025/05/07-03:18:24.570 30bed9 Level-0 table #18: started
+2025/05/07-03:18:24.572 30bed9 Level-0 table #18: 97926 bytes OK
+2025/05/07-03:18:24.574 30bed9 Delete type=0 #14
+2025/05/07-03:18:25.434 30bed9 Level-0 table #20: started
+2025/05/07-03:18:25.436 30bed9 Level-0 table #20: 97921 bytes OK
+2025/05/07-03:18:25.437 30bed9 Delete type=0 #17
+2025/05/07-03:18:26.087 30bed9 Level-0 table #22: started
+2025/05/07-03:18:26.088 30bed9 Level-0 table #22: 97920 bytes OK
+2025/05/07-03:18:26.089 30bed9 Delete type=0 #19
+2025/05/07-03:18:26.975 30bed9 Level-0 table #24: started
+2025/05/07-03:18:26.977 30bed9 Level-0 table #24: 97926 bytes OK
+2025/05/07-03:18:26.978 30bed9 Delete type=0 #21
+2025/05/07-03:18:26.979 30bed9 Compacting 4@0 + 1@1 files
+2025/05/07-03:18:26.980 30bed9 Generated table #25@0: 1 keys, 930 bytes
+2025/05/07-03:18:26.980 30bed9 Compacted 4@0 + 1@1 files => 930 bytes
+2025/05/07-03:18:26.981 30bed9 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/05/07-03:18:26.981 30bed9 Delete type=2 #16
+2025/05/07-03:18:26.981 30bed9 Delete type=2 #20
+2025/05/07-03:18:26.981 30bed9 Delete type=2 #22
+2025/05/07-03:18:26.981 30bed9 Delete type=2 #18
+2025/05/07-03:18:26.981 30bed9 Delete type=2 #24
