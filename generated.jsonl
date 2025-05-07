@@ -1,0 +1,79 @@
+{"utterance": "open a new tab", "rpc": {"method": "new_tab", "params": {}}}
+{"utterance": "open new tab", "rpc": {"method": "new_tab", "params": {}}}
+{"utterance": "create a new tab", "rpc": {"method": "new_tab", "params": {}}}
+{"utterance": "start a new tab", "rpc": {"method": "new_tab", "params": {}}}
+{"utterance": "add a tab", "rpc": {"method": "new_tab", "params": {}}}
+{"utterance": "close the current tab", "rpc": {"method": "close_tab", "params": {}}}
+{"utterance": "close this tab", "rpc": {"method": "close_tab", "params": {}}}
+{"utterance": "shut this tab", "rpc": {"method": "close_tab", "params": {}}}
+{"utterance": "exit this tab", "rpc": {"method": "close_tab", "params": {}}}
+{"utterance": "close the page", "rpc": {"method": "close_tab", "params": {}}}
+{"utterance": "open a new window", "rpc": {"method": "new_window", "params": {}}}
+{"utterance": "open window", "rpc": {"method": "new_window", "params": {}}}
+{"utterance": "launch a window", "rpc": {"method": "new_window", "params": {}}}
+{"utterance": "close the current window", "rpc": {"method": "close_window", "params": {}}}
+{"utterance": "close this window", "rpc": {"method": "close_window", "params": {}}}
+{"utterance": "reload the page", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "refresh the page", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "hit refresh", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "reload", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "go to https://google.com", "rpc": {"method": "navigate", "params": {"url": "https://google.com"}}}
+{"utterance": "navigate to https://google.com", "rpc": {"method": "navigate", "params": {"url": "https://google.com"}}}
+{"utterance": "open https://google.com", "rpc": {"method": "navigate", "params": {"url": "https://google.com"}}}
+{"utterance": "visit https://google.com", "rpc": {"method": "navigate", "params": {"url": "https://google.com"}}}
+{"utterance": "load https://google.com", "rpc": {"method": "navigate", "params": {"url": "https://google.com"}}}
+{"utterance": "go to https://youtube.com", "rpc": {"method": "navigate", "params": {"url": "https://youtube.com"}}}
+{"utterance": "navigate to https://youtube.com", "rpc": {"method": "navigate", "params": {"url": "https://youtube.com"}}}
+{"utterance": "open https://youtube.com", "rpc": {"method": "navigate", "params": {"url": "https://youtube.com"}}}
+{"utterance": "visit https://youtube.com", "rpc": {"method": "navigate", "params": {"url": "https://youtube.com"}}}
+{"utterance": "load https://youtube.com", "rpc": {"method": "navigate", "params": {"url": "https://youtube.com"}}}
+{"utterance": "go to https://wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "https://wikipedia.org"}}}
+{"utterance": "navigate to https://wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "https://wikipedia.org"}}}
+{"utterance": "open https://wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "https://wikipedia.org"}}}
+{"utterance": "visit https://wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "https://wikipedia.org"}}}
+{"utterance": "load https://wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "https://wikipedia.org"}}}
+{"utterance": "search for weather today", "rpc": {"method": "search", "params": {"query": "weather today"}}}
+{"utterance": "look up weather today", "rpc": {"method": "search", "params": {"query": "weather today"}}}
+{"utterance": "find weather today", "rpc": {"method": "search", "params": {"query": "weather today"}}}
+{"utterance": "google weather today", "rpc": {"method": "search", "params": {"query": "weather today"}}}
+{"utterance": "search weather today", "rpc": {"method": "search", "params": {"query": "weather today"}}}
+{"utterance": "search for news headlines", "rpc": {"method": "search", "params": {"query": "news headlines"}}}
+{"utterance": "look up news headlines", "rpc": {"method": "search", "params": {"query": "news headlines"}}}
+{"utterance": "find news headlines", "rpc": {"method": "search", "params": {"query": "news headlines"}}}
+{"utterance": "google news headlines", "rpc": {"method": "search", "params": {"query": "news headlines"}}}
+{"utterance": "search news headlines", "rpc": {"method": "search", "params": {"query": "news headlines"}}}
+{"utterance": "search for python tutorials", "rpc": {"method": "search", "params": {"query": "python tutorials"}}}
+{"utterance": "look up python tutorials", "rpc": {"method": "search", "params": {"query": "python tutorials"}}}
+{"utterance": "find python tutorials", "rpc": {"method": "search", "params": {"query": "python tutorials"}}}
+{"utterance": "google python tutorials", "rpc": {"method": "search", "params": {"query": "python tutorials"}}}
+{"utterance": "search python tutorials", "rpc": {"method": "search", "params": {"query": "python tutorials"}}}
+{"utterance": "bookmark this page", "rpc": {"method": "bookmark_page", "params": {}}}
+{"utterance": "add bookmark", "rpc": {"method": "bookmark_page", "params": {}}}
+{"utterance": "star this page", "rpc": {"method": "bookmark_page", "params": {}}}
+{"utterance": "open bookmarks manager", "rpc": {"method": "open_bookmarks", "params": {}}}
+{"utterance": "show bookmarks", "rpc": {"method": "open_bookmarks", "params": {}}}
+{"utterance": "view bookmarks", "rpc": {"method": "open_bookmarks", "params": {}}}
+{"utterance": "open browsing history", "rpc": {"method": "open_history", "params": {}}}
+{"utterance": "view history", "rpc": {"method": "open_history", "params": {}}}
+{"utterance": "show history", "rpc": {"method": "open_history", "params": {}}}
+{"utterance": "open downloads page", "rpc": {"method": "open_downloads", "params": {}}}
+{"utterance": "show downloads", "rpc": {"method": "open_downloads", "params": {}}}
+{"utterance": "view my downloads", "rpc": {"method": "open_downloads", "params": {}}}
+{"utterance": "pin this tab", "rpc": {"method": "pin_tab", "params": {}}}
+{"utterance": "add tab to pinned", "rpc": {"method": "pin_tab", "params": {}}}
+{"utterance": "keep this tab open", "rpc": {"method": "pin_tab", "params": {}}}
+{"utterance": "mute this tab", "rpc": {"method": "mute_tab", "params": {}}}
+{"utterance": "silence this tab", "rpc": {"method": "mute_tab", "params": {}}}
+{"utterance": "turn off tab sound", "rpc": {"method": "mute_tab", "params": {}}}
+{"utterance": "zoom in", "rpc": {"method": "zoom", "params": {"direction": "in"}}}
+{"utterance": "enlarge page", "rpc": {"method": "zoom", "params": {"direction": "in"}}}
+{"utterance": "increase zoom", "rpc": {"method": "zoom", "params": {"direction": "in"}}}
+{"utterance": "zoom out", "rpc": {"method": "zoom", "params": {"direction": "out"}}}
+{"utterance": "shrink page", "rpc": {"method": "zoom", "params": {"direction": "out"}}}
+{"utterance": "decrease zoom", "rpc": {"method": "zoom", "params": {"direction": "out"}}}
+{"utterance": "hard reload", "rpc": {"method": "reload_ignore_cache", "params": {}}}
+{"utterance": "force refresh", "rpc": {"method": "reload_ignore_cache", "params": {}}}
+{"utterance": "reload without cache", "rpc": {"method": "reload_ignore_cache", "params": {}}}
+{"utterance": "find on page", "rpc": {"method": "find", "params": {"query": "<text>"}}}
+{"utterance": "search within page", "rpc": {"method": "find", "params": {"query": "<text>"}}}
+{"utterance": "find text on this page", "rpc": {"method": "find", "params": {"query": "<text>"}}}
