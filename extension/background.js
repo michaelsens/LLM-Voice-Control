@@ -7,23 +7,26 @@ chrome.action.onClicked.addListener(tab => {
 
 // Handle all incoming RPC calls
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
-  console.log("background got RPC:", msg, "from tab", sender.tab?.id);
+  console.log("background got RPC:", msg);
 
   (async () => {
     try {
-      const currentTabId = sender.tab.id;
+      // Always target the *currently* active tab
+      const [ activeTab ] = await chrome.tabs.query({ active: true, currentWindow: true });
+      const currentTabId = activeTab.id;
 
       switch (msg.method) {
 
         // 1. navigate
         case "navigate": {
-          const url = String(msg.params.url || "");
+          let url = String(msg.params.url || "").trim();
+          if (!/^https?:\/\//i.test(url)) url = `https://${url}`;
           await chrome.tabs.update(currentTabId, { url });
           sendResponse({ status: "ok" });
           break;
         }
 
-        // 2. openTab — always open a new tab to Google.com
+        // 2. openTab — always open Google.com
         case "openTab": {
           const newTab = await chrome.tabs.create({
             url: "https://www.google.com",
@@ -49,9 +52,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 
         // 4. switchTab (by index only)
         case "switchTab": {
-          const index = Number.isFinite(msg.params.index)
-                      ? msg.params.index
-                      : null;
+          const index = Number.isFinite(msg.params.index) ? msg.params.index : null;
           if (index === null) {
             sendResponse({ error: "missing tab index" });
             break;
@@ -74,15 +75,9 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
             target: { tabId: currentTabId },
             args: [text],
             func: (searchText) => {
-              const sel = [
-                "button",
-                "a",
-                "[role=button]",
-                "input[type=button]",
-                "input[type=submit]"
-              ].join(",");
-              const elements = Array.from(document.querySelectorAll(sel));
-              const match = elements.find(el => {
+              const sel = ["button","a","[role=button]","input[type=button]","input[type=submit]"].join(",");
+              const els = Array.from(document.querySelectorAll(sel));
+              const match = els.find(el => {
                 const candidates = [
                   el.innerText,
                   el.value,
@@ -103,7 +98,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
           break;
         }
 
-        // 6. type — find input/textarea/contenteditable by label/placeholder/aria-label/name/id
+        // 6. type — fill inputs, textareas, contenteditables by label/placeholder/etc.
         case "type": {
           const text  = String(msg.params.text  || "");
           const field = String(msg.params.field || "");
@@ -126,8 +121,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
                 if (el.getAttribute("aria-label")) labels.push(el.getAttribute("aria-label"));
                 if (el.name)             labels.push(el.name);
                 if (el.id)               labels.push(el.id);
-                const lab = document.querySelector(`label[for="${el.id}"]`) 
-                          || el.closest("label");
+                const lab = document.querySelector(`label[for="${el.id}"]`) || el.closest("label");
                 if (lab?.innerText)      labels.push(lab.innerText);
                 return labels.map(s => s.toLowerCase());
               }
@@ -137,6 +131,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
                 return labels.some(lbl => lbl.includes(fieldDesc.toLowerCase()));
               });
 
+              // fallback for “search” fields (Google’s main search box)
               if (!match && fieldDesc.toLowerCase().includes("search")) {
                 match = document.querySelector('input[name="q"]');
               }
@@ -144,14 +139,8 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
               if (match) {
                 match.scrollIntoView({ block: "center" });
                 match.focus();
-
-                if (match.isContentEditable) {
-                  match.innerText = value;
-                } else {
-                  match.value = value;
-                }
-
-                // dispatch events so React/Vue/etc. pick it up
+                if (match.isContentEditable) match.innerText = value;
+                else                         match.value     = value;
                 match.dispatchEvent(new Event("input",  { bubbles: true }));
                 match.dispatchEvent(new Event("change", { bubbles: true }));
               }
@@ -161,13 +150,10 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
           break;
         }
 
-
         // 7. scroll
         case "scroll": {
           const direction = String(msg.params.direction || "down");
-          const amount    = Number.isFinite(msg.params.amount)
-                          ? msg.params.amount
-                          : 300;
+          const amount    = Number.isFinite(msg.params.amount) ? msg.params.amount : 300;
           await chrome.scripting.executeScript({
             target: { tabId: currentTabId },
             args: [direction, amount],
@@ -175,7 +161,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
               const deltas = {
                 up:    [0, -amt],
                 down:  [0,  amt],
-                left:  [-amt,0],
+                left:  [-amt, 0],
                 right: [amt,  0]
               };
               const [dx, dy] = deltas[dir] || [0, 0];
@@ -193,11 +179,10 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
           break;
         }
 
-
-        // 9. search — always Google, new tab
+        // 9. search — always Google in new tab
         case "search": {
-          const query = String(msg.params.query || "");
-          const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+          const q   = String(msg.params.query || "");
+          const url = `https://www.google.com/search?q=${encodeURIComponent(q)}`;
           await chrome.tabs.create({ url });
           sendResponse({ status: "ok" });
           break;
@@ -209,9 +194,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
           await chrome.scripting.executeScript({
             target: { tabId: currentTabId },
             args: [steps],
-            func: count => {
-              for (let i = 0; i < count; i++) history.back();
-            }
+            func: count => { for (let i = 0; i < count; i++) history.back(); }
           });
           sendResponse({ status: "ok" });
           break;
@@ -223,9 +206,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
           await chrome.scripting.executeScript({
             target: { tabId: currentTabId },
             args: [steps],
-            func: count => {
-              for (let i = 0; i < count; i++) history.forward();
-            }
+            func: count => { for (let i = 0; i < count; i++) history.forward(); }
           });
           sendResponse({ status: "ok" });
           break;
@@ -241,5 +222,5 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     }
   })();
 
-  return true;
+  return true;  // keep the message channel open for async response
 });
