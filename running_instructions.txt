@@ -1,11 +1,11 @@
-# 1) Split once
 python split_data.py \
        --in_file expanded.jsonl \
        --train_out train.pt \
        --val_out val.pt \
-       --val_ratio 0.10     
+       --val_ratio 0.10   
 
-# 2) Train
+python tokenize_data.py --jsonl expanded.jsonl 
+
 python training.py \
        --train  train.pt \
        --val    val.pt \
