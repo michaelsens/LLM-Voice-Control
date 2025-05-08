@@ -1,0 +1,2486 @@
+{
+  "version": "1.0",
+  "truncation": null,
+  "padding": null,
+  "added_tokens": [
+    {
+      "id": 0,
+      "content": "<PAD>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 1,
+      "content": "<UTT>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 2,
+      "content": "</UTT>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 3,
+      "content": "<CMD>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 4,
+      "content": "</CMD>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 5,
+      "content": "<BOS>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 6,
+      "content": "<EOS>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 7,
+      "content": "<UNK>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    }
+  ],
+  "normalizer": {
+    "type": "NFKC"
+  },
+  "pre_tokenizer": {
+    "type": "Metaspace",
+    "replacement": "▁",
+    "prepend_scheme": "always",
+    "split": true
+  },
+  "post_processor": null,
+  "decoder": {
+    "type": "Metaspace",
+    "replacement": "▁",
+    "prepend_scheme": "always",
+    "split": true
+  },
+  "model": {
+    "type": "BPE",
+    "dropout": null,
+    "unk_token": "<unk>",
+    "continuing_subword_prefix": null,
+    "end_of_word_suffix": null,
+    "fuse_unk": false,
+    "byte_fallback": false,
+    "ignore_merges": false,
+    "vocab": {
+      "<PAD>": 0,
+      "<UTT>": 1,
+      "</UTT>": 2,
+      "<CMD>": 3,
+      "</CMD>": 4,
+      "<BOS>": 5,
+      "<EOS>": 6,
+      "<UNK>": 7,
+      "\n": 8,
+      "\"": 9,
+      ".": 10,
+      "/": 11,
+      "0": 12,
+      "1": 13,
+      "2": 14,
+      "3": 15,
+      "4": 16,
+      "<": 17,
+      "=": 18,
+      ">": 19,
+      "B": 20,
+      "C": 21,
+      "D": 22,
+      "E": 23,
+      "F": 24,
+      "I": 25,
+      "M": 26,
+      "O": 27,
+      "S": 28,
+      "T": 29,
+      "U": 30,
+      "a": 31,
+      "b": 32,
+      "c": 33,
+      "d": 34,
+      "e": 35,
+      "f": 36,
+      "g": 37,
+      "h": 38,
+      "i": 39,
+      "j": 40,
+      "k": 41,
+      "l": 42,
+      "m": 43,
+      "n": 44,
+      "o": 45,
+      "p": 46,
+      "q": 47,
+      "r": 48,
+      "s": 49,
+      "t": 50,
+      "u": 51,
+      "v": 52,
+      "w": 53,
+      "x": 54,
+      "y": 55,
+      "▁": 56,
+      "▁<": 57,
+      "CM": 58,
+      "D>": 59,
+      "OS": 60,
+      "T>": 61,
+      "TT>": 62,
+      "UTT>": 63,
+      "▁</": 64,
+      "CMD>": 65,
+      "OS>": 66,
+      "▁t": 67,
+      "=\"": 68,
+      "\n<": 69,
+      "BOS>": 70,
+      "EOS>": 71,
+      "▁<UTT>": 72,
+      "▁<CMD>": 73,
+      "▁<EOS>": 74,
+      "UTT>\n<": 75,
+      "▁</CMD>": 76,
+      "▁</UTT>\n<": 77,
+      "▁</UTT>\n<BOS>": 78,
+      "ex": 79,
+      "in": 80,
+      "▁s": 81,
+      "ck": 82,
+      "▁c": 83,
+      "pe": 84,
+      "t=\"": 85,
+      "▁tex": 86,
+      "▁text=\"": 87,
+      "te": 88,
+      "el": 89,
+      "ar": 90,
+      "▁cl": 91,
+      "ick": 92,
+      "▁in": 93,
+      "▁click": 94,
+      "ch": 95,
+      "om": 96,
+      "com": 97,
+      "it": 98,
+      "na": 99,
+      "vi": 100,
+      ".com": 101,
+      "▁f": 102,
+      "▁b": 103,
+      "ab": 104,
+      "rl": 105,
+      "ec": 106,
+      "ro": 107,
+      "ear": 108,
+      "il": 109,
+      "ma": 110,
+      "earch": 111,
+      "ate": 112,
+      "ype": 113,
+      "▁type": 114,
+      "ect": 115,
+      "gate": 116,
+      "▁na": 117,
+      "vigate": 118,
+      "▁navigate": 119,
+      "ub": 120,
+      "▁fi": 121,
+      "▁u": 122,
+      "ope": 123,
+      "ema": 124,
+      "email": 125,
+      "d=\"": 126,
+      "he": 127,
+      "▁a": 128,
+      "eld=\"": 129,
+      "rl=\"": 130,
+      "▁field=\"": 131,
+      "▁url=\"": 132,
+      "es": 133,
+      "on": 134,
+      "lo": 135,
+      "ut": 136,
+      "ing": 137,
+      "▁p": 138,
+      "▁to": 139,
+      "wit": 140,
+      "▁search": 141,
+      ".com\"": 142,
+      "ll": 143,
+      "▁ope": 144,
+      "go": 145,
+      "▁tab": 146,
+      "or": 147,
+      "et": 148,
+      "hel": 149,
+      "s\"": 150,
+      "▁email": 151,
+      "Tab": 152,
+      "nt": 153,
+      "to": 154,
+      "▁w": 155,
+      "▁go": 156,
+      "▁into": 157,
+      "dy": 158,
+      "ject": 159,
+      "ody": 160,
+      "ra": 161,
+      "▁swit": 162,
+      "▁bar": 163,
+      "▁body": 164,
+      "ubject": 165,
+      "▁field=\"s": 166,
+      "▁switch": 167,
+      "ft": 168,
+      "▁3": 169,
+      "▁ro": 170,
+      "▁the": 171,
+      "nai": 172,
+      "▁rock": 173,
+      "en": 174,
+      "os": 175,
+      "▁text=\"s": 176,
+      "cro": 177,
+      "di": 178,
+      "eet": 179,
+      "le": 180,
+      "meet": 181,
+      "pm": 182,
+      "▁scro": 183,
+      "▁at": 184,
+      "▁open": 185,
+      "▁3pm": 186,
+      "meeting": 187,
+      "▁scroll": 188,
+      "dex": 189,
+      "ew": 190,
+      "new": 191,
+      "res": 192,
+      "ter": 193,
+      "▁index": 194,
+      "▁switchTab": 195,
+      "▁index=": 196,
+      "ad": 197,
+      "ap": 198,
+      "orl": 199,
+      "▁tap": 200,
+      "▁pres": 201,
+      "hello": 202,
+      "▁worl": 203,
+      "▁press": 204,
+      "▁world": 205,
+      "ose": 206,
+      "00": 207,
+      "dra": 208,
+      "put": 209,
+      "▁con": 210,
+      "tent": 211,
+      "▁input": 212,
+      "draft": 213,
+      "▁content": 214,
+      "ok": 215,
+      "ou": 216,
+      "re": 217,
+      "st": 218,
+      "▁vi": 219,
+      "▁lo": 220,
+      "▁sel": 221,
+      "▁select": 222,
+      "ag": 223,
+      "out": 224,
+      "yout": 225,
+      "▁subject": 226,
+      "ube": 227,
+      "▁field=\"email": 228,
+      "▁bar\"": 229,
+      "▁body\"": 230,
+      "ubject\"": 231,
+      "▁field=\"search": 232,
+      "▁field=\"subject\"": 233,
+      "youtube": 234,
+      "er": 235,
+      "qu": 236,
+      "th": 237,
+      "y=\"": 238,
+      "▁en": 239,
+      "▁new": 240,
+      "▁qu": 241,
+      "exit": 242,
+      "▁text=\"ope": 243,
+      "▁openai": 244,
+      "▁rocks": 245,
+      "▁rocks\"": 246,
+      "ery=\"": 247,
+      "▁enter": 248,
+      "▁query=\"": 249,
+      "▁text=\"openai": 250,
+      ".or": 251,
+      "ac": 252,
+      "a.or": 253,
+      "bo": 254,
+      "dd": 255,
+      "de": 256,
+      "ebo": 257,
+      "fil": 258,
+      "ges": 259,
+      "ik": 260,
+      "ipe": 261,
+      "ima": 262,
+      "ion": 263,
+      "mou": 264,
+      "pose": 265,
+      "rect": 266,
+      "▁di": 267,
+      "▁meeting": 268,
+      "▁text=\"meeting": 269,
+      "rofil": 270,
+      "▁amou": 271,
+      "help": 272,
+      "nt=": 273,
+      "ram": 274,
+      "end": 275,
+      "dia.or": 276,
+      "▁3pm\"": 277,
+      "redd": 278,
+      "stag": 279,
+      "acebo": 280,
+      "ikipe": 281,
+      "images": 282,
+      "ion=\"": 283,
+      "rection=\"": 284,
+      "▁direction=\"": 285,
+      "rofile": 286,
+      "▁amount=": 287,
+      "dia.org": 288,
+      "reddit": 289,
+      "stagram": 290,
+      "acebook": 291,
+      "ikipedia.org": 292,
+      "sit": 293,
+      "▁hello": 294,
+      "▁text=\"hello": 295,
+      "▁world\"": 296,
+      "▁visit": 297,
+      "200": 298,
+      "=1": 299,
+      "al": 300,
+      "am": 301,
+      "at": 302,
+      "ay": 303,
+      "ack": 304,
+      "day": 305,
+      "eat": 306,
+      "gin": 307,
+      "gle": 308,
+      "ho": 309,
+      "ial": 310,
+      "lin": 311,
+      "mit": 312,
+      "ogle": 313,
+      "pp": 314,
+      "ps": 315,
+      "ple": 316,
+      "ting": 317,
+      "war": 318,
+      "yth": 319,
+      "▁he": 320,
+      "▁draft": 321,
+      "▁tut": 322,
+      "exam": 323,
+      "▁ste": 324,
+      "▁text=\"draft": 325,
+      "▁for": 326,
+      "ubmit": 327,
+      "her": 328,
+      "▁today": 329,
+      "witter": 330,
+      "orial": 331,
+      "etting": 332,
+      "adlin": 333,
+      "▁content\"": 334,
+      "▁news": 335,
+      "eather": 336,
+      "hopp": 337,
+      "ps=1": 338,
+      "ward": 339,
+      "ython": 340,
+      "▁headlin": 341,
+      "▁tutorial": 342,
+      "example": 343,
+      "▁steps=1": 344,
+      "hopping": 345,
+      "▁headlines": 346,
+      "hi": 347,
+      "▁r": 348,
+      "▁youtube": 349,
+      "▁exit": 350,
+      "▁thi": 351,
+      "▁close": 352,
+      "▁up": 353,
+      "▁url=\"youtube": 354,
+      "▁load": 355,
+      "▁youtube.com": 356,
+      "▁url=\"youtube.com\"": 357,
+      "300": 358,
+      "do": 359,
+      "facebook": 360,
+      "gh": 361,
+      "ix": 362,
+      "igh": 363,
+      "os\"": 364,
+      "profile": 365,
+      "wn": 366,
+      "wikipedia.org": 367,
+      "▁help": 368,
+      "▁images": 369,
+      "▁reddit": 370,
+      "instagram": 371,
+      "▁send": 372,
+      "▁com": 373,
+      "▁text=\"com": 374,
+      "▁text=\"vi": 375,
+      "▁text=\"exit": 376,
+      "▁text=\"help": 377,
+      "▁text=\"images": 378,
+      "▁text=\"profile": 379,
+      "els": 380,
+      "▁instagram": 381,
+      "▁facebook": 382,
+      "▁by": 383,
+      "earch\"": 384,
+      "▁url=\"reddit": 385,
+      "▁url=\"facebook": 386,
+      "▁url=\"wikipedia.org": 387,
+      "▁url=\"instagram": 388,
+      "▁profile": 389,
+      "▁pix": 390,
+      "▁wikipedia.org": 391,
+      "▁text=\"send": 392,
+      "▁text=\"search\"": 393,
+      "left": 394,
+      "▁vide": 395,
+      "deos\"": 396,
+      "pose\"": 397,
+      "▁amount=200": 398,
+      "▁amount=300": 399,
+      "down": 400,
+      "ight": 401,
+      "▁reddit.com": 402,
+      "▁compose": 403,
+      "▁text=\"compose\"": 404,
+      "▁text=\"videos\"": 405,
+      "▁text=\"exit\"": 406,
+      "▁text=\"help\"": 407,
+      "▁text=\"images\"": 408,
+      "▁text=\"profile\"": 409,
+      "▁instagram.com": 410,
+      "▁facebook.com": 411,
+      "▁url=\"reddit.com\"": 412,
+      "▁url=\"facebook.com\"": 413,
+      "▁url=\"wikipedia.org\"": 414,
+      "▁url=\"instagram.com\"": 415,
+      "▁pixels": 416,
+      "▁text=\"send\"": 417,
+      "▁videos": 418,
+      "=n": 419,
+      "Back": 420,
+      "For": 421,
+      "Id": 422,
+      "all": 423,
+      "oad": 424,
+      "python": 425,
+      "rd": 426,
+      "rst": 427,
+      "rth": 428,
+      "twitter": 429,
+      "ull": 430,
+      "weather": 431,
+      "▁example": 432,
+      "▁twitter": 433,
+      "ind": 434,
+      "▁sec": 435,
+      "▁submit": 436,
+      "▁setting": 437,
+      "▁shopping": 438,
+      "▁text=\"lo": 439,
+      "▁text=\"new": 440,
+      "▁text=\"all": 441,
+      "eload": 442,
+      "▁fou": 443,
+      "▁find": 444,
+      "▁back": 445,
+      "▁fift": 446,
+      "▁first": 447,
+      "▁all": 448,
+      "▁url=\"go": 449,
+      "▁url=\"example": 450,
+      "▁url=\"twitter": 451,
+      "ond": 452,
+      "▁python": 453,
+      "▁tabId": 454,
+      "▁weather": 455,
+      "▁google": 456,
+      "▁goBack": 457,
+      "▁goFor": 458,
+      "▁text=\"submit": 459,
+      "▁text=\"setting": 460,
+      "▁text=\"shopping": 461,
+      "▁openTab": 462,
+      "news": 463,
+      "▁index=0": 464,
+      "▁index=1": 465,
+      "▁index=2": 466,
+      "▁index=3": 467,
+      "▁index=4": 468,
+      "▁look": 469,
+      "▁login": 470,
+      "▁query=\"python": 471,
+      "▁query=\"weather": 472,
+      "▁query=\"news": 473,
+      "gin\"": 474,
+      "ogle.com\"": 475,
+      "▁forward": 476,
+      "▁today\"": 477,
+      "▁tutorials": 478,
+      "▁tutorials\"": 479,
+      "▁headlines\"": 480,
+      "▁reload": 481,
+      "▁third": 482,
+      "▁closeTab": 483,
+      "=null": 484,
+      "▁example.com": 485,
+      "▁twitter.com": 486,
+      "▁second": 487,
+      "▁settings": 488,
+      "▁text=\"login\"": 489,
+      "▁text=\"news\"": 490,
+      "▁text=\"all\"": 491,
+      "▁fourth": 492,
+      "▁fifth": 493,
+      "▁url=\"google.com\"": 494,
+      "▁url=\"example.com\"": 495,
+      "▁url=\"twitter.com\"": 496,
+      "▁tabId=null": 497,
+      "▁google.com": 498,
+      "▁goForward": 499,
+      "▁text=\"submit\"": 500,
+      "▁text=\"settings\"": 501,
+      "▁text=\"shopping\"": 502,
+      "p\"": 503,
+      "right": 504,
+      "up\"": 505,
+      "▁200": 506,
+      "▁left": 507,
+      "▁down": 508,
+      "▁pag": 509,
+      "▁300": 510,
+      "▁direction=\"left": 511,
+      "▁direction=\"down": 512,
+      "▁direction=\"right": 513,
+      "▁direction=\"up\"": 514,
+      "▁right": 515,
+      "▁this": 516,
+      "▁page": 517,
+      "▁direction=\"left\"": 518,
+      "▁direction=\"down\"": 519,
+      "▁direction=\"right\"": 520
+    },
+    "merges": [
+      [
+        "▁",
+        "<"
+      ],
+      [
+        "C",
+        "M"
+      ],
+      [
+        "D",
+        ">"
+      ],
+      [
+        "O",
+        "S"
+      ],
+      [
+        "T",
+        ">"
+      ],
+      [
+        "T",
+        "T>"
+      ],
+      [
+        "U",
+        "TT>"
+      ],
+      [
+        "▁<",
+        "/"
+      ],
+      [
+        "CM",
+        "D>"
+      ],
+      [
+        "OS",
+        ">"
+      ],
+      [
+        "▁",
+        "t"
+      ],
+      [
+        "=",
+        "\""
+      ],
+      [
+        "\n",
+        "<"
+      ],
+      [
+        "B",
+        "OS>"
+      ],
+      [
+        "E",
+        "OS>"
+      ],
+      [
+        "▁<",
+        "UTT>"
+      ],
+      [
+        "▁<",
+        "CMD>"
+      ],
+      [
+        "▁<",
+        "EOS>"
+      ],
+      [
+        "UTT>",
+        "\n<"
+      ],
+      [
+        "▁</",
+        "CMD>"
+      ],
+      [
+        "▁</",
+        "UTT>\n<"
+      ],
+      [
+        "▁</UTT>\n<",
+        "BOS>"
+      ],
+      [
+        "e",
+        "x"
+      ],
+      [
+        "i",
+        "n"
+      ],
+      [
+        "▁",
+        "s"
+      ],
+      [
+        "c",
+        "k"
+      ],
+      [
+        "▁",
+        "c"
+      ],
+      [
+        "p",
+        "e"
+      ],
+      [
+        "t",
+        "=\""
+      ],
+      [
+        "▁t",
+        "ex"
+      ],
+      [
+        "▁tex",
+        "t=\""
+      ],
+      [
+        "t",
+        "e"
+      ],
+      [
+        "e",
+        "l"
+      ],
+      [
+        "a",
+        "r"
+      ],
+      [
+        "▁c",
+        "l"
+      ],
+      [
+        "i",
+        "ck"
+      ],
+      [
+        "▁",
+        "in"
+      ],
+      [
+        "▁cl",
+        "ick"
+      ],
+      [
+        "c",
+        "h"
+      ],
+      [
+        "o",
+        "m"
+      ],
+      [
+        "c",
+        "om"
+      ],
+      [
+        "i",
+        "t"
+      ],
+      [
+        "n",
+        "a"
+      ],
+      [
+        "v",
+        "i"
+      ],
+      [
+        ".",
+        "com"
+      ],
+      [
+        "▁",
+        "f"
+      ],
+      [
+        "▁",
+        "b"
+      ],
+      [
+        "a",
+        "b"
+      ],
+      [
+        "r",
+        "l"
+      ],
+      [
+        "e",
+        "c"
+      ],
+      [
+        "r",
+        "o"
+      ],
+      [
+        "e",
+        "ar"
+      ],
+      [
+        "i",
+        "l"
+      ],
+      [
+        "m",
+        "a"
+      ],
+      [
+        "ear",
+        "ch"
+      ],
+      [
+        "a",
+        "te"
+      ],
+      [
+        "y",
+        "pe"
+      ],
+      [
+        "▁t",
+        "ype"
+      ],
+      [
+        "ec",
+        "t"
+      ],
+      [
+        "g",
+        "ate"
+      ],
+      [
+        "▁",
+        "na"
+      ],
+      [
+        "vi",
+        "gate"
+      ],
+      [
+        "▁na",
+        "vigate"
+      ],
+      [
+        "u",
+        "b"
+      ],
+      [
+        "▁f",
+        "i"
+      ],
+      [
+        "▁",
+        "u"
+      ],
+      [
+        "o",
+        "pe"
+      ],
+      [
+        "e",
+        "ma"
+      ],
+      [
+        "ema",
+        "il"
+      ],
+      [
+        "d",
+        "=\""
+      ],
+      [
+        "h",
+        "e"
+      ],
+      [
+        "▁",
+        "a"
+      ],
+      [
+        "el",
+        "d=\""
+      ],
+      [
+        "rl",
+        "=\""
+      ],
+      [
+        "▁fi",
+        "eld=\""
+      ],
+      [
+        "▁u",
+        "rl=\""
+      ],
+      [
+        "e",
+        "s"
+      ],
+      [
+        "o",
+        "n"
+      ],
+      [
+        "l",
+        "o"
+      ],
+      [
+        "u",
+        "t"
+      ],
+      [
+        "in",
+        "g"
+      ],
+      [
+        "▁",
+        "p"
+      ],
+      [
+        "▁t",
+        "o"
+      ],
+      [
+        "w",
+        "it"
+      ],
+      [
+        "▁s",
+        "earch"
+      ],
+      [
+        ".com",
+        "\""
+      ],
+      [
+        "l",
+        "l"
+      ],
+      [
+        "▁",
+        "ope"
+      ],
+      [
+        "g",
+        "o"
+      ],
+      [
+        "▁t",
+        "ab"
+      ],
+      [
+        "o",
+        "r"
+      ],
+      [
+        "e",
+        "t"
+      ],
+      [
+        "h",
+        "el"
+      ],
+      [
+        "s",
+        "\""
+      ],
+      [
+        "▁",
+        "email"
+      ],
+      [
+        "T",
+        "ab"
+      ],
+      [
+        "n",
+        "t"
+      ],
+      [
+        "t",
+        "o"
+      ],
+      [
+        "▁",
+        "w"
+      ],
+      [
+        "▁",
+        "go"
+      ],
+      [
+        "▁in",
+        "to"
+      ],
+      [
+        "d",
+        "y"
+      ],
+      [
+        "j",
+        "ect"
+      ],
+      [
+        "o",
+        "dy"
+      ],
+      [
+        "r",
+        "a"
+      ],
+      [
+        "▁s",
+        "wit"
+      ],
+      [
+        "▁b",
+        "ar"
+      ],
+      [
+        "▁b",
+        "ody"
+      ],
+      [
+        "ub",
+        "ject"
+      ],
+      [
+        "▁field=\"",
+        "s"
+      ],
+      [
+        "▁swit",
+        "ch"
+      ],
+      [
+        "f",
+        "t"
+      ],
+      [
+        "▁",
+        "3"
+      ],
+      [
+        "▁",
+        "ro"
+      ],
+      [
+        "▁t",
+        "he"
+      ],
+      [
+        "na",
+        "i"
+      ],
+      [
+        "▁ro",
+        "ck"
+      ],
+      [
+        "e",
+        "n"
+      ],
+      [
+        "o",
+        "s"
+      ],
+      [
+        "▁text=\"",
+        "s"
+      ],
+      [
+        "c",
+        "ro"
+      ],
+      [
+        "d",
+        "i"
+      ],
+      [
+        "e",
+        "et"
+      ],
+      [
+        "l",
+        "e"
+      ],
+      [
+        "m",
+        "eet"
+      ],
+      [
+        "p",
+        "m"
+      ],
+      [
+        "▁s",
+        "cro"
+      ],
+      [
+        "▁a",
+        "t"
+      ],
+      [
+        "▁ope",
+        "n"
+      ],
+      [
+        "▁3",
+        "pm"
+      ],
+      [
+        "meet",
+        "ing"
+      ],
+      [
+        "▁scro",
+        "ll"
+      ],
+      [
+        "d",
+        "ex"
+      ],
+      [
+        "e",
+        "w"
+      ],
+      [
+        "n",
+        "ew"
+      ],
+      [
+        "r",
+        "es"
+      ],
+      [
+        "te",
+        "r"
+      ],
+      [
+        "▁in",
+        "dex"
+      ],
+      [
+        "▁switch",
+        "Tab"
+      ],
+      [
+        "▁index",
+        "="
+      ],
+      [
+        "a",
+        "d"
+      ],
+      [
+        "a",
+        "p"
+      ],
+      [
+        "o",
+        "rl"
+      ],
+      [
+        "▁t",
+        "ap"
+      ],
+      [
+        "▁p",
+        "res"
+      ],
+      [
+        "hel",
+        "lo"
+      ],
+      [
+        "▁w",
+        "orl"
+      ],
+      [
+        "▁pres",
+        "s"
+      ],
+      [
+        "▁worl",
+        "d"
+      ],
+      [
+        "os",
+        "e"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "d",
+        "ra"
+      ],
+      [
+        "p",
+        "ut"
+      ],
+      [
+        "▁c",
+        "on"
+      ],
+      [
+        "te",
+        "nt"
+      ],
+      [
+        "▁in",
+        "put"
+      ],
+      [
+        "dra",
+        "ft"
+      ],
+      [
+        "▁con",
+        "tent"
+      ],
+      [
+        "o",
+        "k"
+      ],
+      [
+        "o",
+        "u"
+      ],
+      [
+        "r",
+        "e"
+      ],
+      [
+        "s",
+        "t"
+      ],
+      [
+        "▁",
+        "vi"
+      ],
+      [
+        "▁",
+        "lo"
+      ],
+      [
+        "▁s",
+        "el"
+      ],
+      [
+        "▁sel",
+        "ect"
+      ],
+      [
+        "a",
+        "g"
+      ],
+      [
+        "o",
+        "ut"
+      ],
+      [
+        "y",
+        "out"
+      ],
+      [
+        "▁s",
+        "ubject"
+      ],
+      [
+        "ub",
+        "e"
+      ],
+      [
+        "▁field=\"",
+        "email"
+      ],
+      [
+        "▁bar",
+        "\""
+      ],
+      [
+        "▁body",
+        "\""
+      ],
+      [
+        "ubject",
+        "\""
+      ],
+      [
+        "▁field=\"s",
+        "earch"
+      ],
+      [
+        "▁field=\"s",
+        "ubject\""
+      ],
+      [
+        "yout",
+        "ube"
+      ],
+      [
+        "e",
+        "r"
+      ],
+      [
+        "q",
+        "u"
+      ],
+      [
+        "t",
+        "h"
+      ],
+      [
+        "y",
+        "=\""
+      ],
+      [
+        "▁",
+        "en"
+      ],
+      [
+        "▁",
+        "new"
+      ],
+      [
+        "▁",
+        "qu"
+      ],
+      [
+        "ex",
+        "it"
+      ],
+      [
+        "▁text=\"",
+        "ope"
+      ],
+      [
+        "▁ope",
+        "nai"
+      ],
+      [
+        "▁rock",
+        "s"
+      ],
+      [
+        "▁rock",
+        "s\""
+      ],
+      [
+        "er",
+        "y=\""
+      ],
+      [
+        "▁en",
+        "ter"
+      ],
+      [
+        "▁qu",
+        "ery=\""
+      ],
+      [
+        "▁text=\"ope",
+        "nai"
+      ],
+      [
+        ".",
+        "or"
+      ],
+      [
+        "a",
+        "c"
+      ],
+      [
+        "a",
+        ".or"
+      ],
+      [
+        "b",
+        "o"
+      ],
+      [
+        "d",
+        "d"
+      ],
+      [
+        "d",
+        "e"
+      ],
+      [
+        "e",
+        "bo"
+      ],
+      [
+        "f",
+        "il"
+      ],
+      [
+        "g",
+        "es"
+      ],
+      [
+        "i",
+        "k"
+      ],
+      [
+        "i",
+        "pe"
+      ],
+      [
+        "i",
+        "ma"
+      ],
+      [
+        "i",
+        "on"
+      ],
+      [
+        "m",
+        "ou"
+      ],
+      [
+        "p",
+        "ose"
+      ],
+      [
+        "r",
+        "ect"
+      ],
+      [
+        "▁",
+        "di"
+      ],
+      [
+        "▁",
+        "meeting"
+      ],
+      [
+        "▁text=\"",
+        "meeting"
+      ],
+      [
+        "ro",
+        "fil"
+      ],
+      [
+        "▁a",
+        "mou"
+      ],
+      [
+        "hel",
+        "p"
+      ],
+      [
+        "nt",
+        "="
+      ],
+      [
+        "ra",
+        "m"
+      ],
+      [
+        "en",
+        "d"
+      ],
+      [
+        "di",
+        "a.or"
+      ],
+      [
+        "▁3pm",
+        "\""
+      ],
+      [
+        "re",
+        "dd"
+      ],
+      [
+        "st",
+        "ag"
+      ],
+      [
+        "ac",
+        "ebo"
+      ],
+      [
+        "ik",
+        "ipe"
+      ],
+      [
+        "ima",
+        "ges"
+      ],
+      [
+        "ion",
+        "=\""
+      ],
+      [
+        "rect",
+        "ion=\""
+      ],
+      [
+        "▁di",
+        "rection=\""
+      ],
+      [
+        "rofil",
+        "e"
+      ],
+      [
+        "▁amou",
+        "nt="
+      ],
+      [
+        "dia.or",
+        "g"
+      ],
+      [
+        "redd",
+        "it"
+      ],
+      [
+        "stag",
+        "ram"
+      ],
+      [
+        "acebo",
+        "ok"
+      ],
+      [
+        "ikipe",
+        "dia.org"
+      ],
+      [
+        "s",
+        "it"
+      ],
+      [
+        "▁",
+        "hello"
+      ],
+      [
+        "▁text=\"",
+        "hello"
+      ],
+      [
+        "▁world",
+        "\""
+      ],
+      [
+        "▁vi",
+        "sit"
+      ],
+      [
+        "2",
+        "00"
+      ],
+      [
+        "=",
+        "1"
+      ],
+      [
+        "a",
+        "l"
+      ],
+      [
+        "a",
+        "m"
+      ],
+      [
+        "a",
+        "t"
+      ],
+      [
+        "a",
+        "y"
+      ],
+      [
+        "a",
+        "ck"
+      ],
+      [
+        "d",
+        "ay"
+      ],
+      [
+        "e",
+        "at"
+      ],
+      [
+        "g",
+        "in"
+      ],
+      [
+        "g",
+        "le"
+      ],
+      [
+        "h",
+        "o"
+      ],
+      [
+        "i",
+        "al"
+      ],
+      [
+        "l",
+        "in"
+      ],
+      [
+        "m",
+        "it"
+      ],
+      [
+        "o",
+        "gle"
+      ],
+      [
+        "p",
+        "p"
+      ],
+      [
+        "p",
+        "s"
+      ],
+      [
+        "p",
+        "le"
+      ],
+      [
+        "t",
+        "ing"
+      ],
+      [
+        "w",
+        "ar"
+      ],
+      [
+        "y",
+        "th"
+      ],
+      [
+        "▁",
+        "he"
+      ],
+      [
+        "▁",
+        "draft"
+      ],
+      [
+        "▁t",
+        "ut"
+      ],
+      [
+        "ex",
+        "am"
+      ],
+      [
+        "▁s",
+        "te"
+      ],
+      [
+        "▁text=\"",
+        "draft"
+      ],
+      [
+        "▁f",
+        "or"
+      ],
+      [
+        "ub",
+        "mit"
+      ],
+      [
+        "he",
+        "r"
+      ],
+      [
+        "▁to",
+        "day"
+      ],
+      [
+        "wit",
+        "ter"
+      ],
+      [
+        "or",
+        "ial"
+      ],
+      [
+        "et",
+        "ting"
+      ],
+      [
+        "ad",
+        "lin"
+      ],
+      [
+        "▁content",
+        "\""
+      ],
+      [
+        "▁new",
+        "s"
+      ],
+      [
+        "eat",
+        "her"
+      ],
+      [
+        "ho",
+        "pp"
+      ],
+      [
+        "ps",
+        "=1"
+      ],
+      [
+        "war",
+        "d"
+      ],
+      [
+        "yth",
+        "on"
+      ],
+      [
+        "▁he",
+        "adlin"
+      ],
+      [
+        "▁tut",
+        "orial"
+      ],
+      [
+        "exam",
+        "ple"
+      ],
+      [
+        "▁ste",
+        "ps=1"
+      ],
+      [
+        "hopp",
+        "ing"
+      ],
+      [
+        "▁headlin",
+        "es"
+      ],
+      [
+        "h",
+        "i"
+      ],
+      [
+        "▁",
+        "r"
+      ],
+      [
+        "▁",
+        "youtube"
+      ],
+      [
+        "▁",
+        "exit"
+      ],
+      [
+        "▁t",
+        "hi"
+      ],
+      [
+        "▁cl",
+        "ose"
+      ],
+      [
+        "▁u",
+        "p"
+      ],
+      [
+        "▁url=\"",
+        "youtube"
+      ],
+      [
+        "▁lo",
+        "ad"
+      ],
+      [
+        "▁youtube",
+        ".com"
+      ],
+      [
+        "▁url=\"youtube",
+        ".com\""
+      ],
+      [
+        "3",
+        "00"
+      ],
+      [
+        "d",
+        "o"
+      ],
+      [
+        "f",
+        "acebook"
+      ],
+      [
+        "g",
+        "h"
+      ],
+      [
+        "i",
+        "x"
+      ],
+      [
+        "i",
+        "gh"
+      ],
+      [
+        "o",
+        "s\""
+      ],
+      [
+        "p",
+        "rofile"
+      ],
+      [
+        "w",
+        "n"
+      ],
+      [
+        "w",
+        "ikipedia.org"
+      ],
+      [
+        "▁",
+        "help"
+      ],
+      [
+        "▁",
+        "images"
+      ],
+      [
+        "▁",
+        "reddit"
+      ],
+      [
+        "in",
+        "stagram"
+      ],
+      [
+        "▁s",
+        "end"
+      ],
+      [
+        "▁c",
+        "om"
+      ],
+      [
+        "▁text=\"",
+        "com"
+      ],
+      [
+        "▁text=\"",
+        "vi"
+      ],
+      [
+        "▁text=\"",
+        "exit"
+      ],
+      [
+        "▁text=\"",
+        "help"
+      ],
+      [
+        "▁text=\"",
+        "images"
+      ],
+      [
+        "▁text=\"",
+        "profile"
+      ],
+      [
+        "el",
+        "s"
+      ],
+      [
+        "▁in",
+        "stagram"
+      ],
+      [
+        "▁f",
+        "acebook"
+      ],
+      [
+        "▁b",
+        "y"
+      ],
+      [
+        "earch",
+        "\""
+      ],
+      [
+        "▁url=\"",
+        "reddit"
+      ],
+      [
+        "▁url=\"",
+        "facebook"
+      ],
+      [
+        "▁url=\"",
+        "wikipedia.org"
+      ],
+      [
+        "▁url=\"",
+        "instagram"
+      ],
+      [
+        "▁p",
+        "rofile"
+      ],
+      [
+        "▁p",
+        "ix"
+      ],
+      [
+        "▁w",
+        "ikipedia.org"
+      ],
+      [
+        "▁text=\"s",
+        "end"
+      ],
+      [
+        "▁text=\"s",
+        "earch\""
+      ],
+      [
+        "le",
+        "ft"
+      ],
+      [
+        "▁vi",
+        "de"
+      ],
+      [
+        "de",
+        "os\""
+      ],
+      [
+        "pose",
+        "\""
+      ],
+      [
+        "▁amount=",
+        "200"
+      ],
+      [
+        "▁amount=",
+        "300"
+      ],
+      [
+        "do",
+        "wn"
+      ],
+      [
+        "igh",
+        "t"
+      ],
+      [
+        "▁reddit",
+        ".com"
+      ],
+      [
+        "▁com",
+        "pose"
+      ],
+      [
+        "▁text=\"com",
+        "pose\""
+      ],
+      [
+        "▁text=\"vi",
+        "deos\""
+      ],
+      [
+        "▁text=\"exit",
+        "\""
+      ],
+      [
+        "▁text=\"help",
+        "\""
+      ],
+      [
+        "▁text=\"images",
+        "\""
+      ],
+      [
+        "▁text=\"profile",
+        "\""
+      ],
+      [
+        "▁instagram",
+        ".com"
+      ],
+      [
+        "▁facebook",
+        ".com"
+      ],
+      [
+        "▁url=\"reddit",
+        ".com\""
+      ],
+      [
+        "▁url=\"facebook",
+        ".com\""
+      ],
+      [
+        "▁url=\"wikipedia.org",
+        "\""
+      ],
+      [
+        "▁url=\"instagram",
+        ".com\""
+      ],
+      [
+        "▁pix",
+        "els"
+      ],
+      [
+        "▁text=\"send",
+        "\""
+      ],
+      [
+        "▁vide",
+        "os"
+      ],
+      [
+        "=",
+        "n"
+      ],
+      [
+        "B",
+        "ack"
+      ],
+      [
+        "F",
+        "or"
+      ],
+      [
+        "I",
+        "d"
+      ],
+      [
+        "a",
+        "ll"
+      ],
+      [
+        "o",
+        "ad"
+      ],
+      [
+        "p",
+        "ython"
+      ],
+      [
+        "r",
+        "d"
+      ],
+      [
+        "r",
+        "st"
+      ],
+      [
+        "r",
+        "th"
+      ],
+      [
+        "t",
+        "witter"
+      ],
+      [
+        "u",
+        "ll"
+      ],
+      [
+        "w",
+        "eather"
+      ],
+      [
+        "▁",
+        "example"
+      ],
+      [
+        "▁t",
+        "witter"
+      ],
+      [
+        "in",
+        "d"
+      ],
+      [
+        "▁s",
+        "ec"
+      ],
+      [
+        "▁s",
+        "ubmit"
+      ],
+      [
+        "▁s",
+        "etting"
+      ],
+      [
+        "▁s",
+        "hopping"
+      ],
+      [
+        "▁text=\"",
+        "lo"
+      ],
+      [
+        "▁text=\"",
+        "new"
+      ],
+      [
+        "▁text=\"",
+        "all"
+      ],
+      [
+        "el",
+        "oad"
+      ],
+      [
+        "▁f",
+        "ou"
+      ],
+      [
+        "▁f",
+        "ind"
+      ],
+      [
+        "▁b",
+        "ack"
+      ],
+      [
+        "▁fi",
+        "ft"
+      ],
+      [
+        "▁fi",
+        "rst"
+      ],
+      [
+        "▁a",
+        "ll"
+      ],
+      [
+        "▁url=\"",
+        "go"
+      ],
+      [
+        "▁url=\"",
+        "example"
+      ],
+      [
+        "▁url=\"",
+        "twitter"
+      ],
+      [
+        "on",
+        "d"
+      ],
+      [
+        "▁p",
+        "ython"
+      ],
+      [
+        "▁tab",
+        "Id"
+      ],
+      [
+        "▁w",
+        "eather"
+      ],
+      [
+        "▁go",
+        "ogle"
+      ],
+      [
+        "▁go",
+        "Back"
+      ],
+      [
+        "▁go",
+        "For"
+      ],
+      [
+        "▁text=\"s",
+        "ubmit"
+      ],
+      [
+        "▁text=\"s",
+        "etting"
+      ],
+      [
+        "▁text=\"s",
+        "hopping"
+      ],
+      [
+        "▁open",
+        "Tab"
+      ],
+      [
+        "new",
+        "s"
+      ],
+      [
+        "▁index=",
+        "0"
+      ],
+      [
+        "▁index=",
+        "1"
+      ],
+      [
+        "▁index=",
+        "2"
+      ],
+      [
+        "▁index=",
+        "3"
+      ],
+      [
+        "▁index=",
+        "4"
+      ],
+      [
+        "▁lo",
+        "ok"
+      ],
+      [
+        "▁lo",
+        "gin"
+      ],
+      [
+        "▁query=\"",
+        "python"
+      ],
+      [
+        "▁query=\"",
+        "weather"
+      ],
+      [
+        "▁query=\"",
+        "news"
+      ],
+      [
+        "gin",
+        "\""
+      ],
+      [
+        "ogle",
+        ".com\""
+      ],
+      [
+        "▁for",
+        "ward"
+      ],
+      [
+        "▁today",
+        "\""
+      ],
+      [
+        "▁tutorial",
+        "s"
+      ],
+      [
+        "▁tutorial",
+        "s\""
+      ],
+      [
+        "▁headlines",
+        "\""
+      ],
+      [
+        "▁r",
+        "eload"
+      ],
+      [
+        "▁thi",
+        "rd"
+      ],
+      [
+        "▁close",
+        "Tab"
+      ],
+      [
+        "=n",
+        "ull"
+      ],
+      [
+        "▁example",
+        ".com"
+      ],
+      [
+        "▁twitter",
+        ".com"
+      ],
+      [
+        "▁sec",
+        "ond"
+      ],
+      [
+        "▁setting",
+        "s"
+      ],
+      [
+        "▁text=\"lo",
+        "gin\""
+      ],
+      [
+        "▁text=\"new",
+        "s\""
+      ],
+      [
+        "▁text=\"all",
+        "\""
+      ],
+      [
+        "▁fou",
+        "rth"
+      ],
+      [
+        "▁fift",
+        "h"
+      ],
+      [
+        "▁url=\"go",
+        "ogle.com\""
+      ],
+      [
+        "▁url=\"example",
+        ".com\""
+      ],
+      [
+        "▁url=\"twitter",
+        ".com\""
+      ],
+      [
+        "▁tabId",
+        "=null"
+      ],
+      [
+        "▁google",
+        ".com"
+      ],
+      [
+        "▁goFor",
+        "ward"
+      ],
+      [
+        "▁text=\"submit",
+        "\""
+      ],
+      [
+        "▁text=\"setting",
+        "s\""
+      ],
+      [
+        "▁text=\"shopping",
+        "\""
+      ],
+      [
+        "p",
+        "\""
+      ],
+      [
+        "r",
+        "ight"
+      ],
+      [
+        "u",
+        "p\""
+      ],
+      [
+        "▁",
+        "200"
+      ],
+      [
+        "▁",
+        "left"
+      ],
+      [
+        "▁",
+        "down"
+      ],
+      [
+        "▁p",
+        "ag"
+      ],
+      [
+        "▁3",
+        "00"
+      ],
+      [
+        "▁direction=\"",
+        "left"
+      ],
+      [
+        "▁direction=\"",
+        "down"
+      ],
+      [
+        "▁direction=\"",
+        "right"
+      ],
+      [
+        "▁direction=\"",
+        "up\""
+      ],
+      [
+        "▁r",
+        "ight"
+      ],
+      [
+        "▁thi",
+        "s"
+      ],
+      [
+        "▁pag",
+        "e"
+      ],
+      [
+        "▁direction=\"left",
+        "\""
+      ],
+      [
+        "▁direction=\"down",
+        "\""
+      ],
+      [
+        "▁direction=\"right",
+        "\""
+      ]
+    ]
+  }
+}
