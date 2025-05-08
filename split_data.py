@@ -1,4 +1,4 @@
-# split_expanded.py
+# split_data.py
 # ------------------------------------------------------------
 # Usage:
 #   python split_data.py \
