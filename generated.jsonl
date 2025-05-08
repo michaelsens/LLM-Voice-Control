@@ -1,79 +1,156 @@
-{"utterance": "open a new tab", "rpc": {"method": "new_tab", "params": {}}}
-{"utterance": "open new tab", "rpc": {"method": "new_tab", "params": {}}}
-{"utterance": "create a new tab", "rpc": {"method": "new_tab", "params": {}}}
-{"utterance": "start a new tab", "rpc": {"method": "new_tab", "params": {}}}
-{"utterance": "add a tab", "rpc": {"method": "new_tab", "params": {}}}
-{"utterance": "close the current tab", "rpc": {"method": "close_tab", "params": {}}}
-{"utterance": "close this tab", "rpc": {"method": "close_tab", "params": {}}}
-{"utterance": "shut this tab", "rpc": {"method": "close_tab", "params": {}}}
-{"utterance": "exit this tab", "rpc": {"method": "close_tab", "params": {}}}
-{"utterance": "close the page", "rpc": {"method": "close_tab", "params": {}}}
-{"utterance": "open a new window", "rpc": {"method": "new_window", "params": {}}}
-{"utterance": "open window", "rpc": {"method": "new_window", "params": {}}}
-{"utterance": "launch a window", "rpc": {"method": "new_window", "params": {}}}
-{"utterance": "close the current window", "rpc": {"method": "close_window", "params": {}}}
-{"utterance": "close this window", "rpc": {"method": "close_window", "params": {}}}
+{"utterance": "open wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "wikipedia.org"}}}
+{"utterance": "navigate to google.com", "rpc": {"method": "navigate", "params": {"url": "google.com"}}}
+{"utterance": "open youtube.com", "rpc": {"method": "navigate", "params": {"url": "youtube.com"}}}
+{"utterance": "go to youtube.com", "rpc": {"method": "navigate", "params": {"url": "youtube.com"}}}
+{"utterance": "load example.com", "rpc": {"method": "navigate", "params": {"url": "example.com"}}}
+{"utterance": "visit wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "wikipedia.org"}}}
+{"utterance": "navigate to wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "wikipedia.org"}}}
+{"utterance": "go to wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "wikipedia.org"}}}
+{"utterance": "open reddit.com", "rpc": {"method": "navigate", "params": {"url": "reddit.com"}}}
+{"utterance": "visit instagram.com", "rpc": {"method": "navigate", "params": {"url": "instagram.com"}}}
+{"utterance": "go to google.com", "rpc": {"method": "navigate", "params": {"url": "google.com"}}}
+{"utterance": "open google.com", "rpc": {"method": "navigate", "params": {"url": "google.com"}}}
+{"utterance": "visit twitter.com", "rpc": {"method": "navigate", "params": {"url": "twitter.com"}}}
+{"utterance": "load instagram.com", "rpc": {"method": "navigate", "params": {"url": "instagram.com"}}}
+{"utterance": "navigate to youtube.com", "rpc": {"method": "navigate", "params": {"url": "youtube.com"}}}
+{"utterance": "load youtube.com", "rpc": {"method": "navigate", "params": {"url": "youtube.com"}}}
+{"utterance": "load reddit.com", "rpc": {"method": "navigate", "params": {"url": "reddit.com"}}}
+{"utterance": "open instagram.com", "rpc": {"method": "navigate", "params": {"url": "instagram.com"}}}
+{"utterance": "navigate to twitter.com", "rpc": {"method": "navigate", "params": {"url": "twitter.com"}}}
+{"utterance": "go to facebook.com", "rpc": {"method": "navigate", "params": {"url": "facebook.com"}}}
+{"utterance": "open facebook.com", "rpc": {"method": "navigate", "params": {"url": "facebook.com"}}}
+{"utterance": "visit example.com", "rpc": {"method": "navigate", "params": {"url": "example.com"}}}
+{"utterance": "navigate to reddit.com", "rpc": {"method": "navigate", "params": {"url": "reddit.com"}}}
+{"utterance": "go to instagram.com", "rpc": {"method": "navigate", "params": {"url": "instagram.com"}}}
+{"utterance": "load twitter.com", "rpc": {"method": "navigate", "params": {"url": "twitter.com"}}}
+{"utterance": "open example.com", "rpc": {"method": "navigate", "params": {"url": "example.com"}}}
+{"utterance": "visit youtube.com", "rpc": {"method": "navigate", "params": {"url": "youtube.com"}}}
+{"utterance": "visit facebook.com", "rpc": {"method": "navigate", "params": {"url": "facebook.com"}}}
+{"utterance": "visit reddit.com", "rpc": {"method": "navigate", "params": {"url": "reddit.com"}}}
+{"utterance": "navigate to facebook.com", "rpc": {"method": "navigate", "params": {"url": "facebook.com"}}}
+{"utterance": "open a new tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "create a new tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "start a new tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "close the current tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "close this tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "exit this tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "switch to the first tab", "rpc": {"method": "switchTab", "params": {"index": 0}}}
+{"utterance": "go to the first tab", "rpc": {"method": "switchTab", "params": {"index": 0}}}
+{"utterance": "open the first tab", "rpc": {"method": "switchTab", "params": {"index": 0}}}
+{"utterance": "switch to the second tab", "rpc": {"method": "switchTab", "params": {"index": 1}}}
+{"utterance": "go to the second tab", "rpc": {"method": "switchTab", "params": {"index": 1}}}
+{"utterance": "open the second tab", "rpc": {"method": "switchTab", "params": {"index": 1}}}
+{"utterance": "switch to the third tab", "rpc": {"method": "switchTab", "params": {"index": 2}}}
+{"utterance": "go to the third tab", "rpc": {"method": "switchTab", "params": {"index": 2}}}
+{"utterance": "open the third tab", "rpc": {"method": "switchTab", "params": {"index": 2}}}
+{"utterance": "switch to the fourth tab", "rpc": {"method": "switchTab", "params": {"index": 3}}}
+{"utterance": "go to the fourth tab", "rpc": {"method": "switchTab", "params": {"index": 3}}}
+{"utterance": "open the fourth tab", "rpc": {"method": "switchTab", "params": {"index": 3}}}
+{"utterance": "switch to the fifth tab", "rpc": {"method": "switchTab", "params": {"index": 4}}}
+{"utterance": "go to the fifth tab", "rpc": {"method": "switchTab", "params": {"index": 4}}}
+{"utterance": "open the fifth tab", "rpc": {"method": "switchTab", "params": {"index": 4}}}
+{"utterance": "press send", "rpc": {"method": "click", "params": {"text": "send"}}}
+{"utterance": "press compose", "rpc": {"method": "click", "params": {"text": "compose"}}}
+{"utterance": "press exit", "rpc": {"method": "click", "params": {"text": "exit"}}}
+{"utterance": "press login", "rpc": {"method": "click", "params": {"text": "login"}}}
+{"utterance": "click images", "rpc": {"method": "click", "params": {"text": "images"}}}
+{"utterance": "select shopping", "rpc": {"method": "click", "params": {"text": "shopping"}}}
+{"utterance": "tap search", "rpc": {"method": "click", "params": {"text": "search"}}}
+{"utterance": "press search", "rpc": {"method": "click", "params": {"text": "search"}}}
+{"utterance": "click settings", "rpc": {"method": "click", "params": {"text": "settings"}}}
+{"utterance": "press images", "rpc": {"method": "click", "params": {"text": "images"}}}
+{"utterance": "tap send", "rpc": {"method": "click", "params": {"text": "send"}}}
+{"utterance": "press videos", "rpc": {"method": "click", "params": {"text": "videos"}}}
+{"utterance": "tap all", "rpc": {"method": "click", "params": {"text": "all"}}}
+{"utterance": "click compose", "rpc": {"method": "click", "params": {"text": "compose"}}}
+{"utterance": "tap submit", "rpc": {"method": "click", "params": {"text": "submit"}}}
+{"utterance": "press profile", "rpc": {"method": "click", "params": {"text": "profile"}}}
+{"utterance": "tap help", "rpc": {"method": "click", "params": {"text": "help"}}}
+{"utterance": "select search", "rpc": {"method": "click", "params": {"text": "search"}}}
+{"utterance": "select videos", "rpc": {"method": "click", "params": {"text": "videos"}}}
+{"utterance": "select images", "rpc": {"method": "click", "params": {"text": "images"}}}
+{"utterance": "select help", "rpc": {"method": "click", "params": {"text": "help"}}}
+{"utterance": "tap compose", "rpc": {"method": "click", "params": {"text": "compose"}}}
+{"utterance": "select send", "rpc": {"method": "click", "params": {"text": "send"}}}
+{"utterance": "click login", "rpc": {"method": "click", "params": {"text": "login"}}}
+{"utterance": "click search", "rpc": {"method": "click", "params": {"text": "search"}}}
+{"utterance": "press submit", "rpc": {"method": "click", "params": {"text": "submit"}}}
+{"utterance": "tap images", "rpc": {"method": "click", "params": {"text": "images"}}}
+{"utterance": "select news", "rpc": {"method": "click", "params": {"text": "news"}}}
+{"utterance": "press all", "rpc": {"method": "click", "params": {"text": "all"}}}
+{"utterance": "press shopping", "rpc": {"method": "click", "params": {"text": "shopping"}}}
+{"utterance": "press news", "rpc": {"method": "click", "params": {"text": "news"}}}
+{"utterance": "click profile", "rpc": {"method": "click", "params": {"text": "profile"}}}
+{"utterance": "select submit", "rpc": {"method": "click", "params": {"text": "submit"}}}
+{"utterance": "click help", "rpc": {"method": "click", "params": {"text": "help"}}}
+{"utterance": "click exit", "rpc": {"method": "click", "params": {"text": "exit"}}}
+{"utterance": "tap login", "rpc": {"method": "click", "params": {"text": "login"}}}
+{"utterance": "select exit", "rpc": {"method": "click", "params": {"text": "exit"}}}
+{"utterance": "click all", "rpc": {"method": "click", "params": {"text": "all"}}}
+{"utterance": "select compose", "rpc": {"method": "click", "params": {"text": "compose"}}}
+{"utterance": "tap shopping", "rpc": {"method": "click", "params": {"text": "shopping"}}}
+{"utterance": "tap videos", "rpc": {"method": "click", "params": {"text": "videos"}}}
+{"utterance": "tap exit", "rpc": {"method": "click", "params": {"text": "exit"}}}
+{"utterance": "select profile", "rpc": {"method": "click", "params": {"text": "profile"}}}
+{"utterance": "tap news", "rpc": {"method": "click", "params": {"text": "news"}}}
+{"utterance": "click send", "rpc": {"method": "click", "params": {"text": "send"}}}
+{"utterance": "click videos", "rpc": {"method": "click", "params": {"text": "videos"}}}
+{"utterance": "tap profile", "rpc": {"method": "click", "params": {"text": "profile"}}}
+{"utterance": "press settings", "rpc": {"method": "click", "params": {"text": "settings"}}}
+{"utterance": "press help", "rpc": {"method": "click", "params": {"text": "help"}}}
+{"utterance": "tap settings", "rpc": {"method": "click", "params": {"text": "settings"}}}
+{"utterance": "input meeting at 3pm into email body", "rpc": {"method": "type", "params": {"text": "meeting at 3pm", "field": "email body"}}}
+{"utterance": "type hello world into email body", "rpc": {"method": "type", "params": {"text": "hello world", "field": "email body"}}}
+{"utterance": "input meeting at 3pm into subject", "rpc": {"method": "type", "params": {"text": "meeting at 3pm", "field": "subject"}}}
+{"utterance": "input hello world into subject", "rpc": {"method": "type", "params": {"text": "hello world", "field": "subject"}}}
+{"utterance": "input openai rocks into subject", "rpc": {"method": "type", "params": {"text": "openai rocks", "field": "subject"}}}
+{"utterance": "input hello world into email body", "rpc": {"method": "type", "params": {"text": "hello world", "field": "email body"}}}
+{"utterance": "enter draft email content in email body", "rpc": {"method": "type", "params": {"text": "draft email content", "field": "email body"}}}
+{"utterance": "input draft email content into email body", "rpc": {"method": "type", "params": {"text": "draft email content", "field": "email body"}}}
+{"utterance": "enter hello world in search bar", "rpc": {"method": "type", "params": {"text": "hello world", "field": "search bar"}}}
+{"utterance": "enter openai rocks in search bar", "rpc": {"method": "type", "params": {"text": "openai rocks", "field": "search bar"}}}
+{"utterance": "type meeting at 3pm into email body", "rpc": {"method": "type", "params": {"text": "meeting at 3pm", "field": "email body"}}}
+{"utterance": "enter draft email content in search bar", "rpc": {"method": "type", "params": {"text": "draft email content", "field": "search bar"}}}
+{"utterance": "type hello world into subject", "rpc": {"method": "type", "params": {"text": "hello world", "field": "subject"}}}
+{"utterance": "input openai rocks into search bar", "rpc": {"method": "type", "params": {"text": "openai rocks", "field": "search bar"}}}
+{"utterance": "input hello world into search bar", "rpc": {"method": "type", "params": {"text": "hello world", "field": "search bar"}}}
+{"utterance": "type openai rocks into search bar", "rpc": {"method": "type", "params": {"text": "openai rocks", "field": "search bar"}}}
+{"utterance": "type openai rocks into subject", "rpc": {"method": "type", "params": {"text": "openai rocks", "field": "subject"}}}
+{"utterance": "enter meeting at 3pm in email body", "rpc": {"method": "type", "params": {"text": "meeting at 3pm", "field": "email body"}}}
+{"utterance": "enter openai rocks in email body", "rpc": {"method": "type", "params": {"text": "openai rocks", "field": "email body"}}}
+{"utterance": "type meeting at 3pm into subject", "rpc": {"method": "type", "params": {"text": "meeting at 3pm", "field": "subject"}}}
+{"utterance": "input draft email content into subject", "rpc": {"method": "type", "params": {"text": "draft email content", "field": "subject"}}}
+{"utterance": "input openai rocks into email body", "rpc": {"method": "type", "params": {"text": "openai rocks", "field": "email body"}}}
+{"utterance": "enter openai rocks in subject", "rpc": {"method": "type", "params": {"text": "openai rocks", "field": "subject"}}}
+{"utterance": "type openai rocks into email body", "rpc": {"method": "type", "params": {"text": "openai rocks", "field": "email body"}}}
+{"utterance": "type draft email content into subject", "rpc": {"method": "type", "params": {"text": "draft email content", "field": "subject"}}}
+{"utterance": "enter meeting at 3pm in search bar", "rpc": {"method": "type", "params": {"text": "meeting at 3pm", "field": "search bar"}}}
+{"utterance": "input draft email content into search bar", "rpc": {"method": "type", "params": {"text": "draft email content", "field": "search bar"}}}
+{"utterance": "type meeting at 3pm into search bar", "rpc": {"method": "type", "params": {"text": "meeting at 3pm", "field": "search bar"}}}
+{"utterance": "enter hello world in subject", "rpc": {"method": "type", "params": {"text": "hello world", "field": "subject"}}}
+{"utterance": "input meeting at 3pm into search bar", "rpc": {"method": "type", "params": {"text": "meeting at 3pm", "field": "search bar"}}}
+{"utterance": "scroll down", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 300}}}
+{"utterance": "scroll down by 300 pixels", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 300}}}
+{"utterance": "scroll up", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 300}}}
+{"utterance": "scroll up by 300 pixels", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 300}}}
+{"utterance": "scroll left", "rpc": {"method": "scroll", "params": {"direction": "left", "amount": 200}}}
+{"utterance": "scroll left by 200 pixels", "rpc": {"method": "scroll", "params": {"direction": "left", "amount": 200}}}
+{"utterance": "scroll right", "rpc": {"method": "scroll", "params": {"direction": "right", "amount": 200}}}
+{"utterance": "scroll right by 200 pixels", "rpc": {"method": "scroll", "params": {"direction": "right", "amount": 200}}}
 {"utterance": "reload the page", "rpc": {"method": "reload", "params": {}}}
 {"utterance": "refresh the page", "rpc": {"method": "reload", "params": {}}}
-{"utterance": "hit refresh", "rpc": {"method": "reload", "params": {}}}
-{"utterance": "reload", "rpc": {"method": "reload", "params": {}}}
-{"utterance": "go to https://google.com", "rpc": {"method": "navigate", "params": {"url": "https://google.com"}}}
-{"utterance": "navigate to https://google.com", "rpc": {"method": "navigate", "params": {"url": "https://google.com"}}}
-{"utterance": "open https://google.com", "rpc": {"method": "navigate", "params": {"url": "https://google.com"}}}
-{"utterance": "visit https://google.com", "rpc": {"method": "navigate", "params": {"url": "https://google.com"}}}
-{"utterance": "load https://google.com", "rpc": {"method": "navigate", "params": {"url": "https://google.com"}}}
-{"utterance": "go to https://youtube.com", "rpc": {"method": "navigate", "params": {"url": "https://youtube.com"}}}
-{"utterance": "navigate to https://youtube.com", "rpc": {"method": "navigate", "params": {"url": "https://youtube.com"}}}
-{"utterance": "open https://youtube.com", "rpc": {"method": "navigate", "params": {"url": "https://youtube.com"}}}
-{"utterance": "visit https://youtube.com", "rpc": {"method": "navigate", "params": {"url": "https://youtube.com"}}}
-{"utterance": "load https://youtube.com", "rpc": {"method": "navigate", "params": {"url": "https://youtube.com"}}}
-{"utterance": "go to https://wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "https://wikipedia.org"}}}
-{"utterance": "navigate to https://wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "https://wikipedia.org"}}}
-{"utterance": "open https://wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "https://wikipedia.org"}}}
-{"utterance": "visit https://wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "https://wikipedia.org"}}}
-{"utterance": "load https://wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "https://wikipedia.org"}}}
 {"utterance": "search for weather today", "rpc": {"method": "search", "params": {"query": "weather today"}}}
 {"utterance": "look up weather today", "rpc": {"method": "search", "params": {"query": "weather today"}}}
 {"utterance": "find weather today", "rpc": {"method": "search", "params": {"query": "weather today"}}}
-{"utterance": "google weather today", "rpc": {"method": "search", "params": {"query": "weather today"}}}
-{"utterance": "search weather today", "rpc": {"method": "search", "params": {"query": "weather today"}}}
 {"utterance": "search for news headlines", "rpc": {"method": "search", "params": {"query": "news headlines"}}}
 {"utterance": "look up news headlines", "rpc": {"method": "search", "params": {"query": "news headlines"}}}
 {"utterance": "find news headlines", "rpc": {"method": "search", "params": {"query": "news headlines"}}}
-{"utterance": "google news headlines", "rpc": {"method": "search", "params": {"query": "news headlines"}}}
-{"utterance": "search news headlines", "rpc": {"method": "search", "params": {"query": "news headlines"}}}
 {"utterance": "search for python tutorials", "rpc": {"method": "search", "params": {"query": "python tutorials"}}}
 {"utterance": "look up python tutorials", "rpc": {"method": "search", "params": {"query": "python tutorials"}}}
 {"utterance": "find python tutorials", "rpc": {"method": "search", "params": {"query": "python tutorials"}}}
-{"utterance": "google python tutorials", "rpc": {"method": "search", "params": {"query": "python tutorials"}}}
-{"utterance": "search python tutorials", "rpc": {"method": "search", "params": {"query": "python tutorials"}}}
-{"utterance": "bookmark this page", "rpc": {"method": "bookmark_page", "params": {}}}
-{"utterance": "add bookmark", "rpc": {"method": "bookmark_page", "params": {}}}
-{"utterance": "star this page", "rpc": {"method": "bookmark_page", "params": {}}}
-{"utterance": "open bookmarks manager", "rpc": {"method": "open_bookmarks", "params": {}}}
-{"utterance": "show bookmarks", "rpc": {"method": "open_bookmarks", "params": {}}}
-{"utterance": "view bookmarks", "rpc": {"method": "open_bookmarks", "params": {}}}
-{"utterance": "open browsing history", "rpc": {"method": "open_history", "params": {}}}
-{"utterance": "view history", "rpc": {"method": "open_history", "params": {}}}
-{"utterance": "show history", "rpc": {"method": "open_history", "params": {}}}
-{"utterance": "open downloads page", "rpc": {"method": "open_downloads", "params": {}}}
-{"utterance": "show downloads", "rpc": {"method": "open_downloads", "params": {}}}
-{"utterance": "view my downloads", "rpc": {"method": "open_downloads", "params": {}}}
-{"utterance": "pin this tab", "rpc": {"method": "pin_tab", "params": {}}}
-{"utterance": "add tab to pinned", "rpc": {"method": "pin_tab", "params": {}}}
-{"utterance": "keep this tab open", "rpc": {"method": "pin_tab", "params": {}}}
-{"utterance": "mute this tab", "rpc": {"method": "mute_tab", "params": {}}}
-{"utterance": "silence this tab", "rpc": {"method": "mute_tab", "params": {}}}
-{"utterance": "turn off tab sound", "rpc": {"method": "mute_tab", "params": {}}}
-{"utterance": "zoom in", "rpc": {"method": "zoom", "params": {"direction": "in"}}}
-{"utterance": "enlarge page", "rpc": {"method": "zoom", "params": {"direction": "in"}}}
-{"utterance": "increase zoom", "rpc": {"method": "zoom", "params": {"direction": "in"}}}
-{"utterance": "zoom out", "rpc": {"method": "zoom", "params": {"direction": "out"}}}
-{"utterance": "shrink page", "rpc": {"method": "zoom", "params": {"direction": "out"}}}
-{"utterance": "decrease zoom", "rpc": {"method": "zoom", "params": {"direction": "out"}}}
-{"utterance": "hard reload", "rpc": {"method": "reload_ignore_cache", "params": {}}}
-{"utterance": "force refresh", "rpc": {"method": "reload_ignore_cache", "params": {}}}
-{"utterance": "reload without cache", "rpc": {"method": "reload_ignore_cache", "params": {}}}
-{"utterance": "find on page", "rpc": {"method": "find", "params": {"query": "<text>"}}}
-{"utterance": "search within page", "rpc": {"method": "find", "params": {"query": "<text>"}}}
-{"utterance": "find text on this page", "rpc": {"method": "find", "params": {"query": "<text>"}}}
+{"utterance": "go back", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "navigate back", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "back", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "go forward", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "navigate forward", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "forward", "rpc": {"method": "goForward", "params": {"steps": 1}}}

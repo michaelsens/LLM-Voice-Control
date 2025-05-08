@@ -3,6 +3,7 @@
 
 import os
 import json
+import random
 import logging
 from pathlib import Path
 from dotenv import load_dotenv
@@ -18,145 +19,126 @@ logger = logging.getLogger(__name__)
 # ——— Load Configuration —————————————————————————————————————————————————
 load_dotenv()
 OUTPUT_PATH = Path(os.getenv("OUTPUT_PATH", "generated.jsonl"))
+SAMPLES_PER_WEIGHT = int(os.getenv("SAMPLES_PER_WEIGHT", "10"))
 
-# ——— Synonym Templates for Common Actions —————————————————————————————————
-OPEN_TAB_SYNS = [
-    "open a new tab", "open new tab", "create a new tab",
-    "start a new tab", "add a tab"
-]
-CLOSE_TAB_SYNS = [
-    "close the current tab", "close this tab", "shut this tab",
-    "exit this tab", "close the page"
-]
-NEW_WINDOW_SYNS = ["open a new window", "open window", "launch a window"]
-CLOSE_WINDOW_SYNS = ["close the current window", "close this window"]
-RELOAD_SYNS = ["reload the page", "refresh the page", "hit refresh", "reload"]
-NAVIGATE_SYNS = [
-    "go to {url}", "navigate to {url}", "open {url}",
-    "visit {url}", "load {url}"
-]
-SEARCH_SYNS = [
-    "search for {query}", "look up {query}", "find {query}",
-    "google {query}", "search {query}"
-]
-BOOKMARK_SYNS = ["bookmark this page", "add bookmark", "star this page"]
-OPEN_BOOKMARKS_SYNS = ["open bookmarks manager", "show bookmarks", "view bookmarks"]
-OPEN_HISTORY_SYNS = ["open browsing history", "view history", "show history"]
-OPEN_DOWNLOADS_SYNS = ["open downloads page", "show downloads", "view my downloads"]
-PIN_TAB_SYNS = ["pin this tab", "add tab to pinned", "keep this tab open"]
-MUTE_TAB_SYNS = ["mute this tab", "silence this tab", "turn off tab sound"]
-ZOOM_IN_SYNS = ["zoom in", "enlarge page", "increase zoom"]
-ZOOM_OUT_SYNS = ["zoom out", "shrink page", "decrease zoom"]
-RELOAD_HARD_SYNS = ["hard reload", "force refresh", "reload without cache"]
-FIND_SYNS = ["find on page", "search within page", "find text on this page"]
+# ——— Weight multipliers for current RPCs —————————————————————————————————————
+WEIGHTS = {
+    "gen_navigate":   3,
+    "gen_open_tab":   2,
+    "gen_close_tab":  2,
+    "gen_switch_tab": 2,
+    "gen_click":      5,
+    "gen_type":       3,
+    "gen_scroll":     2,
+    "gen_reload":     1,
+    "gen_search":     4,
+    "gen_go_back":    1,
+    "gen_go_forward": 1,
+}
 
-# ——— Generators for Everyday Chrome Actions —————————————————————————————
+# ——— Synonym Templates —————————————————————————————————————————————————————
+NAV_SYNS      = ["go to {url}", "navigate to {url}", "open {url}", "visit {url}", "load {url}"]
+OPEN_TAB_SYNS = ["open a new tab", "create a new tab", "start a new tab"]
+CLOSE_TAB_SYNS= ["close the current tab", "close this tab", "exit this tab"]
+# use ordinals for tabs
+ORDINALS      = ["first", "second", "third", "fourth", "fifth"]
+SWITCH_SYNS   = ["switch to the {ordinal} tab", "go to the {ordinal} tab", "open the {ordinal} tab"]
+CLICK_SYNS    = ["click {text}", "press {text}", "tap {text}", "select {text}"]
+TYPE_SYNS     = ["type {text} into {field}", "enter {text} in {field}", "input {text} into {field}"]
+SCROLL_SYNS   = ["scroll {direction}", "scroll {direction} by {amount} pixels"]
+RELOAD_SYNS   = ["reload the page", "refresh the page"]
+SEARCH_SYNS   = ["search for {query}", "look up {query}", "find {query}"]
+BACK_SYNS     = ["go back", "navigate back", "back"]
+FORWARD_SYNS  = ["go forward", "navigate forward", "forward"]
 
-def gen_new_tab():
-    rpc = {"method":"new_tab","params":{}}
-    for syn in OPEN_TAB_SYNS:
-        yield syn, rpc
+# ——— Generators ———————————————————————————————————————————————————————
+
+def gen_navigate():
+    sites = ["google.com", "wikipedia.org", "example.com", "youtube.com", "facebook.com", "reddit.com", "twitter.com", "instagram.com"]
+    for url in sites:
+        for tpl in NAV_SYNS:
+            yield tpl.format(url=url), {"method":"navigate","params":{"url":url}}
+
+def gen_open_tab():
+    for tpl in OPEN_TAB_SYNS:
+        yield tpl, {"method":"openTab","params":{}}
 
 def gen_close_tab():
-    rpc = {"method":"close_tab","params":{}}
-    for syn in CLOSE_TAB_SYNS:
-        yield syn, rpc
+    for tpl in CLOSE_TAB_SYNS:
+        yield tpl, {"method":"closeTab","params":{"tabId":None}}
 
-def gen_new_window():
-    rpc = {"method":"new_window","params":{}}
-    for syn in NEW_WINDOW_SYNS:
-        yield syn, rpc
+def gen_switch_tab():
+    # ordinal wording, index stays 0-based
+    for idx, ord in enumerate(ORDINALS):
+        for tpl in SWITCH_SYNS:
+            yield tpl.format(ordinal=ord), {"method":"switchTab","params":{"index":idx}}
 
-def gen_close_window():
-    rpc = {"method":"close_window","params":{}}
-    for syn in CLOSE_WINDOW_SYNS:
-        yield syn, rpc
+def gen_click():
+    targets = ["submit","search","exit","login","compose","send","settings","profile","help","all","news","videos","images","shopping"]
+    for text in targets:
+        for tpl in CLICK_SYNS:
+            yield tpl.format(text=text), {"method":"click","params":{"text":text}}
 
-def gen_reload_page():
-    rpc = {"method":"reload","params":{}}
-    for syn in RELOAD_SYNS:
-        yield syn, rpc
+def gen_type():
+    fields = ["search bar","subject","email body"]
+    texts  = ["hello world","meeting at 3pm","openai rocks","draft email content"]
+    for field in fields:
+        for text in texts:
+            for tpl in TYPE_SYNS:
+                yield tpl.format(text=text,field=field), {"method":"type","params":{"text":text,"field":field}}
 
-def gen_navigate_url():
-    sample_sites = ["https://google.com", "https://youtube.com", "https://wikipedia.org"]
-    for url in sample_sites:
-        rpc = {"method":"navigate","params":{"url":url}}
-        for tpl in NAVIGATE_SYNS:
-            yield tpl.format(url=url), rpc
+def gen_scroll():
+    for direction,amt in [("down",300),("up",300),("left",200),("right",200)]:
+        for tpl in SCROLL_SYNS:
+            yield tpl.format(direction=direction,amount=amt), {"method":"scroll","params":{"direction":direction,"amount":amt}}
 
-def gen_search_omnibox():
-    queries = ["weather today", "news headlines", "python tutorials"]
+def gen_reload():
+    for tpl in RELOAD_SYNS:
+        yield tpl, {"method":"reload","params":{}}
+
+def gen_search():
+    queries = ["weather today","news headlines","python tutorials"]
     for q in queries:
-        rpc = {"method":"search","params":{"query":q}}
         for tpl in SEARCH_SYNS:
-            yield tpl.format(query=q), rpc
+            yield tpl.format(query=q), {"method":"search","params":{"query":q}}
 
-def gen_bookmark_page():
-    rpc = {"method":"bookmark_page","params":{}}
-    for syn in BOOKMARK_SYNS:
-        yield syn, rpc
+def gen_go_back():
+    for tpl in BACK_SYNS:
+        yield tpl, {"method":"goBack","params":{"steps":1}}
 
-def gen_open_bookmarks():
-    rpc = {"method":"open_bookmarks","params":{}}
-    for syn in OPEN_BOOKMARKS_SYNS:
-        yield syn, rpc
+def gen_go_forward():
+    for tpl in FORWARD_SYNS:
+        yield tpl, {"method":"goForward","params":{"steps":1}}
 
-def gen_open_history():
-    rpc = {"method":"open_history","params":{}}
-    for syn in OPEN_HISTORY_SYNS:
-        yield syn, rpc
+# ——— Aggregate, sample proportionally, and write —————————————————————————————
 
-def gen_open_downloads():
-    rpc = {"method":"open_downloads","params":{}}
-    for syn in OPEN_DOWNLOADS_SYNS:
-        yield syn, rpc
+generators = {
+    "gen_navigate":   gen_navigate,
+    "gen_open_tab":   gen_open_tab,
+    "gen_close_tab":  gen_close_tab,
+    "gen_switch_tab": gen_switch_tab,
+    "gen_click":      gen_click,
+    "gen_type":       gen_type,
+    "gen_scroll":     gen_scroll,
+    "gen_reload":     gen_reload,
+    "gen_search":     gen_search,
+    "gen_go_back":    gen_go_back,
+    "gen_go_forward": gen_go_forward,
+}
 
-def gen_pin_tab():
-    rpc = {"method":"pin_tab","params":{}}
-    for syn in PIN_TAB_SYNS:
-        yield syn, rpc
-
-def gen_mute_tab():
-    rpc = {"method":"mute_tab","params":{}}
-    for syn in MUTE_TAB_SYNS:
-        yield syn, rpc
-
-def gen_zoom():
-    rpc_in  = {"method":"zoom","params":{"direction":"in"}}
-    rpc_out = {"method":"zoom","params":{"direction":"out"}}
-    for syn in ZOOM_IN_SYNS:
-        yield syn, rpc_in
-    for syn in ZOOM_OUT_SYNS:
-        yield syn, rpc_out
-
-def gen_reload_hard():
-    rpc = {"method":"reload_ignore_cache","params":{}}
-    for syn in RELOAD_HARD_SYNS:
-        yield syn, rpc
-
-def gen_find_on_page():
-    rpc = {"method":"find","params":{"query":"<text>"}}
-    for syn in FIND_SYNS:
-        yield syn, rpc
-
-# ——— Aggregate & Write Dataset —————————————————————————————————————————
-
-generators = [
-    gen_new_tab, gen_close_tab, gen_new_window, gen_close_window,
-    gen_reload_page, gen_navigate_url, gen_search_omnibox,
-    gen_bookmark_page, gen_open_bookmarks, gen_open_history,
-    gen_open_downloads, gen_pin_tab, gen_mute_tab,
-    gen_zoom, gen_reload_hard, gen_find_on_page
-]
-
-seen = set()
+random.seed(42)
+total = 0
 with OUTPUT_PATH.open("w", encoding="utf-8") as f:
-    for gen in generators:
-        for utt, rpc in gen():
-            key = (utt.lower(), json.dumps(rpc, sort_keys=True))
-            if key in seen:
-                continue
-            seen.add(key)
+    for name, gen in generators.items():
+        weight = WEIGHTS.get(name, 1)
+        examples = list(gen())
+        target_count = weight * SAMPLES_PER_WEIGHT
+        chosen = examples if len(examples) <= target_count else random.sample(examples, target_count)
+        for utt, rpc in chosen:
+            for k,v in rpc["params"].items():
+                if v is None:
+                    rpc["params"][k] = None
             f.write(json.dumps({"utterance": utt, "rpc": rpc}, ensure_ascii=False) + "\n")
+            total += 1
 
-logger.info(f"Generated {len(seen)} entries → {OUTPUT_PATH.resolve()}")
+logger.info(f"Generated {total} examples → {OUTPUT_PATH.resolve()}")
