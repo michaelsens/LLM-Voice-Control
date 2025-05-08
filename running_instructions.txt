@@ -9,4 +9,4 @@ python tokenize_data.py --jsonl expanded.jsonl
 python training.py \
        --train  train.pt \
        --val    val.pt \
-       --chkpt  best_model.pt    
+       --chkpt  runs/best_model.pt
