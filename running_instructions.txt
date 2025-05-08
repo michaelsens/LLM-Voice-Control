@@ -1,5 +1,5 @@
 # 1) Split once
-python split_expanded.py \
+python split_data.py \
        --in_file expanded.jsonl \
        --train_out train.pt \
        --val_out val.pt \
