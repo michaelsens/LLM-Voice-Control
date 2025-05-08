@@ -1,0 +1,24 @@
+python tokenize_data.py --jsonl expanded.jsonl
+
+# -------------------------------------------------------
+# 2  TRAIN MODEL          (20 epochs; adjust as needed)
+#     • checkpoint: runs/best_model_521.pt
+# -------------------------------------------------------
+mkdir -p runs
+python training.py \
+       --train  train.pt \
+       --val    val.pt \
+       --chkpt  runs/best_model_521.pt \
+       --epochs 20
+
+# -------------------------------------------------------
+# 3  INFERENCE LOOP
+#     Make sure inference.py points here:
+#         CKPT_PATH = "runs/best_model_521.pt"
+#         TOK_PATH  = "rpc_tokenizer.json"
+# -------------------------------------------------------
+python inference.py
+# Example session:
+#   > open wikipedia.org
+#   RPC: {"method": "navigate", "params": {"url": "wikipedia.org"}}
+#   >                          (empty line to quit)
