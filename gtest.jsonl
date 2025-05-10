@@ -1,0 +1,6 @@
+{"utterance": "open amazon.com", "rpc": {"method": "navigate", "params": {"url": "amazon.com"}}}
+{"utterance": "advance page", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "open zoom.us", "rpc": {"method": "navigate", "params": {"url": "zoom.us"}}}
+{"utterance": "push home", "rpc": {"method": "click", "params": {"text": "home"}}}
+{"utterance": "pick learn more", "rpc": {"method": "click", "params": {"text": "learn more"}}}
+{"utterance": "move slightly right", "rpc": {"method": "scroll", "params": {"direction": "right", "amount": 150}}}
