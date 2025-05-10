@@ -26,7 +26,6 @@ def main():
         dim_feedforward=2048,
         dropout=0.1,
         max_len=args.block_size,               # ← same as training
-        window_size=args.block_size // 4       # ← same as training
     )
     checkpoint = torch.load(args.model_path, map_location=device)
     model.load_state_dict(checkpoint)
