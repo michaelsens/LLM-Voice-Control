@@ -1,2 +1,3 @@
 .chrome-debug-profile/
 model/__pycache__
+model/seq2seq_model.pt

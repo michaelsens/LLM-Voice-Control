@@ -1,3 +1,7 @@
+# sample command to run this file: python train.py --data ../expanded.jsonl --block_size 128  --batch 16 --epochs 20 --lr 3e-4 --val_ratio 0.1
+# after training you should get a seq2seq_model.pt
+# execute "py inference.py" and it will use that model so you can test on it
+
 import argparse
 import json
 import torch
