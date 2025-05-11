@@ -1,23 +1,88 @@
-// background.js
+/* background.js */
 
-// When the toolbar icon is clicked, tell the page to start listening
-chrome.action.onClicked.addListener(tab => {
-  chrome.tabs.sendMessage(tab.id, { action: "start-listening" });
+// Send; return true if a listener existed, false if not.
+async function safeSend(tabId, payload) {
+  try {
+    await chrome.tabs.sendMessage(tabId, payload);
+    return true;
+  } catch (err) {
+    if (err.message.includes("Receiving end does not exist")) {
+      console.warn("No content-script in tab", tabId, "– message dropped");
+      return false;               // not fatal
+    }
+    throw err;                    // some other kind of failure
+  }
+}
+
+/* Start speech recognition when the extension icon is clicked */
+chrome.action.onClicked.addListener(async tab => {
+  await safeSend(tab.id, { action: "start-listening" });
 });
 
-// Handle all incoming RPC calls
+
+// Main message handler
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  // ──────────────────────────────────────────────────────────
+  //  0. Speech transcript ➜ local LLM (port 6006) ➜ RPC
+  // ──────────────────────────────────────────────────────────
+  if (msg.action === "transcript") {
+    (async () => {
+      try {
+        // Send the transcript to the locally running LLM
+        const llmResp = await fetch("http://127.0.0.1:6006/infer", {
+          method:  "POST",
+          headers: { "Content-Type": "application/json" },
+          body:    JSON.stringify({ text: msg.text })
+        });
+
+        if (!llmResp.ok) {
+          // Print full error body for easier debugging
+          const bodyText = await llmResp.text();
+          console.error("LLM server error", llmResp.status, bodyText);
+          throw new Error(`LLM server HTTP ${llmResp.status}`);
+        }
+
+        const rpc = await llmResp.json();      // model should return { method, params }
+        console.log("LLM → RPC", rpc);
+
+        if (!rpc?.method) throw new Error("LLM reply missing 'method' field");
+
+        // Forward the RPC to the active tab
+        const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true });
+        if (!activeTab) throw new Error("No active tab to receive RPC");
+
+        const delivered = await safeSend(activeTab.id, { rpc });
+        if (!delivered) {                 // no content.js in that tab
+          sendResponse({ error: "no-receiver" });
+          return;                         // stop processing this transcript
+        }
+
+        sendResponse({ status: "ok" });
+      } catch (err) {
+        console.error("transcript→LLM pipeline error:", err);
+        sendResponse({ error: err.message });
+      }
+    })();
+
+    // Keep the sendResponse channel open for the async work above
+    return true;
+  }
+
+  // ──────────────────────────────────────────────────────────
+  //  1-11. Existing RPC calls (unchanged)
+  // ──────────────────────────────────────────────────────────
   console.log("background got RPC:", msg);
 
   (async () => {
     try {
-      // Always target the *currently* active tab
-      const [ activeTab ] = await chrome.tabs.query({ active: true, currentWindow: true });
+      const [activeTab] = await chrome.tabs.query({
+        active: true,
+        currentWindow: true
+      });
+      if (!activeTab) throw new Error("No active tab");
       const currentTabId = activeTab.id;
 
       switch (msg.method) {
-
-        // 1. navigate
         case "navigate": {
           let url = String(msg.params.url || "").trim();
           if (!/^https?:\/\//i.test(url)) url = `https://${url}`;
@@ -26,7 +91,6 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
           break;
         }
 
-        // 2. openTab — always open Google.com
         case "openTab": {
           const newTab = await chrome.tabs.create({
             url: "https://www.google.com",
@@ -36,23 +100,23 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
           break;
         }
 
-        // 3. closeTab
         case "closeTab": {
           const targetId = Number.isFinite(msg.params.tabId)
-                         ? msg.params.tabId
-                         : currentTabId;
+            ? msg.params.tabId
+            : currentTabId;
           try {
             await chrome.tabs.remove(targetId);
             sendResponse({ status: "ok" });
-          } catch (err) {
+          } catch {
             sendResponse({ error: `cannot close tab ${targetId}` });
           }
           break;
         }
 
-        // 4. switchTab (by index only)
         case "switchTab": {
-          const index = Number.isFinite(msg.params.index) ? msg.params.index : null;
+          const index = Number.isFinite(msg.params.index)
+            ? msg.params.index
+            : null;
           if (index === null) {
             sendResponse({ error: "missing tab index" });
             break;
@@ -68,25 +132,32 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
           break;
         }
 
-        // 5. click — match any clickable element by visible text
         case "click": {
           const text = String(msg.params.text || "");
           await chrome.scripting.executeScript({
             target: { tabId: currentTabId },
             args: [text],
-            func: (searchText) => {
-              const sel = ["button","a","[role=button]","input[type=button]","input[type=submit]"].join(",");
+            func: searchText => {
+              const sel = [
+                "button",
+                "a",
+                "[role=button]",
+                "input[type=button]",
+                "input[type=submit]"
+              ].join(",");
               const els = Array.from(document.querySelectorAll(sel));
               const match = els.find(el => {
                 const candidates = [
                   el.innerText,
                   el.value,
                   el.getAttribute("aria-label"),
-                  el.getAttribute("title"),
+                  el.getAttribute("title")
                 ];
                 return candidates
                   .filter(Boolean)
-                  .some(str => str.toLowerCase().includes(searchText.toLowerCase()));
+                  .some(str =>
+                    str.toLowerCase().includes(searchText.toLowerCase())
+                  );
               });
               if (match) {
                 match.scrollIntoView({ block: "center" });
@@ -98,9 +169,8 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
           break;
         }
 
-        // 6. type — fill inputs, textareas, contenteditables by label/placeholder/etc.
         case "type": {
-          const text  = String(msg.params.text  || "");
+          const text = String(msg.params.text || "");
           const field = String(msg.params.field || "");
           await chrome.scripting.executeScript({
             target: { tabId: currentTabId },
@@ -112,26 +182,33 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
                 "[contenteditable='true']",
                 "[role='textbox']"
               ].join(",");
-              const candidates = Array.from(document.querySelectorAll(selector));
+              const candidates = Array.from(
+                document.querySelectorAll(selector)
+              );
 
               function getLabels(el) {
                 const labels = [];
-                if (el.placeholder)      labels.push(el.placeholder);
-                if (el.title)            labels.push(el.title);
-                if (el.getAttribute("aria-label")) labels.push(el.getAttribute("aria-label"));
-                if (el.name)             labels.push(el.name);
-                if (el.id)               labels.push(el.id);
-                const lab = document.querySelector(`label[for="${el.id}"]`) || el.closest("label");
-                if (lab?.innerText)      labels.push(lab.innerText);
+                if (el.placeholder) labels.push(el.placeholder);
+                if (el.title) labels.push(el.title);
+                if (el.getAttribute("aria-label"))
+                  labels.push(el.getAttribute("aria-label"));
+                if (el.name) labels.push(el.name);
+                if (el.id) labels.push(el.id);
+                const lab =
+                  document.querySelector(`label[for="${el.id}"]`) ||
+                  el.closest("label");
+                if (lab?.innerText) labels.push(lab.innerText);
                 return labels.map(s => s.toLowerCase());
               }
 
               let match = candidates.find(el => {
                 const labels = getLabels(el);
-                return labels.some(lbl => lbl.includes(fieldDesc.toLowerCase()));
+                return labels.some(lbl =>
+                  lbl.includes(fieldDesc.toLowerCase())
+                );
               });
 
-              // fallback for “search” fields (Google’s main search box)
+              // fallback for Google main search box
               if (!match && fieldDesc.toLowerCase().includes("search")) {
                 match = document.querySelector('input[name="q"]');
               }
@@ -140,8 +217,8 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
                 match.scrollIntoView({ block: "center" });
                 match.focus();
                 if (match.isContentEditable) match.innerText = value;
-                else                         match.value     = value;
-                match.dispatchEvent(new Event("input",  { bubbles: true }));
+                else match.value = value;
+                match.dispatchEvent(new Event("input", { bubbles: true }));
                 match.dispatchEvent(new Event("change", { bubbles: true }));
               }
             }
@@ -150,19 +227,20 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
           break;
         }
 
-        // 7. scroll
         case "scroll": {
           const direction = String(msg.params.direction || "down");
-          const amount    = Number.isFinite(msg.params.amount) ? msg.params.amount : 300;
+          const amount = Number.isFinite(msg.params.amount)
+            ? msg.params.amount
+            : 300;
           await chrome.scripting.executeScript({
             target: { tabId: currentTabId },
             args: [direction, amount],
             func: (dir, amt) => {
               const deltas = {
-                up:    [0, -amt],
-                down:  [0,  amt],
-                left:  [-amt, 0],
-                right: [amt,  0]
+                up: [0, -amt],
+                down: [0, amt],
+                left: [-amt, 0],
+                right: [amt, 0]
               };
               const [dx, dy] = deltas[dir] || [0, 0];
               window.scrollBy(dx, dy);
@@ -172,41 +250,45 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
           break;
         }
 
-        // 8. reload — default browser reload
         case "reload": {
           await chrome.tabs.reload(currentTabId);
           sendResponse({ status: "ok" });
           break;
         }
 
-        // 9. search — always Google in new tab
         case "search": {
-          const q   = String(msg.params.query || "");
+          const q = String(msg.params.query || "");
           const url = `https://www.google.com/search?q=${encodeURIComponent(q)}`;
           await chrome.tabs.create({ url });
           sendResponse({ status: "ok" });
           break;
         }
 
-        // 10. goBack
         case "goBack": {
-          const steps = Number.isFinite(msg.params.steps) ? msg.params.steps : 1;
+          const steps = Number.isFinite(msg.params.steps)
+            ? msg.params.steps
+            : 1;
           await chrome.scripting.executeScript({
             target: { tabId: currentTabId },
             args: [steps],
-            func: count => { for (let i = 0; i < count; i++) history.back(); }
+            func: count => {
+              for (let i = 0; i < count; i++) history.back();
+            }
           });
           sendResponse({ status: "ok" });
           break;
         }
 
-        // 11. goForward
         case "goForward": {
-          const steps = Number.isFinite(msg.params.steps) ? msg.params.steps : 1;
+          const steps = Number.isFinite(msg.params.steps)
+            ? msg.params.steps
+            : 1;
           await chrome.scripting.executeScript({
             target: { tabId: currentTabId },
             args: [steps],
-            func: count => { for (let i = 0; i < count; i++) history.forward(); }
+            func: count => {
+              for (let i = 0; i < count; i++) history.forward();
+            }
           });
           sendResponse({ status: "ok" });
           break;
@@ -215,12 +297,11 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
         default:
           sendResponse({ error: "unknown method" });
       }
-
     } catch (err) {
       console.error("background error:", err);
       sendResponse({ error: err.message });
     }
   })();
 
-  return true;  // keep the message channel open for async response
+  return true; // keep the message channel open for async response
 });
