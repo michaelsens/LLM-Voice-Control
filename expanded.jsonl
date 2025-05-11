@@ -1,36 +1,915 @@
-{"utterance": "go to wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "wikipedia.org"}}}
-{"utterance": "open a new tab", "rpc": {"method": "openTab", "params": {}}}
-{"utterance": "close the current tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "search for local coffee shops", "rpc": {"method": "search", "params": {"query": "local coffee shops"}}}
+{"utterance": "could you open a new tab?", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "close the current tab please", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
 {"utterance": "switch to the second tab", "rpc": {"method": "switchTab", "params": {"index": 1}}}
-{"utterance": "click on the submit button", "rpc": {"method": "click", "params": {"text": "submit"}}}
-{"utterance": "type hello in the search box", "rpc": {"method": "type", "params": {"text": "hello", "field": "search box"}}}
-{"utterance": "scroll down by 500 pixels", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 500}}}
-{"utterance": "refresh the page", "rpc": {"method": "reload", "params": {}}}
-{"utterance": "search for cute cats", "rpc": {"method": "search", "params": {"query": "cute cats"}}}
-{"utterance": "go back two pages", "rpc": {"method": "goBack", "params": {"steps": 2}}}
-{"utterance": "open new browser tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "click the login button", "rpc": {"method": "click", "params": {"text": "login"}}}
+{"utterance": "type hello world in the comment box", "rpc": {"method": "type", "params": {"text": "hello world", "field": "comment box"}}}
+{"utterance": "scroll down by 200 pixels", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 200}}}
+{"utterance": "reload this page for me", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "go back one step please", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "let's go forward two steps", "rpc": {"method": "goForward", "params": {"steps": 2}}}
+{"utterance": "open a new tab", "rpc": {"method": "openTab", "params": {}}}
 {"utterance": "switch to the third tab", "rpc": {"method": "switchTab", "params": {"index": 2}}}
-{"utterance": "navigate to example.com", "rpc": {"method": "navigate", "params": {"url": "http://example.com"}}}
-{"utterance": "search for weather today", "rpc": {"method": "search", "params": {"query": "weather today"}}}
-{"utterance": "reload the page", "rpc": {"method": "reload", "params": {}}}
-{"utterance": "scroll down five times", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 5}}}
-{"utterance": "go to example.com", "rpc": {"method": "navigate", "params": {"url": "example.com"}}}
-{"utterance": "create a new tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "click sign up", "rpc": {"method": "click", "params": {"text": "sign up"}}}
+{"utterance": "type hello world into the comment box", "rpc": {"method": "type", "params": {"text": "hello world", "field": "comment box"}}}
+{"utterance": "scroll down 500 pixels", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 500}}}
+{"utterance": "please refresh the page", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for tech news", "rpc": {"method": "search", "params": {"query": "tech news"}}}
+{"utterance": "go back two pages", "rpc": {"method": "goBack", "params": {"steps": 2}}}
+{"utterance": "could you go forward once?", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "close the current tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "click on subscribe now", "rpc": {"method": "click", "params": {"text": "subscribe now"}}}
+{"utterance": "type john.doe@gmail.com into email", "rpc": {"method": "type", "params": {"text": "john.doe@gmail.com", "field": "email"}}}
+{"utterance": "scroll down 200 pixels", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 200}}}
+{"utterance": "refresh this page, please", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for the best pasta recipes", "rpc": {"method": "search", "params": {"query": "the best pasta recipes"}}}
+{"utterance": "advance forward one step", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "open a new tab for me", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "click on the subscribe button", "rpc": {"method": "click", "params": {"text": "subscribe"}}}
+{"utterance": "type johndoe@example.com into email", "rpc": {"method": "type", "params": {"text": "johndoe@example.com", "field": "email"}}}
+{"utterance": "scroll down halfway", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 500}}}
+{"utterance": "reload this page, please", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for vegan recipes", "rpc": {"method": "search", "params": {"query": "vegan recipes"}}}
+{"utterance": "go back two steps", "rpc": {"method": "goBack", "params": {"steps": 2}}}
+{"utterance": "can you go forward one page?", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "click on sign in", "rpc": {"method": "click", "params": {"text": "sign in"}}}
+{"utterance": "type hello world into comment box", "rpc": {"method": "type", "params": {"text": "hello world", "field": "comment box"}}}
+{"utterance": "refresh the page", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for pizza recipes", "rpc": {"method": "search", "params": {"query": "pizza recipes"}}}
+{"utterance": "move forward one step", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "load twitter.com please", "rpc": {"method": "navigate", "params": {"url": "twitter.com"}}}
+{"utterance": "click the sign up button", "rpc": {"method": "click", "params": {"text": "sign up"}}}
+{"utterance": "type password123 into password", "rpc": {"method": "type", "params": {"text": "password123", "field": "password"}}}
+{"utterance": "scroll down 300 pixels", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 300}}}
+{"utterance": "search for the latest tech news", "rpc": {"method": "search", "params": {"query": "latest tech news"}}}
+{"utterance": "click the sign in button", "rpc": {"method": "click", "params": {"text": "sign in"}}}
+{"utterance": "type john.doe@example.com into email", "rpc": {"method": "type", "params": {"text": "john.doe@example.com", "field": "email"}}}
+{"utterance": "scroll down a bit", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 100}}}
+{"utterance": "reload this page", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for tech news headlines", "rpc": {"method": "search", "params": {"query": "tech news headlines"}}}
+{"utterance": "go back one step", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "could you go forward two pages?", "rpc": {"method": "goForward", "params": {"steps": 2}}}
+{"utterance": "close this tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "scroll down by 300 pixels", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 300}}}
+{"utterance": "refresh the page, please", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for best Italian restaurants near me", "rpc": {"method": "search", "params": {"query": "best Italian restaurants near me"}}}
+{"utterance": "could you move forward one step?", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "open up a new tab please", "rpc": {"method": "openTab", "params": {}}}
 {"utterance": "click on the login button", "rpc": {"method": "click", "params": {"text": "login"}}}
-{"utterance": "type my name in the name field", "rpc": {"method": "type", "params": {"text": "my name", "field": "name"}}}
-{"utterance": "scroll down by three units", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 3}}}
+{"utterance": "type hello@example.com into email", "rpc": {"method": "type", "params": {"text": "hello@example.com", "field": "email"}}}
 {"utterance": "refresh this page", "rpc": {"method": "reload", "params": {}}}
-{"utterance": "search for coffee shops nearby", "rpc": {"method": "search", "params": {"query": "coffee shops nearby"}}}
-{"utterance": "visit example.com", "rpc": {"method": "navigate", "params": {"url": "http://example.com"}}}
-{"utterance": "enter username in the login field", "rpc": {"method": "type", "params": {"text": "username", "field": "login"}}}
-{"utterance": "scroll down by 100 pixels", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 100}}}
-{"utterance": "search for weather updates", "rpc": {"method": "search", "params": {"query": "weather updates"}}}
-{"utterance": "open the homepage", "rpc": {"method": "navigate", "params": {"url": "http://homepage.com"}}}
-{"utterance": "type 'hello' in the search box", "rpc": {"method": "type", "params": {"text": "hello", "field": "search box"}}}
-{"utterance": "search for cats", "rpc": {"method": "search", "params": {"query": "cats"}}}
-{"utterance": "go to previous page", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "search for best pizza recipes", "rpc": {"method": "search", "params": {"query": "best pizza recipes"}}}
+{"utterance": "please close the current tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "click the buy now button on amazon.com", "rpc": {"method": "click", "params": {"text": "buy now"}}}
+{"utterance": "type james@example.com into email", "rpc": {"method": "type", "params": {"text": "james@example.com", "field": "email"}}}
+{"utterance": "move forward one page", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "type john.doe@example.com into username", "rpc": {"method": "type", "params": {"text": "john.doe@example.com", "field": "username"}}}
+{"utterance": "search for the latest tech tutorials", "rpc": {"method": "search", "params": {"query": "latest tech tutorials"}}}
+{"utterance": "can you go forward one step?", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "please reload this page", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for vegan pasta recipes", "rpc": {"method": "search", "params": {"query": "vegan pasta recipes"}}}
+{"utterance": "move forward two steps", "rpc": {"method": "goForward", "params": {"steps": 2}}}
+{"utterance": "open a new tab please", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "click on the sign in button", "rpc": {"method": "click", "params": {"text": "sign in"}}}
+{"utterance": "type hello world into the search bar", "rpc": {"method": "type", "params": {"text": "hello world", "field": "search bar"}}}
+{"utterance": "go back one page", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "open up a new tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "refresh the page please", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for nearby coffee shops", "rpc": {"method": "search", "params": {"query": "nearby coffee shops"}}}
+{"utterance": "search for best travel destinations", "rpc": {"method": "search", "params": {"query": "best travel destinations"}}}
+{"utterance": "move forward two pages please", "rpc": {"method": "goForward", "params": {"steps": 2}}}
+{"utterance": "click sign in on the page", "rpc": {"method": "click", "params": {"text": "sign in"}}}
+{"utterance": "search for best hiking trails nearby", "rpc": {"method": "search", "params": {"query": "best hiking trails nearby"}}}
+{"utterance": "can you go back two steps?", "rpc": {"method": "goBack", "params": {"steps": 2}}}
+{"utterance": "move forward three pages", "rpc": {"method": "goForward", "params": {"steps": 3}}}
+{"utterance": "click sign in button", "rpc": {"method": "click", "params": {"text": "sign in"}}}
+{"utterance": "click Sign In button", "rpc": {"method": "click", "params": {"text": "Sign In"}}}
+{"utterance": "type Hello, how are you? into chat input", "rpc": {"method": "type", "params": {"text": "Hello, how are you?", "field": "chat input"}}}
+{"utterance": "search for the best smartphone deals", "rpc": {"method": "search", "params": {"query": "best smartphone deals"}}}
+{"utterance": "move forward two pages", "rpc": {"method": "goForward", "params": {"steps": 2}}}
+{"utterance": "type john.doe@example.com into email address", "rpc": {"method": "type", "params": {"text": "john.doe@example.com", "field": "email address"}}}
+{"utterance": "search for the best pizza recipe", "rpc": {"method": "search", "params": {"query": "the best pizza recipe"}}}
+{"utterance": "search for the best Italian restaurants near me", "rpc": {"method": "search", "params": {"query": "best Italian restaurants near me"}}}
+{"utterance": "reload the page, please", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "could you go forward one step?", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "type hello123 in the password", "rpc": {"method": "type", "params": {"text": "hello123", "field": "password"}}}
+{"utterance": "scroll down by 500 pixels", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 500}}}
+{"utterance": "search for upcoming movie releases", "rpc": {"method": "search", "params": {"query": "upcoming movie releases"}}}
+{"utterance": "can you go back two pages?", "rpc": {"method": "goBack", "params": {"steps": 2}}}
+{"utterance": "advance forward three steps", "rpc": {"method": "goForward", "params": {"steps": 3}}}
+{"utterance": "click sign in on gmail.com", "rpc": {"method": "click", "params": {"text": "sign in"}}}
+{"utterance": "could you reload the page?", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for latest tech news", "rpc": {"method": "search", "params": {"query": "latest tech news"}}}
+{"utterance": "move forward a step", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "click on contact us", "rpc": {"method": "click", "params": {"text": "contact us"}}}
+{"utterance": "search for best hiking trails", "rpc": {"method": "search", "params": {"query": "best hiking trails"}}}
+{"utterance": "close the current tab, please", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "click on the submit button", "rpc": {"method": "click", "params": {"text": "submit"}}}
+{"utterance": "can you move forward one page?", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "could you close the current tab?", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "search for the best pizza recipes", "rpc": {"method": "search", "params": {"query": "best pizza recipes"}}}
 {"utterance": "open a new browser tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "type hello@example.com into the email", "rpc": {"method": "type", "params": {"text": "hello@example.com", "field": "email"}}}
+{"utterance": "move forward one page please", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "click sign in on twitter.com", "rpc": {"method": "click", "params": {"text": "sign in"}}}
+{"utterance": "refresh this page please", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for tech tutorials", "rpc": {"method": "search", "params": {"query": "tech tutorials"}}}
+{"utterance": "please open a new tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "type example@gmail.com into email", "rpc": {"method": "type", "params": {"text": "example@gmail.com", "field": "email"}}}
+{"utterance": "type johndoe123 into username", "rpc": {"method": "type", "params": {"text": "johndoe123", "field": "username"}}}
+{"utterance": "search for today's weather forecast", "rpc": {"method": "search", "params": {"query": "today's weather forecast"}}}
+{"utterance": "tap the login button", "rpc": {"method": "click", "params": {"text": "login"}}}
+{"utterance": "please refresh this page", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for Italian recipes", "rpc": {"method": "search", "params": {"query": "Italian recipes"}}}
+{"utterance": "head to twitter.com", "rpc": {"method": "navigate", "params": {"url": "twitter.com"}}}
+{"utterance": "click the sign-up button", "rpc": {"method": "click", "params": {"text": "sign-up"}}}
+{"utterance": "reload the page please", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "click on add to cart", "rpc": {"method": "click", "params": {"text": "add to cart"}}}
+{"utterance": "type 123 Main St into address", "rpc": {"method": "type", "params": {"text": "123 Main St", "field": "address"}}}
+{"utterance": "please reload the page", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for weather in New York", "rpc": {"method": "search", "params": {"query": "weather in New York"}}}
+{"utterance": "could you refresh this page?", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "please go forward one step", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "head over to twitter.com", "rpc": {"method": "navigate", "params": {"url": "twitter.com"}}}
+{"utterance": "close this current tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "search for pasta recipes", "rpc": {"method": "search", "params": {"query": "pasta recipes"}}}
+{"utterance": "go forward one page", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "type example@example.com into email", "rpc": {"method": "type", "params": {"text": "example@example.com", "field": "email"}}}
+{"utterance": "can you move forward two pages?", "rpc": {"method": "goForward", "params": {"steps": 2}}}
+{"utterance": "click login on the page", "rpc": {"method": "click", "params": {"text": "login"}}}
+{"utterance": "type hello world into chat input", "rpc": {"method": "type", "params": {"text": "hello world", "field": "chat input"}}}
+{"utterance": "let's open a new tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "tap the Sign In button", "rpc": {"method": "click", "params": {"text": "Sign In"}}}
+{"utterance": "search for the best lasagna recipe", "rpc": {"method": "search", "params": {"query": "best lasagna recipe"}}}
+{"utterance": "click on subscribe", "rpc": {"method": "click", "params": {"text": "subscribe"}}}
+{"utterance": "can you go forward two steps?", "rpc": {"method": "goForward", "params": {"steps": 2}}}
+{"utterance": "could you reload this page?", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for weather updates", "rpc": {"method": "search", "params": {"query": "weather updates"}}}
+{"utterance": "go forward two steps", "rpc": {"method": "goForward", "params": {"steps": 2}}}
+{"utterance": "search for chocolate cake recipe", "rpc": {"method": "search", "params": {"query": "chocolate cake recipe"}}}
+{"utterance": "could you go back two pages?", "rpc": {"method": "goBack", "params": {"steps": 2}}}
+{"utterance": "could you refresh the page?", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for best laptop deals", "rpc": {"method": "search", "params": {"query": "best laptop deals"}}}
+{"utterance": "go back two steps please", "rpc": {"method": "goBack", "params": {"steps": 2}}}
+{"utterance": "type hello@example.com into the email box", "rpc": {"method": "type", "params": {"text": "hello@example.com", "field": "email"}}}
+{"utterance": "search for nearby cafes", "rpc": {"method": "search", "params": {"query": "nearby cafes"}}}
+{"utterance": "can you move forward two steps?", "rpc": {"method": "goForward", "params": {"steps": 2}}}
+{"utterance": "search for cat videos", "rpc": {"method": "search", "params": {"query": "cat videos"}}}
+{"utterance": "please move forward one step", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "click on the sign-in button", "rpc": {"method": "click", "params": {"text": "sign-in"}}}
+{"utterance": "press the play button", "rpc": {"method": "click", "params": {"text": "play"}}}
+{"utterance": "enter myusername into username", "rpc": {"method": "type", "params": {"text": "myusername", "field": "username"}}}
+{"utterance": "search for flights to Tokyo", "rpc": {"method": "search", "params": {"query": "flights to Tokyo"}}}
+{"utterance": "tap on Contact Us", "rpc": {"method": "click", "params": {"text": "Contact Us"}}}
+{"utterance": "would you please go forward one page?", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "could you please load wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "wikipedia.org"}}}
+{"utterance": "click on the contact us link", "rpc": {"method": "click", "params": {"text": "contact us"}}}
+{"utterance": "click the play button", "rpc": {"method": "click", "params": {"text": "play"}}}
+{"utterance": "open up youtube.com", "rpc": {"method": "navigate", "params": {"url": "youtube.com"}}}
+{"utterance": "create a new tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "click the sign-in button", "rpc": {"method": "click", "params": {"text": "sign in"}}}
+{"utterance": "type chocolate cake recipe into search bar", "rpc": {"method": "type", "params": {"text": "chocolate cake recipe", "field": "search bar"}}}
+{"utterance": "search for flight deals to Paris", "rpc": {"method": "search", "params": {"query": "flight deals to Paris"}}}
+{"utterance": "tap on the sign in button", "rpc": {"method": "click", "params": {"text": "sign in"}}}
+{"utterance": "click login", "rpc": {"method": "click", "params": {"text": "login"}}}
+{"utterance": "take me to twitter.com", "rpc": {"method": "navigate", "params": {"url": "https://twitter.com"}}}
+{"utterance": "head over to twitter.com", "rpc": {"method": "navigate", "params": {"url": "https://twitter.com"}}}
+{"utterance": "click on login", "rpc": {"method": "click", "params": {"text": "login"}}}
+{"utterance": "go forward a page", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "head over to bbc.com", "rpc": {"method": "navigate", "params": {"url": "https://www.bbc.com"}}}
+{"utterance": "please click on the subscribe button", "rpc": {"method": "click", "params": {"text": "subscribe"}}}
+{"utterance": "can you reload this page?", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "move forward one page, please", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "head to twitter.com", "rpc": {"method": "navigate", "params": {"url": "https://twitter.com"}}}
+{"utterance": "type john.doe@gmail.com into the email field", "rpc": {"method": "type", "params": {"text": "john.doe@gmail.com", "field": "email"}}}
+{"utterance": "could you please refresh this page?", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "advance forward two pages", "rpc": {"method": "goForward", "params": {"steps": 2}}}
+{"utterance": "visit twitter.com", "rpc": {"method": "navigate", "params": {"url": "twitter.com"}}}
+{"utterance": "click Sign In", "rpc": {"method": "click", "params": {"text": "Sign In"}}}
+{"utterance": "type hello into the chat input", "rpc": {"method": "type", "params": {"text": "hello", "field": "chat input"}}}
+{"utterance": "search for recipes with chicken", "rpc": {"method": "search", "params": {"query": "recipes with chicken"}}}
+{"utterance": "take me to youtube.com", "rpc": {"method": "navigate", "params": {"url": "https://www.youtube.com"}}}
+{"utterance": "navigate to twitter.com", "rpc": {"method": "navigate", "params": {"url": "https://twitter.com"}}}
+{"utterance": "search for Italian pasta recipes", "rpc": {"method": "search", "params": {"query": "Italian pasta recipes"}}}
+{"utterance": "advance forward one page", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "navigate to amazon.com", "rpc": {"method": "navigate", "params": {"url": "https://www.amazon.com"}}}
+{"utterance": "shut the tab with ID 3", "rpc": {"method": "closeTab", "params": {"tabId": 3}}}
+{"utterance": "press the buy now button", "rpc": {"method": "click", "params": {"text": "buy now"}}}
+{"utterance": "advance forward by one page", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "close tab number 2", "rpc": {"method": "closeTab", "params": {"tabId": 2}}}
+{"utterance": "can you go back one step?", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "navigate to maps.google.com", "rpc": {"method": "navigate", "params": {"url": "https://maps.google.com"}}}
+{"utterance": "click subscribe", "rpc": {"method": "click", "params": {"text": "subscribe"}}}
+{"utterance": "search for flights to New York", "rpc": {"method": "search", "params": {"query": "flights to New York"}}}
+{"utterance": "go to twitter.com", "rpc": {"method": "navigate", "params": {"url": "https://twitter.com"}}}
+{"utterance": "close the second tab", "rpc": {"method": "closeTab", "params": {"tabId": 2}}}
+{"utterance": "switch to the first tab", "rpc": {"method": "switchTab", "params": {"index": 0}}}
+{"utterance": "click the subscribe button", "rpc": {"method": "click", "params": {"text": "subscribe"}}}
+{"utterance": "type hello world into the chat input", "rpc": {"method": "type", "params": {"text": "hello world", "field": "chat input"}}}
+{"utterance": "search for flight deals", "rpc": {"method": "search", "params": {"query": "flight deals"}}}
+{"utterance": "go back one step, please", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "navigate to youtube.com", "rpc": {"method": "navigate", "params": {"url": "https://www.youtube.com"}}}
+{"utterance": "close the tab with ID 3", "rpc": {"method": "closeTab", "params": {"tabId": 3}}}
+{"utterance": "search for best Italian recipes", "rpc": {"method": "search", "params": {"query": "best Italian recipes"}}}
+{"utterance": "type JohnDoe123 into username", "rpc": {"method": "type", "params": {"text": "JohnDoe123", "field": "username"}}}
+{"utterance": "navigate to bbc.com", "rpc": {"method": "navigate", "params": {"url": "https://www.bbc.com"}}}
+{"utterance": "click login button", "rpc": {"method": "click", "params": {"text": "login"}}}
+{"utterance": "close the second tab", "rpc": {"method": "closeTab", "params": {"tabId": 1}}}
+{"utterance": "navigate to twitter.com", "rpc": {"method": "navigate", "params": {"url": "twitter.com"}}}
+{"utterance": "open a new tab, please", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "switch to tab number three", "rpc": {"method": "switchTab", "params": {"index": 2}}}
+{"utterance": "click sign up button", "rpc": {"method": "click", "params": {"text": "sign up"}}}
+{"utterance": "search for Italian restaurants near me", "rpc": {"method": "search", "params": {"query": "Italian restaurants near me"}}}
+{"utterance": "go to youtube.com", "rpc": {"method": "navigate", "params": {"url": "https://www.youtube.com"}}}
+{"utterance": "type mypassword123 into password", "rpc": {"method": "type", "params": {"text": "mypassword123", "field": "password"}}}
+{"utterance": "reload the page", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for top tech news", "rpc": {"method": "search", "params": {"query": "top tech news"}}}
+{"utterance": "can you go forward one step please", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "please go to maps.google.com", "rpc": {"method": "navigate", "params": {"url": "https://maps.google.com"}}}
+{"utterance": "click on Sign In", "rpc": {"method": "click", "params": {"text": "Sign In"}}}
+{"utterance": "head over to amazon.com", "rpc": {"method": "navigate", "params": {"url": "https://www.amazon.com"}}}
+{"utterance": "could you please refresh the page?", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for local weather updates", "rpc": {"method": "search", "params": {"query": "local weather updates"}}}
+{"utterance": "please go back one step", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "could you go back two steps?", "rpc": {"method": "goBack", "params": {"steps": 2}}}
+{"utterance": "could you scroll down 300 px", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 300}}}
+{"utterance": "switch over to the third tab", "rpc": {"method": "switchTab", "params": {"index": 2}}}
+{"utterance": "type john.doe@gmail.com into the email", "rpc": {"method": "type", "params": {"text": "john.doe@gmail.com", "field": "email"}}}
+{"utterance": "visit twitter.com", "rpc": {"method": "navigate", "params": {"url": "https://twitter.com"}}}
+{"utterance": "type support@example.com into email", "rpc": {"method": "type", "params": {"text": "support@example.com", "field": "email"}}}
+{"utterance": "search for hiking trails near me", "rpc": {"method": "search", "params": {"query": "hiking trails near me"}}}
+{"utterance": "click on the buy now button", "rpc": {"method": "click", "params": {"text": "buy now"}}}
+{"utterance": "please go back two steps", "rpc": {"method": "goBack", "params": {"steps": 2}}}
+{"utterance": "type example123 into username", "rpc": {"method": "type", "params": {"text": "example123", "field": "username"}}}
+{"utterance": "close the first tab", "rpc": {"method": "closeTab", "params": {"tabId": 0}}}
+{"utterance": "click on subscribe button", "rpc": {"method": "click", "params": {"text": "subscribe"}}}
+{"utterance": "switch to the fifth tab", "rpc": {"method": "switchTab", "params": {"index": 4}}}
+{"utterance": "could you go back one step?", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "let's check out twitter.com", "rpc": {"method": "navigate", "params": {"url": "https://twitter.com"}}}
+{"utterance": "open a new browser tab for me", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "please go back two pages", "rpc": {"method": "goBack", "params": {"steps": 2}}}
+{"utterance": "please navigate to amazon.com", "rpc": {"method": "navigate", "params": {"url": "https://www.amazon.com"}}}
+{"utterance": "could you navigate to twitter.com?", "rpc": {"method": "navigate", "params": {"url": "https://twitter.com"}}}
+{"utterance": "click on the sign up button", "rpc": {"method": "click", "params": {"text": "sign up"}}}
+{"utterance": "search for recipes using pumpkin", "rpc": {"method": "search", "params": {"query": "recipes using pumpkin"}}}
+{"utterance": "switch over to the second tab", "rpc": {"method": "switchTab", "params": {"index": 1}}}
+{"utterance": "press sign in", "rpc": {"method": "click", "params": {"text": "sign in"}}}
+{"utterance": "tap buy now", "rpc": {"method": "click", "params": {"text": "buy now"}}}
+{"utterance": "search for restaurants near me", "rpc": {"method": "search", "params": {"query": "restaurants near me"}}}
+{"utterance": "navigate to wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "https://wikipedia.org"}}}
+{"utterance": "click on sign up", "rpc": {"method": "click", "params": {"text": "sign up"}}}
+{"utterance": "scroll down by 300 px", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 300}}}
+{"utterance": "tap on contact us", "rpc": {"method": "click", "params": {"text": "contact us"}}}
+{"utterance": "click the submit button", "rpc": {"method": "click", "params": {"text": "submit"}}}
+{"utterance": "type hello world into the chat box", "rpc": {"method": "type", "params": {"text": "hello world", "field": "chat box"}}}
+{"utterance": "head over to youtube.com", "rpc": {"method": "navigate", "params": {"url": "https://youtube.com"}}}
+{"utterance": "tap sign up", "rpc": {"method": "click", "params": {"text": "sign up"}}}
+{"utterance": "type johndoe@gmail.com into email", "rpc": {"method": "type", "params": {"text": "johndoe@gmail.com", "field": "email"}}}
+{"utterance": "tap search on Amazon", "rpc": {"method": "click", "params": {"text": "search"}}}
+{"utterance": "could you move forward two pages?", "rpc": {"method": "goForward", "params": {"steps": 2}}}
+{"utterance": "type example@example.com into email field", "rpc": {"method": "type", "params": {"text": "example@example.com", "field": "email"}}}
+{"utterance": "search for Italian restaurants nearby", "rpc": {"method": "search", "params": {"query": "Italian restaurants nearby"}}}
+{"utterance": "press search on amazon", "rpc": {"method": "click", "params": {"text": "search"}}}
+{"utterance": "type 12345 into zip code", "rpc": {"method": "type", "params": {"text": "12345", "field": "zip code"}}}
+{"utterance": "navigate to youtube.com", "rpc": {"method": "navigate", "params": {"url": "https://youtube.com"}}}
+{"utterance": "visit bbc.com", "rpc": {"method": "navigate", "params": {"url": "https://www.bbc.com"}}}
+{"utterance": "press the subscribe button", "rpc": {"method": "click", "params": {"text": "subscribe"}}}
+{"utterance": "can you close this tab?", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "close this tab please", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "tap on login", "rpc": {"method": "click", "params": {"text": "login"}}}
+{"utterance": "could you please reload the page?", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "can you close the current tab?", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "reload this page please", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "type Hello World into comment box", "rpc": {"method": "type", "params": {"text": "Hello World", "field": "comment box"}}}
+{"utterance": "type hello world into search bar", "rpc": {"method": "type", "params": {"text": "hello world", "field": "search bar"}}}
+{"utterance": "click the search button", "rpc": {"method": "click", "params": {"text": "search"}}}
+{"utterance": "tap play on the video", "rpc": {"method": "click", "params": {"text": "play"}}}
+{"utterance": "search for flight deals to Tokyo", "rpc": {"method": "search", "params": {"query": "flight deals to Tokyo"}}}
+{"utterance": "navigate to facebook.com", "rpc": {"method": "navigate", "params": {"url": "https://facebook.com"}}}
+{"utterance": "search for coffee recipes", "rpc": {"method": "search", "params": {"query": "coffee recipes"}}}
+{"utterance": "click add to cart", "rpc": {"method": "click", "params": {"text": "add to cart"}}}
+{"utterance": "navigate to wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "https://www.wikipedia.org"}}}
+{"utterance": "hit the subscribe button", "rpc": {"method": "click", "params": {"text": "subscribe"}}}
+{"utterance": "search for the best laptops 2023", "rpc": {"method": "search", "params": {"query": "best laptops 2023"}}}
+{"utterance": "click subscribe now", "rpc": {"method": "click", "params": {"text": "subscribe now"}}}
+{"utterance": "click sign in", "rpc": {"method": "click", "params": {"text": "sign in"}}}
+{"utterance": "could you go to amazon.com?", "rpc": {"method": "navigate", "params": {"url": "https://www.amazon.com"}}}
+{"utterance": "head over to maps.google.com", "rpc": {"method": "navigate", "params": {"url": "https://maps.google.com"}}}
+{"utterance": "press the sign up button", "rpc": {"method": "click", "params": {"text": "sign up"}}}
+{"utterance": "type New York in location bar", "rpc": {"method": "type", "params": {"text": "New York", "field": "location"}}}
+{"utterance": "go back one page please", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "click submit", "rpc": {"method": "click", "params": {"text": "submit"}}}
+{"utterance": "press submit", "rpc": {"method": "click", "params": {"text": "submit"}}}
+{"utterance": "search for pancake recipes", "rpc": {"method": "search", "params": {"query": "pancake recipes"}}}
+{"utterance": "load twitter.com", "rpc": {"method": "navigate", "params": {"url": "https://twitter.com"}}}
+{"utterance": "search for stock market updates", "rpc": {"method": "search", "params": {"query": "stock market updates"}}}
+{"utterance": "visit amazon.com", "rpc": {"method": "navigate", "params": {"url": "https://www.amazon.com"}}}
+{"utterance": "click on submit", "rpc": {"method": "click", "params": {"text": "submit"}}}
+{"utterance": "open cnn.com", "rpc": {"method": "navigate", "params": {"url": "https://www.cnn.com"}}}
+{"utterance": "create a new tab please", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "press subscribe", "rpc": {"method": "click", "params": {"text": "subscribe"}}}
+{"utterance": "search for vegetarian recipes", "rpc": {"method": "search", "params": {"query": "vegetarian recipes"}}}
+{"utterance": "search for chocolate cake recipes", "rpc": {"method": "search", "params": {"query": "chocolate cake recipes"}}}
+{"utterance": "search for nearby hotels", "rpc": {"method": "search", "params": {"query": "nearby hotels"}}}
+{"utterance": "navigate to wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "wikipedia.org"}}}
+{"utterance": "go to maps.google.com", "rpc": {"method": "navigate", "params": {"url": "https://maps.google.com"}}}
+{"utterance": "search for local weather", "rpc": {"method": "search", "params": {"query": "local weather"}}}
+{"utterance": "go back one page, please", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "click buy now", "rpc": {"method": "click", "params": {"text": "buy now"}}}
+{"utterance": "could you close this tab?", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "tap on submit feedback", "rpc": {"method": "click", "params": {"text": "submit feedback"}}}
+{"utterance": "take me to twitter.com", "rpc": {"method": "navigate", "params": {"url": "twitter.com"}}}
+{"utterance": "tap the submit button", "rpc": {"method": "click", "params": {"text": "submit"}}}
+{"utterance": "search for the latest tech gadgets", "rpc": {"method": "search", "params": {"query": "latest tech gadgets"}}}
+{"utterance": "tap login", "rpc": {"method": "click", "params": {"text": "login"}}}
+{"utterance": "please go to twitter.com", "rpc": {"method": "navigate", "params": {"url": "https://twitter.com"}}}
+{"utterance": "click subscribe button", "rpc": {"method": "click", "params": {"text": "subscribe"}}}
+{"utterance": "search for best laptops 2023", "rpc": {"method": "search", "params": {"query": "best laptops 2023"}}}
+{"utterance": "take me to bbc.com", "rpc": {"method": "navigate", "params": {"url": "https://www.bbc.com"}}}
+{"utterance": "go forward one step", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "please navigate to twitter.com", "rpc": {"method": "navigate", "params": {"url": "https://twitter.com"}}}
+{"utterance": "type johndoe into username", "rpc": {"method": "type", "params": {"text": "johndoe", "field": "username"}}}
+{"utterance": "switch to tab number two", "rpc": {"method": "switchTab", "params": {"index": 1}}}
+{"utterance": "tap sign in button", "rpc": {"method": "click", "params": {"text": "sign in"}}}
+{"utterance": "tap search button", "rpc": {"method": "click", "params": {"text": "search"}}}
+{"utterance": "search for local weather forecast", "rpc": {"method": "search", "params": {"query": "local weather forecast"}}}
+{"utterance": "could you go back one page?", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "navigate to cnn.com", "rpc": {"method": "navigate", "params": {"url": "https://www.cnn.com"}}}
+{"utterance": "click on buy now", "rpc": {"method": "click", "params": {"text": "buy now"}}}
+{"utterance": "search for top technology news", "rpc": {"method": "search", "params": {"query": "top technology news"}}}
+{"utterance": "go to bbc.com", "rpc": {"method": "navigate", "params": {"url": "https://www.bbc.com"}}}
+{"utterance": "open a new tab for me please", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "type John Doe into name", "rpc": {"method": "type", "params": {"text": "John Doe", "field": "name"}}}
+{"utterance": "can you reload the page?", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "navigate to maps.google.com", "rpc": {"method": "navigate", "params": {"url": "maps.google.com"}}}
+{"utterance": "click play button", "rpc": {"method": "click", "params": {"text": "play"}}}
+{"utterance": "navigate to nytimes.com", "rpc": {"method": "navigate", "params": {"url": "https://nytimes.com"}}}
+{"utterance": "press sign up", "rpc": {"method": "click", "params": {"text": "sign up"}}}
+{"utterance": "type john_doe123 into username", "rpc": {"method": "type", "params": {"text": "john_doe123", "field": "username"}}}
+{"utterance": "tap on the contact us link", "rpc": {"method": "click", "params": {"text": "contact us"}}}
+{"utterance": "search for local pizza places", "rpc": {"method": "search", "params": {"query": "local pizza places"}}}
+{"utterance": "search for weather in Paris", "rpc": {"method": "search", "params": {"query": "weather in Paris"}}}
+{"utterance": "tap subscribe button", "rpc": {"method": "click", "params": {"text": "subscribe"}}}
+{"utterance": "could you go forward two steps?", "rpc": {"method": "goForward", "params": {"steps": 2}}}
+{"utterance": "take me to amazon.com", "rpc": {"method": "navigate", "params": {"url": "https://www.amazon.com"}}}
+{"utterance": "search for local news headlines", "rpc": {"method": "search", "params": {"query": "local news headlines"}}}
+{"utterance": "head over to youtube.com", "rpc": {"method": "navigate", "params": {"url": "https://www.youtube.com"}}}
+{"utterance": "tap search on this page", "rpc": {"method": "click", "params": {"text": "search"}}}
+{"utterance": "scroll down 300 px", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 300}}}
+{"utterance": "type johndoe@example.com into username", "rpc": {"method": "type", "params": {"text": "johndoe@example.com", "field": "username"}}}
+{"utterance": "search for tech tutorials online", "rpc": {"method": "search", "params": {"query": "tech tutorials online"}}}
+{"utterance": "click buy now on that page", "rpc": {"method": "click", "params": {"text": "buy now"}}}
+{"utterance": "head to amazon.com", "rpc": {"method": "navigate", "params": {"url": "https://www.amazon.com"}}}
+{"utterance": "press the login button", "rpc": {"method": "click", "params": {"text": "login"}}}
+{"utterance": "type john_doe into username", "rpc": {"method": "type", "params": {"text": "john_doe", "field": "username"}}}
+{"utterance": "type admin into username", "rpc": {"method": "type", "params": {"text": "admin", "field": "username"}}}
+{"utterance": "type example123 in username", "rpc": {"method": "type", "params": {"text": "example123", "field": "username"}}}
+{"utterance": "go to amazon.com", "rpc": {"method": "navigate", "params": {"url": "https://www.amazon.com"}}}
+{"utterance": "type hello world into the feedback form", "rpc": {"method": "type", "params": {"text": "hello world", "field": "feedback form"}}}
+{"utterance": "could you go back three pages?", "rpc": {"method": "goBack", "params": {"steps": 3}}}
+{"utterance": "go forward two pages", "rpc": {"method": "goForward", "params": {"steps": 2}}}
+{"utterance": "tap the sign up button", "rpc": {"method": "click", "params": {"text": "sign up"}}}
+{"utterance": "type john_doe into the username box", "rpc": {"method": "type", "params": {"text": "john_doe", "field": "username"}}}
+{"utterance": "type john.doe@example.com into the email input", "rpc": {"method": "type", "params": {"text": "john.doe@example.com", "field": "email"}}}
+{"utterance": "would you mind going back two steps?", "rpc": {"method": "goBack", "params": {"steps": 2}}}
+{"utterance": "type hello world in the chat box", "rpc": {"method": "type", "params": {"text": "hello world", "field": "chat box"}}}
+{"utterance": "navigate to netflix.com", "rpc": {"method": "navigate", "params": {"url": "https://www.netflix.com"}}}
+{"utterance": "search for top news headlines", "rpc": {"method": "search", "params": {"query": "top news headlines"}}}
+{"utterance": "type hello123 into password", "rpc": {"method": "type", "params": {"text": "hello123", "field": "password"}}}
+{"utterance": "click subscribe on the page", "rpc": {"method": "click", "params": {"text": "subscribe"}}}
+{"utterance": "type password123 into the password", "rpc": {"method": "type", "params": {"text": "password123", "field": "password"}}}
+{"utterance": "type 123 Main St in address", "rpc": {"method": "type", "params": {"text": "123 Main St", "field": "address"}}}
+{"utterance": "click on Buy Now", "rpc": {"method": "click", "params": {"text": "Buy Now"}}}
+{"utterance": "click on the contact us button", "rpc": {"method": "click", "params": {"text": "contact us"}}}
+{"utterance": "type info@example.com into email", "rpc": {"method": "type", "params": {"text": "info@example.com", "field": "email"}}}
+{"utterance": "search for best smartphone deals", "rpc": {"method": "search", "params": {"query": "best smartphone deals"}}}
+{"utterance": "search for best travel destinations 2023", "rpc": {"method": "search", "params": {"query": "best travel destinations 2023"}}}
+{"utterance": "can you go back one page?", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "tap on Buy Now", "rpc": {"method": "click", "params": {"text": "Buy Now"}}}
+{"utterance": "type myemail@gmail.com into email", "rpc": {"method": "type", "params": {"text": "myemail@gmail.com", "field": "email"}}}
+{"utterance": "go back two steps, please", "rpc": {"method": "goBack", "params": {"steps": 2}}}
+{"utterance": "Head over to twitter.com", "rpc": {"method": "navigate", "params": {"url": "https://twitter.com"}}}
+{"utterance": "Open a new tab, please", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "Close the current tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "Switch to the third tab", "rpc": {"method": "switchTab", "params": {"index": 2}}}
+{"utterance": "Tap the submit button", "rpc": {"method": "click", "params": {"text": "submit"}}}
+{"utterance": "Type 1234 Main St into address", "rpc": {"method": "type", "params": {"text": "1234 Main St", "field": "address"}}}
+{"utterance": "Scroll down by 300 pixels", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 300}}}
+{"utterance": "Could you refresh the page?", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "Search for Italian recipes", "rpc": {"method": "search", "params": {"query": "Italian recipes"}}}
+{"utterance": "Go back two steps", "rpc": {"method": "goBack", "params": {"steps": 2}}}
 {"utterance": "click on submit button", "rpc": {"method": "click", "params": {"text": "submit"}}}
-{"utterance": "enter username in the name field", "rpc": {"method": "type", "params": {"text": "username", "field": "name"}}}
-{"utterance": "reload the current page", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for top ten books of 2023", "rpc": {"method": "search", "params": {"query": "top ten books of 2023"}}}
+{"utterance": "click search on YouTube", "rpc": {"method": "click", "params": {"text": "search"}}}
+{"utterance": "open up a new tab, please", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "click on the sign-up button", "rpc": {"method": "click", "params": {"text": "sign-up"}}}
+{"utterance": "search for best tech tutorials", "rpc": {"method": "search", "params": {"query": "best tech tutorials"}}}
+{"utterance": "search for best smartphone 2023", "rpc": {"method": "search", "params": {"query": "best smartphone 2023"}}}
+{"utterance": "could you reload the page, please?", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "go back two steps in history", "rpc": {"method": "goBack", "params": {"steps": 2}}}
+{"utterance": "go back two pages please", "rpc": {"method": "goBack", "params": {"steps": 2}}}
+{"utterance": "click the buy now button", "rpc": {"method": "click", "params": {"text": "buy now"}}}
+{"utterance": "type username123 into username", "rpc": {"method": "type", "params": {"text": "username123", "field": "username"}}}
+{"utterance": "navigate to youtube.com", "rpc": {"method": "navigate", "params": {"url": "youtube.com"}}}
+{"utterance": "search for vegan lasagna recipes", "rpc": {"method": "search", "params": {"query": "vegan lasagna recipes"}}}
+{"utterance": "click the Login button", "rpc": {"method": "click", "params": {"text": "Login"}}}
+{"utterance": "type best chocolate cake recipe in search bar", "rpc": {"method": "type", "params": {"text": "best chocolate cake recipe", "field": "search bar"}}}
+{"utterance": "search for cheap flights to Paris", "rpc": {"method": "search", "params": {"query": "cheap flights to Paris"}}}
+{"utterance": "Navigate to twitter.com", "rpc": {"method": "navigate", "params": {"url": "https://twitter.com"}}}
+{"utterance": "Open a new tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "Click the subscribe button", "rpc": {"method": "click", "params": {"text": "subscribe"}}}
+{"utterance": "Type chocolate cake recipe into search bar", "rpc": {"method": "type", "params": {"text": "chocolate cake recipe", "field": "search bar"}}}
+{"utterance": "Scroll down by 500 pixels", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 500}}}
+{"utterance": "Refresh this page, please", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "Search for nearby coffee shops", "rpc": {"method": "search", "params": {"query": "nearby coffee shops"}}}
+{"utterance": "Go back two pages", "rpc": {"method": "goBack", "params": {"steps": 2}}}
+{"utterance": "type myusername123 into username", "rpc": {"method": "type", "params": {"text": "myusername123", "field": "username"}}}
+{"utterance": "search for stock quotes", "rpc": {"method": "search", "params": {"query": "stock quotes"}}}
+{"utterance": "click the Subscribe button", "rpc": {"method": "click", "params": {"text": "Subscribe"}}}
+{"utterance": "type 1234 Main St into address", "rpc": {"method": "type", "params": {"text": "1234 Main St", "field": "address"}}}
+{"utterance": "search for vegan pancake recipes", "rpc": {"method": "search", "params": {"query": "vegan pancake recipes"}}}
+{"utterance": "scroll down 400 pixels", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 400}}}
+{"utterance": "click on log in", "rpc": {"method": "click", "params": {"text": "log in"}}}
+{"utterance": "search for best Italian restaurants", "rpc": {"method": "search", "params": {"query": "best Italian restaurants"}}}
+{"utterance": "scroll up by 500 pixels", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 500}}}
+{"utterance": "search for cat videos on YouTube", "rpc": {"method": "search", "params": {"query": "cat videos on YouTube"}}}
+{"utterance": "let's visit youtube.com", "rpc": {"method": "navigate", "params": {"url": "https://www.youtube.com"}}}
+{"utterance": "can you refresh this page?", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "scroll right by 300 pixels", "rpc": {"method": "scroll", "params": {"direction": "right", "amount": 300}}}
+{"utterance": "type hello world in the chat box", "rpc": {"method": "type", "params": {"text": "hello world", "field": "chat input"}}}
+{"utterance": "scroll left by 300 pixels", "rpc": {"method": "scroll", "params": {"direction": "left", "amount": 300}}}
+{"utterance": "scroll up halfway", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 500}}}
+{"utterance": "scroll up by 300 pixels", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 300}}}
+{"utterance": "search for best pasta recipes", "rpc": {"method": "search", "params": {"query": "best pasta recipes"}}}
+{"utterance": "scroll up a bit", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 100}}}
+{"utterance": "search for apple pie recipes", "rpc": {"method": "search", "params": {"query": "apple pie recipes"}}}
+{"utterance": "scroll up 400 pixels", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 400}}}
+{"utterance": "go to twitter.com", "rpc": {"method": "navigate", "params": {"url": "http://twitter.com"}}}
+{"utterance": "tap the sign in button", "rpc": {"method": "click", "params": {"text": "Sign In"}}}
+{"utterance": "scroll right by 500 px", "rpc": {"method": "scroll", "params": {"direction": "right", "amount": 500}}}
+{"utterance": "take me to wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "https://www.wikipedia.org"}}}
+{"utterance": "click the subscribe button", "rpc": {"method": "click", "params": {"text": "Subscribe"}}}
+{"utterance": "scroll left by 500 pixels", "rpc": {"method": "scroll", "params": {"direction": "left", "amount": 500}}}
+{"utterance": "scroll up a little", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 200}}}
+{"utterance": "could you please close the current tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "press the subscribe button", "rpc": {"method": "click", "params": {"text": "Subscribe"}}}
+{"utterance": "scroll down all the way", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 10000}}}
+{"utterance": "can we go back two pages", "rpc": {"method": "goBack", "params": {"steps": 2}}}
 {"utterance": "scroll down a bit", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 200}}}
+{"utterance": "type hello@example.com into email field", "rpc": {"method": "type", "params": {"text": "hello@example.com", "field": "email"}}}
+{"utterance": "click the login button", "rpc": {"method": "click", "params": {"text": "Login"}}}
+{"utterance": "could you refresh this?", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "type myusername into username", "rpc": {"method": "type", "params": {"text": "myusername", "field": "username"}}}
+{"utterance": "can you reload this?", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "please go to twitter.com", "rpc": {"method": "navigate", "params": {"url": "twitter.com"}}}
+{"utterance": "scroll down halfway through the page", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 500}}}
+{"utterance": "find news headlines", "rpc": {"method": "search", "params": {"query": "news headlines"}}}
+{"utterance": "type New York into the destination box", "rpc": {"method": "type", "params": {"text": "New York", "field": "destination"}}}
+{"utterance": "navigate to nytimes.com", "rpc": {"method": "navigate", "params": {"url": "https://www.nytimes.com"}}}
+{"utterance": "search for top movies 2023", "rpc": {"method": "search", "params": {"query": "top movies 2023"}}}
+{"utterance": "please go back one page", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "click on latest news", "rpc": {"method": "click", "params": {"text": "latest news"}}}
+{"utterance": "search for best smartphones 2023", "rpc": {"method": "search", "params": {"query": "best smartphones 2023"}}}
+{"utterance": "click login on the homepage", "rpc": {"method": "click", "params": {"text": "login"}}}
+{"utterance": "click on the latest news headline", "rpc": {"method": "click", "params": {"text": "latest news headline"}}}
+{"utterance": "type tech tutorials into search bar", "rpc": {"method": "type", "params": {"text": "tech tutorials", "field": "search bar"}}}
+{"utterance": "scroll down halfway on this page", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 500}}}
+{"utterance": "load bbc.com", "rpc": {"method": "navigate", "params": {"url": "https://www.bbc.com"}}}
+{"utterance": "find tech tutorials on Google", "rpc": {"method": "search", "params": {"query": "tech tutorials"}}}
+{"utterance": "click on the sign-in button", "rpc": {"method": "click", "params": {"text": "Sign in"}}}
+{"utterance": "search for tech tutorials on YouTube", "rpc": {"method": "search", "params": {"query": "tech tutorials on YouTube"}}}
+{"utterance": "please close this tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "click on Sign Up", "rpc": {"method": "click", "params": {"text": "Sign Up"}}}
+{"utterance": "could you open a new tab for me?", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "search for best vegan recipes", "rpc": {"method": "search", "params": {"query": "best vegan recipes"}}}
+{"utterance": "search for the latest stock quotes", "rpc": {"method": "search", "params": {"query": "latest stock quotes"}}}
+{"utterance": "click on the sign-up button", "rpc": {"method": "click", "params": {"text": "Sign Up"}}}
+{"utterance": "search for flight deals to Hawaii", "rpc": {"method": "search", "params": {"query": "flight deals to Hawaii"}}}
+{"utterance": "open a new browser tab please", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "type hello@example.com into the email input", "rpc": {"method": "type", "params": {"text": "hello@example.com", "field": "email"}}}
+{"utterance": "open twitter.com", "rpc": {"method": "navigate", "params": {"url": "https://twitter.com"}}}
+{"utterance": "click subscribe on YouTube", "rpc": {"method": "click", "params": {"text": "subscribe"}}}
+{"utterance": "search for stock market news", "rpc": {"method": "search", "params": {"query": "stock market news"}}}
+{"utterance": "click submit button", "rpc": {"method": "click", "params": {"text": "submit"}}}
+{"utterance": "could you switch to the third tab?", "rpc": {"method": "switchTab", "params": {"index": 2}}}
+{"utterance": "would you mind reloading this page?", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "find tech tutorials for me", "rpc": {"method": "search", "params": {"query": "tech tutorials"}}}
+{"utterance": "press the sign in button", "rpc": {"method": "click", "params": {"text": "sign in"}}}
+{"utterance": "click buy now on amazon.com", "rpc": {"method": "click", "params": {"text": "buy now"}}}
+{"utterance": "close this tab now", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "refresh this page, would you?", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for tech tutorials online", "rpc": {"method": "search", "params": {"query": "tech tutorials"}}}
+{"utterance": "search for top headlines", "rpc": {"method": "search", "params": {"query": "top headlines"}}}
+{"utterance": "tap the play button on YouTube", "rpc": {"method": "click", "params": {"text": "play"}}}
+{"utterance": "search for best Italian restaurants nearby", "rpc": {"method": "search", "params": {"query": "best Italian restaurants nearby"}}}
+{"utterance": "navigate to weather.com", "rpc": {"method": "navigate", "params": {"url": "https://weather.com"}}}
+{"utterance": "click on the Sign Up button", "rpc": {"method": "click", "params": {"text": "Sign Up"}}}
+{"utterance": "could you reload this page, please?", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "search for today's weather in New York", "rpc": {"method": "search", "params": {"query": "today's weather in New York"}}}
+{"utterance": "type hello123 into username", "rpc": {"method": "type", "params": {"text": "hello123", "field": "username"}}}
+{"utterance": "click the sign in button", "rpc": {"method": "click", "params": {"text": "Sign In"}}}
+{"utterance": "could you navigate to youtube.com?", "rpc": {"method": "navigate", "params": {"url": "https://www.youtube.com"}}}
+{"utterance": "close this tab for me", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "please visit twitter.com", "rpc": {"method": "navigate", "params": {"url": "https://twitter.com"}}}
+{"utterance": "let's head to twitter.com", "rpc": {"method": "navigate", "params": {"url": "https://twitter.com"}}}
+{"utterance": "switch to tab number 3", "rpc": {"method": "switchTab", "params": {"index": 3}}}
+{"utterance": "type john_doe@example.com into email", "rpc": {"method": "type", "params": {"text": "john_doe@example.com", "field": "email"}}}
+{"utterance": "search for weather forecast", "rpc": {"method": "search", "params": {"query": "weather forecast"}}}
+{"utterance": "open amazon.com", "rpc": {"method": "navigate", "params": {"url": "amazon.com"}}}
+{"utterance": "direct to wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "wikipedia.org"}}}
+{"utterance": "navigate to medium.com", "rpc": {"method": "navigate", "params": {"url": "medium.com"}}}
+{"utterance": "show me twitch.tv", "rpc": {"method": "navigate", "params": {"url": "twitch.tv"}}}
+{"utterance": "load espn.com", "rpc": {"method": "navigate", "params": {"url": "espn.com"}}}
+{"utterance": "open netflix.com", "rpc": {"method": "navigate", "params": {"url": "netflix.com"}}}
+{"utterance": "take me to gmail.com", "rpc": {"method": "navigate", "params": {"url": "gmail.com"}}}
+{"utterance": "show me translate.google.com", "rpc": {"method": "navigate", "params": {"url": "translate.google.com"}}}
+{"utterance": "head to instagram.com", "rpc": {"method": "navigate", "params": {"url": "instagram.com"}}}
+{"utterance": "show me booking.com", "rpc": {"method": "navigate", "params": {"url": "booking.com"}}}
+{"utterance": "load youtube.com", "rpc": {"method": "navigate", "params": {"url": "youtube.com"}}}
+{"utterance": "open youtube.com", "rpc": {"method": "navigate", "params": {"url": "youtube.com"}}}
+{"utterance": "direct to instagram.com", "rpc": {"method": "navigate", "params": {"url": "instagram.com"}}}
+{"utterance": "browse to weather.com", "rpc": {"method": "navigate", "params": {"url": "weather.com"}}}
+{"utterance": "go to twitch.tv", "rpc": {"method": "navigate", "params": {"url": "twitch.tv"}}}
+{"utterance": "browse to web.whatsapp.com", "rpc": {"method": "navigate", "params": {"url": "web.whatsapp.com"}}}
+{"utterance": "browse to wikipedia.org", "rpc": {"method": "navigate", "params": {"url": "wikipedia.org"}}}
+{"utterance": "go to coursera.org", "rpc": {"method": "navigate", "params": {"url": "coursera.org"}}}
+{"utterance": "launch bing.com", "rpc": {"method": "navigate", "params": {"url": "bing.com"}}}
+{"utterance": "access booking.com", "rpc": {"method": "navigate", "params": {"url": "booking.com"}}}
+{"utterance": "navigate to espn.com", "rpc": {"method": "navigate", "params": {"url": "espn.com"}}}
+{"utterance": "direct to paypal.com", "rpc": {"method": "navigate", "params": {"url": "paypal.com"}}}
+{"utterance": "load medium.com", "rpc": {"method": "navigate", "params": {"url": "medium.com"}}}
+{"utterance": "take me to google.com", "rpc": {"method": "navigate", "params": {"url": "google.com"}}}
+{"utterance": "access stackoverflow.com", "rpc": {"method": "navigate", "params": {"url": "stackoverflow.com"}}}
+{"utterance": "show me apple.com", "rpc": {"method": "navigate", "params": {"url": "apple.com"}}}
+{"utterance": "head to stackoverflow.com", "rpc": {"method": "navigate", "params": {"url": "stackoverflow.com"}}}
+{"utterance": "check out weather.com", "rpc": {"method": "navigate", "params": {"url": "weather.com"}}}
+{"utterance": "bring me to apple.com", "rpc": {"method": "navigate", "params": {"url": "apple.com"}}}
+{"utterance": "check out instagram.com", "rpc": {"method": "navigate", "params": {"url": "instagram.com"}}}
+{"utterance": "direct to docs.google.com", "rpc": {"method": "navigate", "params": {"url": "docs.google.com"}}}
+{"utterance": "navigate to gmail.com", "rpc": {"method": "navigate", "params": {"url": "gmail.com"}}}
+{"utterance": "visit spotify.com", "rpc": {"method": "navigate", "params": {"url": "spotify.com"}}}
+{"utterance": "open zoom.us", "rpc": {"method": "navigate", "params": {"url": "zoom.us"}}}
+{"utterance": "load github.com", "rpc": {"method": "navigate", "params": {"url": "github.com"}}}
+{"utterance": "open facebook.com", "rpc": {"method": "navigate", "params": {"url": "facebook.com"}}}
+{"utterance": "bring me to quora.com", "rpc": {"method": "navigate", "params": {"url": "quora.com"}}}
+{"utterance": "visit translate.google.com", "rpc": {"method": "navigate", "params": {"url": "translate.google.com"}}}
+{"utterance": "navigate to linkedin.com", "rpc": {"method": "navigate", "params": {"url": "linkedin.com"}}}
+{"utterance": "access docs.google.com", "rpc": {"method": "navigate", "params": {"url": "docs.google.com"}}}
+{"utterance": "check out twitter.com", "rpc": {"method": "navigate", "params": {"url": "twitter.com"}}}
+{"utterance": "head to udemy.com", "rpc": {"method": "navigate", "params": {"url": "udemy.com"}}}
+{"utterance": "take me to yahoo.com", "rpc": {"method": "navigate", "params": {"url": "yahoo.com"}}}
+{"utterance": "take me to spotify.com", "rpc": {"method": "navigate", "params": {"url": "spotify.com"}}}
+{"utterance": "visit khanacademy.org", "rpc": {"method": "navigate", "params": {"url": "khanacademy.org"}}}
+{"utterance": "go to bing.com", "rpc": {"method": "navigate", "params": {"url": "bing.com"}}}
+{"utterance": "navigate to twitter.com", "rpc": {"method": "navigate", "params": {"url": "twitter.com"}}}
+{"utterance": "load facebook.com", "rpc": {"method": "navigate", "params": {"url": "facebook.com"}}}
+{"utterance": "access espn.com", "rpc": {"method": "navigate", "params": {"url": "espn.com"}}}
+{"utterance": "open yahoo.com", "rpc": {"method": "navigate", "params": {"url": "yahoo.com"}}}
+{"utterance": "direct to twitter.com", "rpc": {"method": "navigate", "params": {"url": "twitter.com"}}}
+{"utterance": "head to gmail.com", "rpc": {"method": "navigate", "params": {"url": "gmail.com"}}}
+{"utterance": "open quora.com", "rpc": {"method": "navigate", "params": {"url": "quora.com"}}}
+{"utterance": "access spotify.com", "rpc": {"method": "navigate", "params": {"url": "spotify.com"}}}
+{"utterance": "show me stackoverflow.com", "rpc": {"method": "navigate", "params": {"url": "stackoverflow.com"}}}
+{"utterance": "navigate to docs.google.com", "rpc": {"method": "navigate", "params": {"url": "docs.google.com"}}}
+{"utterance": "browse to zoom.us", "rpc": {"method": "navigate", "params": {"url": "zoom.us"}}}
+{"utterance": "load weather.com", "rpc": {"method": "navigate", "params": {"url": "weather.com"}}}
+{"utterance": "launch github.com", "rpc": {"method": "navigate", "params": {"url": "github.com"}}}
+{"utterance": "visit twitter.com", "rpc": {"method": "navigate", "params": {"url": "twitter.com"}}}
+{"utterance": "open a new tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "create a new tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "start a new tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "launch a new tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "make a new tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "new browser tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "add another tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "begin a new tab", "rpc": {"method": "openTab", "params": {}}}
+{"utterance": "close the current tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "close this tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "exit this tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "shut this tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "terminate this tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "remove this tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "close active tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "close open tab", "rpc": {"method": "closeTab", "params": {"tabId": null}}}
+{"utterance": "navigate to the sixth tab", "rpc": {"method": "switchTab", "params": {"index": 5}}}
+{"utterance": "change to the sixth tab", "rpc": {"method": "switchTab", "params": {"index": 5}}}
+{"utterance": "navigate to the second tab", "rpc": {"method": "switchTab", "params": {"index": 1}}}
+{"utterance": "jump to the fifth tab", "rpc": {"method": "switchTab", "params": {"index": 4}}}
+{"utterance": "bring up the seventh tab", "rpc": {"method": "switchTab", "params": {"index": 6}}}
+{"utterance": "go to the third tab", "rpc": {"method": "switchTab", "params": {"index": 2}}}
+{"utterance": "bring up the eighth tab", "rpc": {"method": "switchTab", "params": {"index": 7}}}
+{"utterance": "go to the fifth tab", "rpc": {"method": "switchTab", "params": {"index": 4}}}
+{"utterance": "navigate to the fourth tab", "rpc": {"method": "switchTab", "params": {"index": 3}}}
+{"utterance": "navigate to the third tab", "rpc": {"method": "switchTab", "params": {"index": 2}}}
+{"utterance": "change to the eighth tab", "rpc": {"method": "switchTab", "params": {"index": 7}}}
+{"utterance": "open the seventh tab", "rpc": {"method": "switchTab", "params": {"index": 6}}}
+{"utterance": "switch to the sixth tab", "rpc": {"method": "switchTab", "params": {"index": 5}}}
+{"utterance": "switch to the third tab", "rpc": {"method": "switchTab", "params": {"index": 2}}}
+{"utterance": "jump to the third tab", "rpc": {"method": "switchTab", "params": {"index": 2}}}
+{"utterance": "navigate to the first tab", "rpc": {"method": "switchTab", "params": {"index": 0}}}
+{"utterance": "switch to the seventh tab", "rpc": {"method": "switchTab", "params": {"index": 6}}}
+{"utterance": "open the first tab", "rpc": {"method": "switchTab", "params": {"index": 0}}}
+{"utterance": "jump to the sixth tab", "rpc": {"method": "switchTab", "params": {"index": 5}}}
+{"utterance": "bring up the fourth tab", "rpc": {"method": "switchTab", "params": {"index": 3}}}
+{"utterance": "push download", "rpc": {"method": "click", "params": {"text": "download"}}}
+{"utterance": "pick compose", "rpc": {"method": "click", "params": {"text": "compose"}}}
+{"utterance": "click save", "rpc": {"method": "click", "params": {"text": "save"}}}
+{"utterance": "hit contact us", "rpc": {"method": "click", "params": {"text": "contact us"}}}
+{"utterance": "push home", "rpc": {"method": "click", "params": {"text": "home"}}}
+{"utterance": "press save", "rpc": {"method": "click", "params": {"text": "save"}}}
+{"utterance": "pick learn more", "rpc": {"method": "click", "params": {"text": "learn more"}}}
+{"utterance": "click on comment", "rpc": {"method": "click", "params": {"text": "comment"}}}
+{"utterance": "push rate", "rpc": {"method": "click", "params": {"text": "rate"}}}
+{"utterance": "press continue", "rpc": {"method": "click", "params": {"text": "continue"}}}
+{"utterance": "tap videos", "rpc": {"method": "click", "params": {"text": "videos"}}}
+{"utterance": "pick download", "rpc": {"method": "click", "params": {"text": "download"}}}
+{"utterance": "push news", "rpc": {"method": "click", "params": {"text": "news"}}}
+{"utterance": "click upload", "rpc": {"method": "click", "params": {"text": "upload"}}}
+{"utterance": "push book now", "rpc": {"method": "click", "params": {"text": "book now"}}}
+{"utterance": "engage try for free", "rpc": {"method": "click", "params": {"text": "try for free"}}}
+{"utterance": "activate download", "rpc": {"method": "click", "params": {"text": "download"}}}
+{"utterance": "push read more", "rpc": {"method": "click", "params": {"text": "read more"}}}
+{"utterance": "choose follow", "rpc": {"method": "click", "params": {"text": "follow"}}}
+{"utterance": "click on read more", "rpc": {"method": "click", "params": {"text": "read more"}}}
+{"utterance": "click share", "rpc": {"method": "click", "params": {"text": "share"}}}
+{"utterance": "push pause", "rpc": {"method": "click", "params": {"text": "pause"}}}
+{"utterance": "tap on save", "rpc": {"method": "click", "params": {"text": "save"}}}
+{"utterance": "click on news", "rpc": {"method": "click", "params": {"text": "news"}}}
+{"utterance": "activate buy now", "rpc": {"method": "click", "params": {"text": "buy now"}}}
+{"utterance": "press learn more", "rpc": {"method": "click", "params": {"text": "learn more"}}}
+{"utterance": "click on settings", "rpc": {"method": "click", "params": {"text": "settings"}}}
+{"utterance": "click logout", "rpc": {"method": "click", "params": {"text": "logout"}}}
+{"utterance": "hit help", "rpc": {"method": "click", "params": {"text": "help"}}}
+{"utterance": "click images", "rpc": {"method": "click", "params": {"text": "images"}}}
+{"utterance": "pick images", "rpc": {"method": "click", "params": {"text": "images"}}}
+{"utterance": "click follow", "rpc": {"method": "click", "params": {"text": "follow"}}}
+{"utterance": "push join now", "rpc": {"method": "click", "params": {"text": "join now"}}}
+{"utterance": "activate compose", "rpc": {"method": "click", "params": {"text": "compose"}}}
+{"utterance": "push dislike", "rpc": {"method": "click", "params": {"text": "dislike"}}}
+{"utterance": "choose dislike", "rpc": {"method": "click", "params": {"text": "dislike"}}}
+{"utterance": "select open chat", "rpc": {"method": "click", "params": {"text": "open chat"}}}
+{"utterance": "engage continue", "rpc": {"method": "click", "params": {"text": "continue"}}}
+{"utterance": "press try for free", "rpc": {"method": "click", "params": {"text": "try for free"}}}
+{"utterance": "activate upload", "rpc": {"method": "click", "params": {"text": "upload"}}}
+{"utterance": "tap book now", "rpc": {"method": "click", "params": {"text": "book now"}}}
+{"utterance": "engage submit", "rpc": {"method": "click", "params": {"text": "submit"}}}
+{"utterance": "click on help", "rpc": {"method": "click", "params": {"text": "help"}}}
+{"utterance": "click on try for free", "rpc": {"method": "click", "params": {"text": "try for free"}}}
+{"utterance": "click on download", "rpc": {"method": "click", "params": {"text": "download"}}}
+{"utterance": "click play", "rpc": {"method": "click", "params": {"text": "play"}}}
+{"utterance": "choose help", "rpc": {"method": "click", "params": {"text": "help"}}}
+{"utterance": "click menu", "rpc": {"method": "click", "params": {"text": "menu"}}}
+{"utterance": "press unfollow", "rpc": {"method": "click", "params": {"text": "unfollow"}}}
+{"utterance": "activate images", "rpc": {"method": "click", "params": {"text": "images"}}}
+{"utterance": "tap on edit", "rpc": {"method": "click", "params": {"text": "edit"}}}
+{"utterance": "select submit", "rpc": {"method": "click", "params": {"text": "submit"}}}
+{"utterance": "pick rate", "rpc": {"method": "click", "params": {"text": "rate"}}}
+{"utterance": "tap on learn more", "rpc": {"method": "click", "params": {"text": "learn more"}}}
+{"utterance": "tap next", "rpc": {"method": "click", "params": {"text": "next"}}}
+{"utterance": "select buy now", "rpc": {"method": "click", "params": {"text": "buy now"}}}
+{"utterance": "click help", "rpc": {"method": "click", "params": {"text": "help"}}}
+{"utterance": "activate menu", "rpc": {"method": "click", "params": {"text": "menu"}}}
+{"utterance": "hit sign up", "rpc": {"method": "click", "params": {"text": "sign up"}}}
+{"utterance": "engage previous", "rpc": {"method": "click", "params": {"text": "previous"}}}
+{"utterance": "choose open chat", "rpc": {"method": "click", "params": {"text": "open chat"}}}
+{"utterance": "push like", "rpc": {"method": "click", "params": {"text": "like"}}}
+{"utterance": "click on images", "rpc": {"method": "click", "params": {"text": "images"}}}
+{"utterance": "click see plans", "rpc": {"method": "click", "params": {"text": "see plans"}}}
+{"utterance": "select try for free", "rpc": {"method": "click", "params": {"text": "try for free"}}}
+{"utterance": "click submit", "rpc": {"method": "click", "params": {"text": "submit"}}}
+{"utterance": "pick explore", "rpc": {"method": "click", "params": {"text": "explore"}}}
+{"utterance": "tap on more", "rpc": {"method": "click", "params": {"text": "more"}}}
+{"utterance": "pick search", "rpc": {"method": "click", "params": {"text": "search"}}}
+{"utterance": "press view profile", "rpc": {"method": "click", "params": {"text": "view profile"}}}
+{"utterance": "engage pause", "rpc": {"method": "click", "params": {"text": "pause"}}}
+{"utterance": "tap home", "rpc": {"method": "click", "params": {"text": "home"}}}
+{"utterance": "activate delete", "rpc": {"method": "click", "params": {"text": "delete"}}}
+{"utterance": "engage logout", "rpc": {"method": "click", "params": {"text": "logout"}}}
+{"utterance": "choose delete", "rpc": {"method": "click", "params": {"text": "delete"}}}
+{"utterance": "tap on review", "rpc": {"method": "click", "params": {"text": "review"}}}
+{"utterance": "tap on send", "rpc": {"method": "click", "params": {"text": "send"}}}
+{"utterance": "select settings", "rpc": {"method": "click", "params": {"text": "settings"}}}
+{"utterance": "activate more", "rpc": {"method": "click", "params": {"text": "more"}}}
+{"utterance": "push compose", "rpc": {"method": "click", "params": {"text": "compose"}}}
+{"utterance": "activate try for free", "rpc": {"method": "click", "params": {"text": "try for free"}}}
+{"utterance": "tap on all", "rpc": {"method": "click", "params": {"text": "all"}}}
+{"utterance": "engage all", "rpc": {"method": "click", "params": {"text": "all"}}}
+{"utterance": "choose details", "rpc": {"method": "click", "params": {"text": "details"}}}
+{"utterance": "push see plans", "rpc": {"method": "click", "params": {"text": "see plans"}}}
+{"utterance": "press shopping", "rpc": {"method": "click", "params": {"text": "shopping"}}}
+{"utterance": "click review", "rpc": {"method": "click", "params": {"text": "review"}}}
+{"utterance": "click try for free", "rpc": {"method": "click", "params": {"text": "try for free"}}}
+{"utterance": "press follow", "rpc": {"method": "click", "params": {"text": "follow"}}}
+{"utterance": "click on review", "rpc": {"method": "click", "params": {"text": "review"}}}
+{"utterance": "tap on join now", "rpc": {"method": "click", "params": {"text": "join now"}}}
+{"utterance": "press cancel", "rpc": {"method": "click", "params": {"text": "cancel"}}}
+{"utterance": "pick home", "rpc": {"method": "click", "params": {"text": "home"}}}
+{"utterance": "select rate", "rpc": {"method": "click", "params": {"text": "rate"}}}
+{"utterance": "engage view profile", "rpc": {"method": "click", "params": {"text": "view profile"}}}
+{"utterance": "hit unfollow", "rpc": {"method": "click", "params": {"text": "unfollow"}}}
+{"utterance": "press get started", "rpc": {"method": "click", "params": {"text": "get started"}}}
+{"utterance": "choose edit", "rpc": {"method": "click", "params": {"text": "edit"}}}
+{"utterance": "select all", "rpc": {"method": "click", "params": {"text": "all"}}}
+{"utterance": "press upload", "rpc": {"method": "click", "params": {"text": "upload"}}}
+{"utterance": "fill in chat input with John Doe", "rpc": {"method": "type", "params": {"text": "John Doe", "field": "chat input"}}}
+{"utterance": "input myPassword123 into email body", "rpc": {"method": "type", "params": {"text": "myPassword123", "field": "email body"}}}
+{"utterance": "add Lorem ipsum to billing info", "rpc": {"method": "type", "params": {"text": "Lorem ipsum", "field": "billing info"}}}
+{"utterance": "enter Best regards in search", "rpc": {"method": "type", "params": {"text": "Best regards", "field": "search"}}}
+{"utterance": "fill in support message with Let’s connect soon", "rpc": {"method": "type", "params": {"text": "Let’s connect soon", "field": "support message"}}}
+{"utterance": "enter John Doe in note", "rpc": {"method": "type", "params": {"text": "John Doe", "field": "note"}}}
+{"utterance": "fill in chat input with I love this!", "rpc": {"method": "type", "params": {"text": "I love this!", "field": "chat input"}}}
+{"utterance": "put Let’s connect soon into support message", "rpc": {"method": "type", "params": {"text": "Let’s connect soon", "field": "support message"}}}
+{"utterance": "fill in chat input with hello world", "rpc": {"method": "type", "params": {"text": "hello world", "field": "chat input"}}}
+{"utterance": "fill in search with This is a test", "rpc": {"method": "type", "params": {"text": "This is a test", "field": "search"}}}
+{"utterance": "put Order #12345 into email body", "rpc": {"method": "type", "params": {"text": "Order #12345", "field": "email body"}}}
+{"utterance": "input Best regards into to field", "rpc": {"method": "type", "params": {"text": "Best regards", "field": "to field"}}}
+{"utterance": "write Join us now! in the bio", "rpc": {"method": "type", "params": {"text": "Join us now!", "field": "bio"}}}
+{"utterance": "put draft email content into email body", "rpc": {"method": "type", "params": {"text": "draft email content", "field": "email body"}}}
+{"utterance": "write myPassword123 in the chat input", "rpc": {"method": "type", "params": {"text": "myPassword123", "field": "chat input"}}}
+{"utterance": "write Great article! in the email body", "rpc": {"method": "type", "params": {"text": "Great article!", "field": "email body"}}}
+{"utterance": "put draft email content into subject", "rpc": {"method": "type", "params": {"text": "draft email content", "field": "subject"}}}
+{"utterance": "add hello world to billing info", "rpc": {"method": "type", "params": {"text": "hello world", "field": "billing info"}}}
+{"utterance": "fill in email body with Order #12345", "rpc": {"method": "type", "params": {"text": "Order #12345", "field": "email body"}}}
+{"utterance": "fill promo code with Looking forward to it", "rpc": {"method": "type", "params": {"text": "Looking forward to it", "field": "promo code"}}}
+{"utterance": "put Thanks! into chat input", "rpc": {"method": "type", "params": {"text": "Thanks!", "field": "chat input"}}}
+{"utterance": "fill in feedback form with draft email content", "rpc": {"method": "type", "params": {"text": "draft email content", "field": "feedback form"}}}
+{"utterance": "fill review text with myPassword123", "rpc": {"method": "type", "params": {"text": "myPassword123", "field": "review text"}}}
+{"utterance": "insert Thanks! into zip", "rpc": {"method": "type", "params": {"text": "Thanks!", "field": "zip"}}}
+{"utterance": "type Test123 into comment box", "rpc": {"method": "type", "params": {"text": "Test123", "field": "comment box"}}}
+{"utterance": "insert Invoice attached into note field", "rpc": {"method": "type", "params": {"text": "Invoice attached", "field": "note field"}}}
+{"utterance": "write Test123 in the username", "rpc": {"method": "type", "params": {"text": "Test123", "field": "username"}}}
+{"utterance": "write myPassword123 in the to", "rpc": {"method": "type", "params": {"text": "myPassword123", "field": "to"}}}
+{"utterance": "add Best regards to note", "rpc": {"method": "type", "params": {"text": "Best regards", "field": "note"}}}
+{"utterance": "fill in note with Join us now!", "rpc": {"method": "type", "params": {"text": "Join us now!", "field": "note"}}}
+{"utterance": "input 123 Main St into zip", "rpc": {"method": "type", "params": {"text": "123 Main St", "field": "zip"}}}
+{"utterance": "enter Don't forget the deadline in chat input", "rpc": {"method": "type", "params": {"text": "Don't forget the deadline", "field": "chat input"}}}
+{"utterance": "enter Order #12345 in cc", "rpc": {"method": "type", "params": {"text": "Order #12345", "field": "cc"}}}
+{"utterance": "fill in zip with 123 Main St", "rpc": {"method": "type", "params": {"text": "123 Main St", "field": "zip"}}}
+{"utterance": "type Let’s connect soon into bcc field", "rpc": {"method": "type", "params": {"text": "Let’s connect soon", "field": "bcc field"}}}
+{"utterance": "fill in city field with Test123", "rpc": {"method": "type", "params": {"text": "Test123", "field": "city field"}}}
+{"utterance": "input Let's schedule a meeting into password", "rpc": {"method": "type", "params": {"text": "Let's schedule a meeting", "field": "password"}}}
+{"utterance": "insert Let’s connect soon into username field", "rpc": {"method": "type", "params": {"text": "Let’s connect soon", "field": "username field"}}}
+{"utterance": "input Need help with this into username field", "rpc": {"method": "type", "params": {"text": "Need help with this", "field": "username field"}}}
+{"utterance": "insert Join us now! into status update", "rpc": {"method": "type", "params": {"text": "Join us now!", "field": "status update"}}}
+{"utterance": "write Looking forward to it in the city", "rpc": {"method": "type", "params": {"text": "Looking forward to it", "field": "city"}}}
+{"utterance": "fill in billing info with Here's the info you asked for", "rpc": {"method": "type", "params": {"text": "Here's the info you asked for", "field": "billing info"}}}
+{"utterance": "fill in city with Let’s connect soon", "rpc": {"method": "type", "params": {"text": "Let’s connect soon", "field": "city"}}}
+{"utterance": "enter Join us now! in city field", "rpc": {"method": "type", "params": {"text": "Join us now!", "field": "city field"}}}
+{"utterance": "type hello world into zip", "rpc": {"method": "type", "params": {"text": "hello world", "field": "zip"}}}
+{"utterance": "put Need help with this into to", "rpc": {"method": "type", "params": {"text": "Need help with this", "field": "to"}}}
+{"utterance": "input Join us now! into subject", "rpc": {"method": "type", "params": {"text": "Join us now!", "field": "subject"}}}
+{"utterance": "fill review text with Please call me back", "rpc": {"method": "type", "params": {"text": "Please call me back", "field": "review text"}}}
+{"utterance": "insert Best regards into status update", "rpc": {"method": "type", "params": {"text": "Best regards", "field": "status update"}}}
+{"utterance": "enter Need help with this in status update", "rpc": {"method": "type", "params": {"text": "Need help with this", "field": "status update"}}}
+{"utterance": "put Order #12345 into username field", "rpc": {"method": "type", "params": {"text": "Order #12345", "field": "username field"}}}
+{"utterance": "enter 123 Main St in email body", "rpc": {"method": "type", "params": {"text": "123 Main St", "field": "email body"}}}
+{"utterance": "fill in city field with Thanks!", "rpc": {"method": "type", "params": {"text": "Thanks!", "field": "city field"}}}
+{"utterance": "insert Please call me back into to", "rpc": {"method": "type", "params": {"text": "Please call me back", "field": "to"}}}
+{"utterance": "insert myPassword123 into billing info", "rpc": {"method": "type", "params": {"text": "myPassword123", "field": "billing info"}}}
+{"utterance": "add draft email content to bcc field", "rpc": {"method": "type", "params": {"text": "draft email content", "field": "bcc field"}}}
+{"utterance": "fill in username field with Join us now!", "rpc": {"method": "type", "params": {"text": "Join us now!", "field": "username field"}}}
+{"utterance": "input meeting at 3pm into address form", "rpc": {"method": "type", "params": {"text": "meeting at 3pm", "field": "address form"}}}
+{"utterance": "write Join us now! in the password", "rpc": {"method": "type", "params": {"text": "Join us now!", "field": "password"}}}
+{"utterance": "enter Let's schedule a meeting in password", "rpc": {"method": "type", "params": {"text": "Let's schedule a meeting", "field": "password"}}}
+{"utterance": "move slightly right", "rpc": {"method": "scroll", "params": {"direction": "right", "amount": 150}}}
+{"utterance": "slide right", "rpc": {"method": "scroll", "params": {"direction": "right", "amount": 200}}}
+{"utterance": "scroll up by 100 pixels", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 100}}}
+{"utterance": "scroll 150 right", "rpc": {"method": "scroll", "params": {"direction": "right", "amount": 150}}}
+{"utterance": "move up", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 300}}}
+{"utterance": "scroll left by 50", "rpc": {"method": "scroll", "params": {"direction": "left", "amount": 50}}}
+{"utterance": "scroll 300 right", "rpc": {"method": "scroll", "params": {"direction": "right", "amount": 300}}}
+{"utterance": "pan up", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 1000}}}
+{"utterance": "shift view down", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 500}}}
+{"utterance": "scroll 200 right", "rpc": {"method": "scroll", "params": {"direction": "right", "amount": 200}}}
+{"utterance": "scroll down", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 1000}}}
+{"utterance": "scroll 300 pixels down", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 300}}}
+{"utterance": "pan down", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 100}}}
+{"utterance": "pan down", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 750}}}
+{"utterance": "scroll up by 1000 pixels", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 1000}}}
+{"utterance": "scroll 200 pixels up", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 200}}}
+{"utterance": "shift view right", "rpc": {"method": "scroll", "params": {"direction": "right", "amount": 100}}}
+{"utterance": "move far up", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 1000}}}
+{"utterance": "scroll a bit up", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 150}}}
+{"utterance": "slide up", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 500}}}
+{"utterance": "scroll 100 pixels right", "rpc": {"method": "scroll", "params": {"direction": "right", "amount": 100}}}
+{"utterance": "scroll right by 300 pixels", "rpc": {"method": "scroll", "params": {"direction": "right", "amount": 300}}}
+{"utterance": "scroll 200 pixels down", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 200}}}
+{"utterance": "scroll down by 750", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 750}}}
+{"utterance": "pan up", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 300}}}
+{"utterance": "scroll down", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 100}}}
+{"utterance": "slide up", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 300}}}
+{"utterance": "pan down", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 1500}}}
+{"utterance": "pan right", "rpc": {"method": "scroll", "params": {"direction": "right", "amount": 300}}}
+{"utterance": "scroll right", "rpc": {"method": "scroll", "params": {"direction": "right", "amount": 100}}}
+{"utterance": "move far down", "rpc": {"method": "scroll", "params": {"direction": "down", "amount": 1000}}}
+{"utterance": "scroll 750 up", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 750}}}
+{"utterance": "move up", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 100}}}
+{"utterance": "shift view up", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 500}}}
+{"utterance": "shift view left", "rpc": {"method": "scroll", "params": {"direction": "left", "amount": 200}}}
+{"utterance": "pan left", "rpc": {"method": "scroll", "params": {"direction": "left", "amount": 300}}}
+{"utterance": "scroll up all the way", "rpc": {"method": "scroll", "params": {"direction": "up", "amount": 1500}}}
+{"utterance": "scroll right slightly", "rpc": {"method": "scroll", "params": {"direction": "right", "amount": 150}}}
+{"utterance": "slide left", "rpc": {"method": "scroll", "params": {"direction": "left", "amount": 150}}}
+{"utterance": "move left", "rpc": {"method": "scroll", "params": {"direction": "left", "amount": 300}}}
+{"utterance": "reload the page", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "refresh the page", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "reload this page", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "refresh this page", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "reload tab", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "refresh tab", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "refresh the browser", "rpc": {"method": "reload", "params": {}}}
+{"utterance": "look for latest tech news", "rpc": {"method": "search", "params": {"query": "latest tech news"}}}
+{"utterance": "try searching how to tie a tie", "rpc": {"method": "search", "params": {"query": "how to tie a tie"}}}
+{"utterance": "search for AI tools for developers", "rpc": {"method": "search", "params": {"query": "AI tools for developers"}}}
+{"utterance": "google top programming languages", "rpc": {"method": "search", "params": {"query": "top programming languages"}}}
+{"utterance": "try searching AI tools for developers", "rpc": {"method": "search", "params": {"query": "AI tools for developers"}}}
+{"utterance": "do a search for news headlines", "rpc": {"method": "search", "params": {"query": "news headlines"}}}
+{"utterance": "look for stock market trends", "rpc": {"method": "search", "params": {"query": "stock market trends"}}}
+{"utterance": "look for recipe for pancakes", "rpc": {"method": "search", "params": {"query": "recipe for pancakes"}}}
+{"utterance": "find meditation music", "rpc": {"method": "search", "params": {"query": "meditation music"}}}
+{"utterance": "try searching news headlines", "rpc": {"method": "search", "params": {"query": "news headlines"}}}
+{"utterance": "try searching recipe for pancakes", "rpc": {"method": "search", "params": {"query": "recipe for pancakes"}}}
+{"utterance": "search for HTML vs CSS", "rpc": {"method": "search", "params": {"query": "HTML vs CSS"}}}
+{"utterance": "find travel restrictions for Japan", "rpc": {"method": "search", "params": {"query": "travel restrictions for Japan"}}}
+{"utterance": "look for news headlines", "rpc": {"method": "search", "params": {"query": "news headlines"}}}
+{"utterance": "search the web for stock market trends", "rpc": {"method": "search", "params": {"query": "stock market trends"}}}
+{"utterance": "find latest tech news", "rpc": {"method": "search", "params": {"query": "latest tech news"}}}
+{"utterance": "search for celebrity gossip", "rpc": {"method": "search", "params": {"query": "celebrity gossip"}}}
+{"utterance": "try searching celebrity gossip", "rpc": {"method": "search", "params": {"query": "celebrity gossip"}}}
+{"utterance": "search for best laptops 2025", "rpc": {"method": "search", "params": {"query": "best laptops 2025"}}}
+{"utterance": "google is it going to rain", "rpc": {"method": "search", "params": {"query": "is it going to rain"}}}
+{"utterance": "find celebrity gossip", "rpc": {"method": "search", "params": {"query": "celebrity gossip"}}}
+{"utterance": "look for python tutorials", "rpc": {"method": "search", "params": {"query": "python tutorials"}}}
+{"utterance": "try searching best laptops 2025", "rpc": {"method": "search", "params": {"query": "best laptops 2025"}}}
+{"utterance": "look up python tutorials", "rpc": {"method": "search", "params": {"query": "python tutorials"}}}
+{"utterance": "search for NBA scores", "rpc": {"method": "search", "params": {"query": "NBA scores"}}}
+{"utterance": "search for weather in Tokyo", "rpc": {"method": "search", "params": {"query": "weather in Tokyo"}}}
+{"utterance": "look for what is machine learning", "rpc": {"method": "search", "params": {"query": "what is machine learning"}}}
+{"utterance": "look for cheap flights to NYC", "rpc": {"method": "search", "params": {"query": "cheap flights to NYC"}}}
+{"utterance": "try searching coffee shops nearby", "rpc": {"method": "search", "params": {"query": "coffee shops nearby"}}}
+{"utterance": "do a search for restaurants near me", "rpc": {"method": "search", "params": {"query": "restaurants near me"}}}
+{"utterance": "look up stock market trends", "rpc": {"method": "search", "params": {"query": "stock market trends"}}}
+{"utterance": "try searching cheap flights to NYC", "rpc": {"method": "search", "params": {"query": "cheap flights to NYC"}}}
+{"utterance": "look up travel restrictions for Japan", "rpc": {"method": "search", "params": {"query": "travel restrictions for Japan"}}}
+{"utterance": "search the web for is it going to rain", "rpc": {"method": "search", "params": {"query": "is it going to rain"}}}
+{"utterance": "find news headlines", "rpc": {"method": "search", "params": {"query": "news headlines"}}}
+{"utterance": "do a search for NBA scores", "rpc": {"method": "search", "params": {"query": "NBA scores"}}}
+{"utterance": "find weather in Tokyo", "rpc": {"method": "search", "params": {"query": "weather in Tokyo"}}}
+{"utterance": "google fitness tips", "rpc": {"method": "search", "params": {"query": "fitness tips"}}}
+{"utterance": "search for what is machine learning", "rpc": {"method": "search", "params": {"query": "what is machine learning"}}}
+{"utterance": "look up is it going to rain", "rpc": {"method": "search", "params": {"query": "is it going to rain"}}}
+{"utterance": "search for stock market trends", "rpc": {"method": "search", "params": {"query": "stock market trends"}}}
+{"utterance": "search the web for celebrity gossip", "rpc": {"method": "search", "params": {"query": "celebrity gossip"}}}
+{"utterance": "look for is it going to rain", "rpc": {"method": "search", "params": {"query": "is it going to rain"}}}
+{"utterance": "find movie showtimes", "rpc": {"method": "search", "params": {"query": "movie showtimes"}}}
+{"utterance": "look for AI tools for developers", "rpc": {"method": "search", "params": {"query": "AI tools for developers"}}}
+{"utterance": "search the web for what is machine learning", "rpc": {"method": "search", "params": {"query": "what is machine learning"}}}
+{"utterance": "search the web for cheap flights to NYC", "rpc": {"method": "search", "params": {"query": "cheap flights to NYC"}}}
+{"utterance": "google movie showtimes", "rpc": {"method": "search", "params": {"query": "movie showtimes"}}}
+{"utterance": "search the web for coffee shops nearby", "rpc": {"method": "search", "params": {"query": "coffee shops nearby"}}}
+{"utterance": "look up how to tie a tie", "rpc": {"method": "search", "params": {"query": "how to tie a tie"}}}
+{"utterance": "search the web for book recommendations", "rpc": {"method": "search", "params": {"query": "book recommendations"}}}
+{"utterance": "look for top programming languages", "rpc": {"method": "search", "params": {"query": "top programming languages"}}}
+{"utterance": "search the web for remote jobs", "rpc": {"method": "search", "params": {"query": "remote jobs"}}}
+{"utterance": "find what is machine learning", "rpc": {"method": "search", "params": {"query": "what is machine learning"}}}
+{"utterance": "find python tutorials", "rpc": {"method": "search", "params": {"query": "python tutorials"}}}
+{"utterance": "find weather today", "rpc": {"method": "search", "params": {"query": "weather today"}}}
+{"utterance": "google book recommendations", "rpc": {"method": "search", "params": {"query": "book recommendations"}}}
+{"utterance": "try searching what is machine learning", "rpc": {"method": "search", "params": {"query": "what is machine learning"}}}
+{"utterance": "look up restaurants near me", "rpc": {"method": "search", "params": {"query": "restaurants near me"}}}
+{"utterance": "look up book recommendations", "rpc": {"method": "search", "params": {"query": "book recommendations"}}}
+{"utterance": "look up meditation music", "rpc": {"method": "search", "params": {"query": "meditation music"}}}
+{"utterance": "do a search for AI tools for developers", "rpc": {"method": "search", "params": {"query": "AI tools for developers"}}}
+{"utterance": "look up celebrity gossip", "rpc": {"method": "search", "params": {"query": "celebrity gossip"}}}
+{"utterance": "look up translate hello to Spanish", "rpc": {"method": "search", "params": {"query": "translate hello to Spanish"}}}
+{"utterance": "do a search for book recommendations", "rpc": {"method": "search", "params": {"query": "book recommendations"}}}
+{"utterance": "look up JavaScript frameworks", "rpc": {"method": "search", "params": {"query": "JavaScript frameworks"}}}
+{"utterance": "do a search for recipe for pancakes", "rpc": {"method": "search", "params": {"query": "recipe for pancakes"}}}
+{"utterance": "do a search for cheap flights to NYC", "rpc": {"method": "search", "params": {"query": "cheap flights to NYC"}}}
+{"utterance": "do a search for JavaScript frameworks", "rpc": {"method": "search", "params": {"query": "JavaScript frameworks"}}}
+{"utterance": "search for top programming languages", "rpc": {"method": "search", "params": {"query": "top programming languages"}}}
+{"utterance": "search the web for weather in Tokyo", "rpc": {"method": "search", "params": {"query": "weather in Tokyo"}}}
+{"utterance": "search for remote jobs", "rpc": {"method": "search", "params": {"query": "remote jobs"}}}
+{"utterance": "google meditation music", "rpc": {"method": "search", "params": {"query": "meditation music"}}}
+{"utterance": "search the web for top programming languages", "rpc": {"method": "search", "params": {"query": "top programming languages"}}}
+{"utterance": "do a search for weather in Tokyo", "rpc": {"method": "search", "params": {"query": "weather in Tokyo"}}}
+{"utterance": "search for book recommendations", "rpc": {"method": "search", "params": {"query": "book recommendations"}}}
+{"utterance": "look for book recommendations", "rpc": {"method": "search", "params": {"query": "book recommendations"}}}
+{"utterance": "find restaurants near me", "rpc": {"method": "search", "params": {"query": "restaurants near me"}}}
+{"utterance": "find how to tie a tie", "rpc": {"method": "search", "params": {"query": "how to tie a tie"}}}
+{"utterance": "do a search for translate hello to Spanish", "rpc": {"method": "search", "params": {"query": "translate hello to Spanish"}}}
+{"utterance": "go back", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "navigate back", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "back", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "move back", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "back up", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "return to previous page", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "go to last page", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "previous page", "rpc": {"method": "goBack", "params": {"steps": 1}}}
+{"utterance": "go forward", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "navigate forward", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "forward", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "move forward", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "next page", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "proceed to next", "rpc": {"method": "goForward", "params": {"steps": 1}}}
+{"utterance": "advance page", "rpc": {"method": "goForward", "params": {"steps": 1}}}
