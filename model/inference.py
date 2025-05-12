@@ -1,8 +1,8 @@
 import argparse
+import json
 import torch
 import tiktoken
 from train import Seq2SeqTransformer, infer
-
 
 def main():
     parser = argparse.ArgumentParser()
@@ -18,14 +18,13 @@ def main():
 
     # Reconstruct model architecture and load weights
     model = Seq2SeqTransformer(
-        vocab_size=vocab_size,
+        vocab_size,
         d_model=512,
         nhead=8,
         num_encoder_layers=3,
         num_decoder_layers=3,
         dim_feedforward=2048,
-        dropout=0.1,
-        max_len=args.block_size,               # ← same as training
+        dropout=0.1
     )
     checkpoint = torch.load(args.model_path, map_location=device)
     model.load_state_dict(checkpoint)
@@ -40,7 +39,6 @@ def main():
             continue
         rpc = infer(model, enc, device, utterance, args.block_size)
         print("Predicted RPC:", rpc)
-
 
 if __name__ == '__main__':
     main()

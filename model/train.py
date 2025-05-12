@@ -1,11 +1,10 @@
-# ---------------------- train.py ----------------------
+# train.py
 # Usage:
 # python train.py --data ../expanded.jsonl --block_size 128 --batch 16 --epochs 20 --lr 3e-4 --val_ratio 0.1
-# after training you should get seq2seq_model.pt
-# execute "python inference.py" to test
 
 import argparse
 import json
+import math
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -13,8 +12,7 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader, random_split
 import tiktoken
 from tqdm import tqdm
-
-torch.backends.cudnn.benchmark = True
+import os
 
 # ----------------------------------------------------------------------------
 # Utterance parser: split first verb as action, rest as target
@@ -26,13 +24,7 @@ def split_action_target(utt: str):
     return action, target
 
 # ----------------------------------------------------------------------------
-# Causal Attention Mask
-# ----------------------------------------------------------------------------
-def generate_square_subsequent_mask(sz):
-    return torch.triu(torch.full((sz, sz), float('-inf')), diagonal=1)
-
-# ----------------------------------------------------------------------------
-# Rotary Positional Embedding (more expressive)
+# Positional embeddings (Rotary)
 # ----------------------------------------------------------------------------
 class RotaryEmbedding(nn.Module):
     def __init__(self, dim, max_freq=10.0):
@@ -44,90 +36,11 @@ class RotaryEmbedding(nn.Module):
         t = torch.arange(seq_len, device=device).type_as(self.inv_freq)
         freqs = torch.einsum('i , j -> i j', t, self.inv_freq)
         emb = torch.cat((freqs.sin(), freqs.cos()), dim=-1)
-        return emb.unsqueeze(1)
+        # return [seq_len, dim]
+        return emb
 
 # ----------------------------------------------------------------------------
-# Transformer with Pre-Norm and Rotary Embeddings
-# ----------------------------------------------------------------------------
-class TransformerBlock(nn.Module):
-    def __init__(self, d_model, nhead, dim_feedforward, dropout):
-        super().__init__()
-        self.ln1 = nn.LayerNorm(d_model)
-        self.attn = nn.MultiheadAttention(d_model, nhead, dropout=dropout)
-        self.ln2 = nn.LayerNorm(d_model)
-        self.ff = nn.Sequential(
-            nn.Linear(d_model, dim_feedforward),
-            nn.GELU(),
-            nn.Dropout(dropout),
-            nn.Linear(dim_feedforward, d_model),
-            nn.Dropout(dropout)
-        )
-
-    def forward(self, x, attn_mask=None, key_padding_mask=None):
-        # Pre-norm
-        x2 = self.ln1(x)
-        attn_out, _ = self.attn(x2, x2, x2, attn_mask=attn_mask, key_padding_mask=key_padding_mask)
-        x = x + attn_out
-        x2 = self.ln2(x)
-        x = x + self.ff(x2)
-        return x
-
-# ----------------------------------------------------------------------------
-# Seq2Seq Transformer Model (more complex)
-# ----------------------------------------------------------------------------
-class Seq2SeqTransformer(nn.Module):
-    def __init__(self, vocab_size, d_model=768, nhead=12,
-                 num_encoder_layers=6, num_decoder_layers=6,
-                 dim_feedforward=3072, dropout=0.1, max_len=130):
-        super().__init__()
-        self.d_model = d_model
-        self.src_emb = nn.Embedding(vocab_size, d_model)
-        self.tgt_emb = nn.Embedding(vocab_size, d_model)
-        self.rotary = RotaryEmbedding(d_model)
-        self.enc_blocks = nn.ModuleList([
-            TransformerBlock(d_model, nhead, dim_feedforward, dropout)
-            for _ in range(num_encoder_layers)
-        ])
-        self.dec_blocks = nn.ModuleList([
-            TransformerBlock(d_model, nhead, dim_feedforward, dropout)
-            for _ in range(num_decoder_layers)
-        ])
-        self.generator = nn.Sequential(
-            nn.LayerNorm(d_model),
-            nn.Linear(d_model, vocab_size)
-        )
-
-    def forward(self, src, tgt, src_key_padding_mask=None, tgt_key_padding_mask=None):
-        # src/tgt: [S/T, B]
-        seq_len_s, B = src.size(0), src.size(1)
-        seq_len_t = tgt.size(0)
-
-        # Embedding + rotary
-        src_emb = self.src_emb(src) * (self.d_model ** 0.5)
-        tgt_emb = self.tgt_emb(tgt) * (self.d_model ** 0.5)
-        rotary_emb_s = self.rotary(seq_len_s, src_emb.device)
-        rotary_emb_t = self.rotary(seq_len_t, tgt_emb.device)
-        src_emb = src_emb + rotary_emb_s
-        tgt_emb = tgt_emb + rotary_emb_t
-
-        # Encoder
-        memory = src_emb
-        for blk in self.enc_blocks:
-            memory = blk(memory, key_padding_mask=src_key_padding_mask)
-
-        # Decoder
-        out = tgt_emb
-        causal_mask = generate_square_subsequent_mask(seq_len_t).to(src.device)
-        for blk in self.dec_blocks:
-            out = blk(out, attn_mask=causal_mask, key_padding_mask=tgt_key_padding_mask)
-            # cross-attention
-            out = out + blk.ln1(out)  # reuse block for simplicity: self-attn sim cross-attn
-
-        # Project
-        return self.generator(out)
-
-# ----------------------------------------------------------------------------
-# Dataset with action/target prefix
+# Dataset
 # ----------------------------------------------------------------------------
 class Seq2SeqDataset(Dataset):
     def __init__(self, examples, enc, block_size):
@@ -137,7 +50,7 @@ class Seq2SeqDataset(Dataset):
             action, target = split_action_target(utt)
             inp_str = f"action: {action} target: {target}"
             src_ids = enc.encode(inp_str)[:block_size]
-            tgt_ids = enc.encode(rpc)[: block_size - 1]
+            tgt_ids = enc.encode(json.dumps(rpc, separators=(',',':')))[:block_size-1]
             if not tgt_ids:
                 continue
             self.data.append((
@@ -152,7 +65,7 @@ class Seq2SeqDataset(Dataset):
     def __getitem__(self, idx): return self.data[idx]
 
 # ----------------------------------------------------------------------------
-# Collate with padding masks
+# Collate
 # ----------------------------------------------------------------------------
 def collate_fn(batch):
     src, inp, out = zip(*batch)
@@ -165,44 +78,90 @@ def collate_fn(batch):
         src_pad[:len(s), i] = s
         inp_pad[:len(ii), i] = ii
         out_pad[:len(oo), i] = oo
-    src_mask = (src_pad == 0).transpose(0, 1)
-    tgt_mask = (inp_pad == 0).transpose(0, 1)
+    src_mask = (src_pad==0).transpose(0,1)
+    tgt_mask = (inp_pad==0).transpose(0,1)
     return src_pad, inp_pad, out_pad, src_mask, tgt_mask
 
 # ----------------------------------------------------------------------------
-# Training loop
+# Model with true cross-attention
 # ----------------------------------------------------------------------------
-def train(model, loader, optimizer, scheduler, scaler, device):
+from torch.nn import TransformerEncoder, TransformerEncoderLayer, TransformerDecoder, TransformerDecoderLayer
+
+class Seq2SeqTransformer(nn.Module):
+    def __init__(self, vocab_size, d_model=512, nhead=8,
+                 num_encoder_layers=3, num_decoder_layers=3,
+                 dim_feedforward=2048, dropout=0.1):
+        super().__init__()
+        self.d_model = d_model
+        self.src_emb = nn.Embedding(vocab_size, d_model)
+        self.tgt_emb = nn.Embedding(vocab_size, d_model)
+        self.pos = RotaryEmbedding(d_model)
+
+        # use default batch_first=False
+        enc_layer = TransformerEncoderLayer(d_model, nhead, dim_feedforward, dropout)
+        self.encoder = TransformerEncoder(enc_layer, num_encoder_layers)
+
+        dec_layer = TransformerDecoderLayer(d_model, nhead, dim_feedforward, dropout)
+        self.decoder = TransformerDecoder(dec_layer, num_decoder_layers)
+
+        self.generator = nn.Linear(d_model, vocab_size)
+
+    def forward(self, src, tgt, src_key_padding_mask=None, tgt_key_padding_mask=None, tgt_mask=None):
+        # src/tgt: [seq_len, batch]
+        src_emb = self.src_emb(src) * math.sqrt(self.d_model)
+        tgt_emb = self.tgt_emb(tgt) * math.sqrt(self.d_model)
+
+        # positional: [seq_len, d_model]
+        Ls, Lt = src.size(0), tgt.size(0)
+        pos_s = self.pos(Ls, src.device).unsqueeze(1)       # [seq_len, 1, d_model]
+        pos_t = self.pos(Lt, tgt.device).unsqueeze(1)       # [seq_len, 1, d_model]
+        src_emb = src_emb + pos_s
+        tgt_emb = tgt_emb + pos_t
+
+        memory = self.encoder(src_emb, src_key_padding_mask=src_key_padding_mask)
+        out = self.decoder(tgt_emb,
+                           memory,
+                           tgt_mask=tgt_mask,
+                           memory_key_padding_mask=src_key_padding_mask,
+                           tgt_key_padding_mask=tgt_key_padding_mask)
+        return self.generator(out)
+
+# ----------------------------------------------------------------------------
+# Training & evaluation
+# ----------------------------------------------------------------------------
+def generate_square_subsequent_mask(sz):
+    return torch.triu(torch.full((sz, sz), float('-inf')), diagonal=1)
+
+
+def train(model, loader, optimizer, scheduler, device):
     model.train()
-    total_loss = 0.0
+    total_loss = 0
     for src, inp, out, src_mask, tgt_mask in tqdm(loader, desc="Training"):
         src, inp, out = src.to(device), inp.to(device), out.to(device)
         src_mask, tgt_mask = src_mask.to(device), tgt_mask.to(device)
         optimizer.zero_grad()
-        with torch.cuda.amp.autocast():
-            logits = model(src, inp, src_key_padding_mask=src_mask, tgt_key_padding_mask=tgt_mask)
-            loss = F.cross_entropy(logits.view(-1, logits.size(-1)), out.view(-1),
-                                   ignore_index=0, label_smoothing=0.1)
-        scaler.scale(loss).backward()
-        scaler.unscale_(optimizer)
+        logits = model(src, inp,
+                       src_key_padding_mask=src_mask,
+                       tgt_key_padding_mask=tgt_mask,
+                       tgt_mask=generate_square_subsequent_mask(inp.size(0)).to(device))
+        loss = F.cross_entropy(logits.view(-1, logits.size(-1)), out.view(-1), ignore_index=0, label_smoothing=0.1)
+        loss.backward()
         torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
-        scaler.step(optimizer)
-        scaler.update()
+        optimizer.step()
         scheduler.step()
         total_loss += loss.item()
     return total_loss / len(loader)
 
-# ----------------------------------------------------------------------------
-# Token accuracy
-# ----------------------------------------------------------------------------
 @torch.no_grad()
 def eval_token_accuracy(model, loader, device):
     model.eval()
     correct = total = 0
     for src, inp, out, src_mask, tgt_mask in tqdm(loader, desc="Evaluating"):
         src, inp, out = src.to(device), inp.to(device), out.to(device)
-        src_mask, tgt_mask = src_mask.to(device), tgt_mask.to(device)
-        logits = model(src, inp, src_key_padding_mask=src_mask, tgt_key_padding_mask=tgt_mask)
+        logits = model(src, inp,
+                       src_key_padding_mask=src_mask,
+                       tgt_key_padding_mask=tgt_mask,
+                       tgt_mask=generate_square_subsequent_mask(inp.size(0)).to(device))
         preds = logits.argmax(dim=-1)
         mask = out.ne(0)
         correct += (preds == out).masked_select(mask).sum().item()
@@ -234,11 +193,11 @@ def infer(model, enc, device, utterance, block_size):
     return enc.decode(token_ids[1:-1])
 
 # ----------------------------------------------------------------------------
-# Main training script
+# Main script
 # ----------------------------------------------------------------------------
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data', required=True, help="JSONL with utterance/rpc pairs")
+    parser.add_argument('--data', required=True)
     parser.add_argument('--block_size', type=int, default=128)
     parser.add_argument('--d_model', type=int, default=512)
     parser.add_argument('--nhead', type=int, default=8)
@@ -249,63 +208,63 @@ def main():
     parser.add_argument('--batch', type=int, default=16)
     parser.add_argument('--epochs', type=int, default=30)
     parser.add_argument('--lr', type=float, default=3e-4)
-    parser.add_argument('--device', default='cuda:0')
+    parser.add_argument('--device', default='cpu')
     parser.add_argument('--val_ratio', type=float, default=0.1)
     args = parser.parse_args()
 
+    # select device
+    if args.device=='cpu' and torch.backends.mps.is_available():
+        device = torch.device('mps')
+    else:
+        device = torch.device(args.device if torch.cuda.is_available() or args.device=='cpu' else 'cpu')
+
+    # load data
     examples = []
     with open(args.data, 'r', encoding='utf-8') as f:
         for line in f:
             j = json.loads(line)
-            examples.append((j['utterance'], json.dumps(j['rpc'], separators=(',', ':'))))
+            examples.append((j['utterance'], j['rpc']))
 
+    # prepare dataset & loaders
     enc = tiktoken.get_encoding('gpt2')
     dataset = Seq2SeqDataset(examples, enc, args.block_size)
-
-    total = len(dataset)
-    val_size = int(args.val_ratio * total)
+    total, val_size = len(dataset), int(args.val_ratio * len(dataset))
     train_size = total - val_size
-    print(f"Dataset size: {total}, train: {train_size}, val: {val_size}")
     train_ds, val_ds = random_split(dataset, [train_size, val_size], generator=torch.Generator().manual_seed(42))
+    num_workers = min(8, os.cpu_count() or 1)
+    train_loader = DataLoader(train_ds, batch_size=args.batch, shuffle=True, collate_fn=collate_fn, num_workers=num_workers)
+    val_loader   = DataLoader(val_ds,   batch_size=args.batch, shuffle=False,collate_fn=collate_fn, num_workers=num_workers)
 
-    train_loader = DataLoader(train_ds, batch_size=args.batch, shuffle=True, collate_fn=collate_fn, num_workers=4)
-    val_loader = DataLoader(val_ds, batch_size=args.batch, shuffle=False, collate_fn=collate_fn, num_workers=4)
-
-    device = torch.device(args.device if torch.cuda.is_available() else 'cpu')
+    # init model
     vocab_size = enc.n_vocab + 2
-    model = Seq2SeqTransformer(vocab_size=vocab_size, d_model=args.d_model, nhead=args.nhead,
-                                num_encoder_layers=args.enc_layers, num_decoder_layers=args.dec_layers,
-                                dim_feedforward=args.ff, dropout=args.dropout, max_len=args.block_size).to(device)
+    model = Seq2SeqTransformer(vocab_size, args.d_model, args.nhead, args.enc_layers, args.dec_layers, args.ff, args.dropout).to(device)
 
     optimizer = optim.AdamW(model.parameters(), lr=args.lr, weight_decay=1e-2)
-    scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, max_lr=args.lr,
-                                                    steps_per_epoch=len(train_loader), epochs=args.epochs, pct_start=0.1)
-    scaler = torch.cuda.amp.GradScaler()
+    scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, max_lr=args.lr, steps_per_epoch=len(train_loader), epochs=args.epochs, pct_start=0.1)
 
-    best_val_loss, patience, no_improve = float('inf'), 3, 0
-    for epoch in range(1, args.epochs + 1):
-        train_loss = train(model, train_loader, optimizer, scheduler, scaler, device)
-        print(f"Epoch {epoch}/{args.epochs} — Train Loss: {train_loss:.4f}")
-        val_loss = 0
-        model.eval()
-        with torch.no_grad():
-            for src, inp, out, src_mask, tgt_mask in tqdm(val_loader, desc="Validating"):
-                src, inp, out = src.to(device), inp.to(device), out.to(device)
-                src_mask, tgt_mask = src_mask.to(device), tgt_mask.to(device)
-                logits = model(src, inp, src_key_padding_mask=src_mask, tgt_key_padding_mask=tgt_mask)
-                val_loss += F.cross_entropy(logits.view(-1, logits.size(-1)), out.view(-1), ignore_index=0, label_smoothing=0.1).item()
-        val_loss /= len(val_loader)
-        val_acc = eval_token_accuracy(model, val_loader, device)
-        print(f" -> Val Loss: {val_loss:.4f} — Val Acc: {val_acc:.1f}%")
-        if val_loss < best_val_loss - 1e-4:
-            best_val_loss, no_improve = val_loss, 0
+    # training loop...
+    best_val, patience, no_imp = float('inf'), 3, 0
+    for ep in range(1, args.epochs+1):
+        trl = train(model, train_loader, optimizer, scheduler, device)
+        print(f"Epoch {ep}/{args.epochs} — Train Loss: {trl:.4f}")
+        total_loss = 0
+        for src, inp, out, sm, tm in val_loader:
+            logits = model(src.to(device), inp.to(device), src_key_padding_mask=sm.to(device), tgt_key_padding_mask=tm.to(device), tgt_mask=generate_square_subsequent_mask(inp.size(0)).to(device))
+            total_loss += F.cross_entropy(logits.view(-1, vocab_size), out.to(device).view(-1), ignore_index=0, label_smoothing=0.1).item()
+        vl = total_loss / len(val_loader)
+        va = eval_token_accuracy(model, val_loader, device)
+        print(f" -> Val Loss: {vl:.4f} — Val Acc: {va:.1f}%")
+        if vl < best_val - 1e-4:
+            best_val, no_imp = vl, 0
             torch.save(model.state_dict(), 'seq2seq_model.pt')
         else:
-            no_improve += 1
-            if no_improve >= patience:
+            no_imp += 1
+            if no_imp >= patience:
                 print("Early stopping.")
                 break
     print("Training complete.")
 
-if __name__ == '__main__':
+if __name__=='__main__':
     main()
+
+# inference.py (unchanged)
