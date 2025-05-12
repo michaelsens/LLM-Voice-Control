@@ -1,20 +1,20 @@
-python tokenize_data.py --jsonl expanded.jsonl
+python tokenize_data.py --jsonl adjusted_data.jsonl
 
 # -------------------------------------------------------
 # 2  TRAIN MODEL          (20 epochs; adjust as needed)
-#     • checkpoint: runs/best_model_521.pt
+#     • checkpoint: runs/XXX_best_model.pt
 # -------------------------------------------------------
 mkdir -p runs
 python training.py \
        --train  train.pt \
        --val    val.pt \
-       --chkpt  runs/best_model_521.pt \
+       --chkpt  runs/XXX_best_model.pt \
        --epochs 20
 
 # -------------------------------------------------------
 # 3  INFERENCE LOOP
 #     Make sure inference.py points here:
-#         CKPT_PATH = "runs/best_model_521.pt"
+#         CKPT_PATH = "runs/XXX_best_model.pt"
 #         TOK_PATH  = "rpc_tokenizer.json"
 # -------------------------------------------------------
 python inference.py
