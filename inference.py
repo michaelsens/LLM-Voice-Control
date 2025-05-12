@@ -5,7 +5,7 @@ from tokenizers import Tokenizer                    # ← generic loader
 from models import MiniRPCTransformer
 
 # -------- paths -----------------------------------------------------
-CKPT_PATH = "runs/best_model_521.pt"
+CKPT_PATH = "runs/XXX_best_model.pt"
 TOK_PATH  = "rpc_tokenizer.json"
 DEVICE    = "cpu"                                  # "cuda" for GPU
 
